@@ -20,8 +20,6 @@ if('processed_data.RData' %in% dir('data')){
   cow <- raster('data/CATTLE/Glb_Cattle_CC2006_AD.tif')
   projection(cow) <- "+proj=utm +zone=48 +datum=WGS84"
   cow <- aggregate(cow, fact=8)
-  cow_original <- cow
-  values(cow) <- dplyr::percent_rank(values(cow)) * 100
   # values(cow) <- values(cow) / max(values(cow), na.rm = TRUE)
   
   # Crop cow just to africa
@@ -35,6 +33,9 @@ if('processed_data.RData' %in% dir('data')){
                          # res = res(mosq),
                          # crs = proj4string(mosq)
   )
+  cow_original <- cowap
+  values(cowap) <- dplyr::percent_rank(values(cowap)) * 100
+  
   # extent(cowap) <- extent(mosq)
   # combine_function <- function(x,y){
   #   as.numeric(paste0(mean(x), '.', mean(y)))
@@ -42,16 +43,78 @@ if('processed_data.RData' %in% dir('data')){
   # combine_function <- Vectorize(combine_function)
   cowsquito <- overlay(cowap, mosq, 
                        # fun = combine_function
-                       fun = mean
+                       fun = prod
                        )
+  
+  # Combine into a spatial pixels dataframe
+  cowap_small <- cowap#aggregate(cowap, fact=8)
+  values(cowap_small) <- values(cowap_small) * 100
+  mosq_small <- mosq#aggregate(mosq, fact = 8)
+  r = brick(cowap_small,mosq_small)
+  r <- as(r, "SpatialPixelsDataFrame")
+  names(r@data) <- c('cattle', 'pr')
+  # Round
+  r@data$cattle <- round(r@data$cattle)
+  r@data$cattle[is.na(r@data$cattle)] <- 0
+  r@data$pr <- round(r@data$pr)
+  r@data$pr[is.na(r@data$pr)] <- 0
+  # Define color
+  # Come up with a color matrix
+  dat <- expand.grid(cattle=seq(0, 100, by=1), pr=seq(0, 100, by=1))
+  dat <- within(dat, color <- rgb(green=50, red=pr, blue=cattle, maxColorValue=100))
+  dat$color_number <- 1:nrow(dat)
+  # # Legend
+  # ggplot(dat, aes(x=cattle, y=pr)) +
+  # geom_tile(aes(fill=color), color=NA) +
+  # scale_fill_identity() +
+  #   labs(x = 'Cattle percentile',
+  #        y = 'Pr percentile') +
+  #   databrew::theme_databrew()
+  # # Join color key to r
+  r@data <-left_join(r@data,
+                     dat)
+  
+  # # Convert back to raster
+  # color_number <- rep(NA, nrow(r@data))
+  # 
+  # if('color_number.RData' %in% dir('data')){
+  #   load('data/color_number.RData')
+  # } else {
+  # 
+  #   for(i in which(!is.na(r@data$color))){
+  #     message(i)
+  #     color_number[i] <-
+  #       which(dat$color == r@data$color[i])
+  #   }
+  #   save(color_number,
+  #        file = 'data/color_number.RData')
+  # }
+  # r@data$color_number <- color_number
+  
+
+  x <- SpatialPointsDataFrame(coords = coordinates(r),
+                              data = r@data)
+  rr <- mosq_small
+  z <- rasterize(x, mosq_small, field = 'color_number')
+
   save(cow,
        cowa,
        cowap,
        cowsquito,
        mosq,
+       cow_original, 
+       mosq_original,
+       z,
+       x,
+       r,
+       dat,
        file = 'data/processed_data.RData')
 }
 
+
+# ggplot(dat, aes(x=red, y=blue)) + 
+  # geom_tile(aes(fill=mix), color="white") + 
+  # scale_fill_identity()
 
 # plot(cow)
 # levelplot(cow)
@@ -81,15 +144,22 @@ if('processed_data.RData' %in% dir('data')){
 #           # at=seq(-5, 5, len=101)
 #           )            # colour ramp breaks
 
-plotter <- function(r){
-  colr <- colorRampPalette(rev(brewer.pal(9, 'Spectral')))
+plotter <- function(r, colr = NULL, no_legend = FALSE){
+  if(is.null(colr)){
+    colr <- colorRampPalette(rev(brewer.pal(9, 'Spectral')))
+  }
+  if(no_legend){
+    colorkey <- FALSE
+  } else {
+    colorkey <- list(
+      space='bottom'#,                   # plot legend at bottom
+      # labels=list(at=-5:5, font=4)      # legend ticks and labels 
+    ) 
+  }
   
   levelplot(r, 
             margin=FALSE,                       # suppress marginal graphics
-            colorkey=list(
-              space='bottom'#,                   # plot legend at bottom
-              # labels=list(at=-5:5, font=4)      # legend ticks and labels 
-            ),    
+            colorkey= colorkey,
             par.settings=list(
               axis.line=list(col='transparent') # suppress axes and legend outline
             ),

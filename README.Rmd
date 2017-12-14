@@ -16,29 +16,20 @@ opts_chunk$set(comment = NA, echo = FALSE, warning = FALSE, message = FALSE, err
 
 ```{r}
 source('code.R')
+africa <- cism::africa
+
 ```
 
 # cowsquito: Identifying geographical areas of greatest potential impact for livestock ivermectin implants
 
-# Data sources
-
-### Where are the cows?
-
-https://livestock.geo-wiki.org/Application/index.php
-
-### Where are the mosquitoes?  
-
-(malaria, actually)
-
-https://map.ox.ac.uk/explorer/#/explorer
 
 # Methods 
 
 - We use raw raster data on where cattle are from the International Livestock Research Institute (ILRI) and the Food and Agriculture Organization of the United Nations (FAO) and the Université Libre de Bruxelles (ULB-LUBIES).  
 - We use raw raster data on the Plasmodium falciparum parasite rate in 2-10 year olds in Africa in 2015, made available through the Malaria Atlas Project.  
 - We use R to process the data, standardize their geographic attributes (extents, projections) and quality attributes (granularity, etc.).
-- We use simple percentilization to scale incidence (0-1) and cattle per square kilometer (0-Inf) into a 0-100 metric.
-- We combine our two metrics by simple average. So, in the combined score, 0 means no Pf or cattle, and 100 means the maximum amount of Pf and cattle. Anything between the two represents some combination. This method assumes an equilinear value of both percentilized Pf and cattle (ie, a place with 60th percentile cattle density and 40th percentile Pf is equally as promising as a place with 40th percentile cattle density and 60th percentile Pf).  
+- We use simple percentilization to scale prevalence (0-1) and cattle per square kilometer (0-Inf) into a 0-100 metric.
+- We combine our two metrics by simple product So, in the combined score, 0 means no Pf or cattle, and 100 means the maximum amount of Pf and cattle. 0 can also much of one metric, but not of the other (for example, a very malarious region with no cattle gets a 0). Anything between the two represents some combination. This method assumes an equilinear value of both percentilized Pf and cattle (ie, a place with 60th percentile cattle density and 40th percentile Pf is equally as promising as a place with 40th percentile cattle density and 60th percentile Pf).  
 - Full code in this repo (`code.R`).
 
 # Results  
@@ -51,6 +42,12 @@ The below shows the raw data on the Plasmodium falciparum parasite rate in 2-10 
 plotter(mosq_original)
 ```
 
+The below is identical to the above, but with country borders.
+
+```{r}
+plotter(mosq_original) +
+  layer(sp.polygons(africa))
+```
 
 The below shows our (scaled) data on the Plasmodium falciparum parasite rate in 2-10 year-olds.
 
@@ -58,33 +55,184 @@ The below shows our (scaled) data on the Plasmodium falciparum parasite rate in 
 plotter(mosq)
 ```
 
-## Cattle density  
-
-The below shows the raw data on cattle density per square kilometer.
+The below is identical to the above, but with country borders.
 
 ```{r}
-plotter(cow_original)
+plotter(mosq) +
+  layer(sp.polygons(africa))
 ```
 
-The below shows our (scaled) cattle scores (Africa only).
+
+## Cattle density  
+
+The below shows our (scaled) cattle scores for Africa.
 
 ```{r}
 plotter(cowa)
 ```
 
+The below is identical to the above, but with country borders.
+
+```{r}
+plotter(cowa) +
+  layer(sp.polygons(africa))
+```
 
 ## Combined score
 
-The below shows our combined score.
+### Multidimensional score
+
+We can visualize both the quantity of malaria and cattle through a 2-dimensional color-scale. In the below chart, we use a 10,000 value color palette, mixing green (neither cattle nor malaria) with blue (lots of cattle, little malaria) with orange (lots of malaria, little cattle) with purple (lots of both). Below the map is key for interpretation.
+
+```{r}
+dat <- dat %>%
+  arrange(color_number)
+plotter(z, colr = colorRampPalette(dat$color), no_legend = TRUE)
+```
+
+```{r, fig.height = 3.5, fig.width = 5}
+ggplot(dat, aes(x=cattle, y=pr)) +
+  geom_tile(aes(fill=color), color=NA) +
+  scale_fill_identity() +
+    labs(x = 'Cattle percentile',
+         y = 'Pr percentile',
+         title = 'Legend for intepreting above map',
+         subtitle = 'Blue = cows, orange = malaria, purple = both') +
+    databrew::theme_databrew()
+```
+
+The below is identical to the above, but with country borders.
+
+```{r}
+plotter(z, colr = colorRampPalette(dat$color), no_legend = TRUE) +
+  layer(sp.polygons(africa))
+```
+
+
+### Single score
+
+The below shows our combined score, using the product of the cattle and malaria metrics. Unlike the above multi-dimensional score, this visual does not contain as much information (ie, with a value of "40", it's not clear whether this is due to a cattle percentile of 40 and a malaria percentile of 1, or a cattle percentile of 5 and a malaria percentile of 8). That said, a one-dimensional color legend is much easier to interpret visually.
 
 ```{r}
 plotter(cowsquito)
 ```
 
-# Discussion
+The below is identical to the above, but with country borders.
+
+```{r}
+plotter(cowsquito) +
+  layer(sp.polygons(africa))
+```
+
+### Country aggregation
+
+We aggregate at the polygonal national level so as to rank countries by suitability for intervention. The below maps show the mean, median, maximum, and % of area greater than continental median "single score" (product of Pf and cattle percentile) for each country in Africa.
+
+```{r, fig.width = 9, fig.height = 11}
+proj4string(cowsquito) <- proj4string(africa)
+# a <- extract(cowsquito, africa, fun = mean, na.rm = TRUE)
+b <- extract(cowsquito, africa)
+a_mean <- unlist(lapply(b, FUN=mean, na.rm = T))
+a_max <- unlist(lapply(b, FUN=max, na.rm = T))
+a_median <- unlist(lapply(b, function(x){y <- median(x, na.rm = TRUE); ifelse(is.null(y), 0, y)}))
+a_p <- unlist(lapply(b, FUN=function(x){length(which(x > median(values(cowsquito), na.rm = TRUE))) / length(x) * 100}))
+africa@data$avg <- a_mean
+africa@data$a_max <- a_max
+africa@data$a_median <- a_median
+africa@data$a_p <- a_p
+africa@data$id <- as.character(1:nrow(africa@data))
+
+library(maptools)
+library(databrew)
+africa_fortified <- fortify(africa, region = 'id')
+africa_fortified <-
+  left_join(africa_fortified,
+            africa@data %>%
+              dplyr::select(id, avg, a_max, a_median, a_p))
+
+g1 <- ggplot() +
+  geom_polygon(data = africa_fortified,
+               aes(x = long,
+                   y = lat,
+                   group = group,
+                   fill = avg),
+               color = 'black',
+               size = 0.1) +
+  theme_databrew() +
+  coord_map() +
+  ggthemes::theme_map() +
+  scale_fill_gradientn(name ='',
+                       colors = colorRampPalette(rev(brewer.pal(9, 'Spectral')))(10),
+                       na.value = 'white') +
+  labs(title = 'Average score')
+
+g2 <- ggplot() +
+  geom_polygon(data = africa_fortified,
+               aes(x = long,
+                   y = lat,
+                   group = group,
+                   fill = a_max),
+               color = 'black',
+               size = 0.1) +
+  theme_databrew() +
+  coord_map() +
+  ggthemes::theme_map() +
+  scale_fill_gradientn(name ='',
+                       colors = colorRampPalette(rev(brewer.pal(9, 'Spectral')))(10),
+                       na.value = 'white') +
+  labs(title = 'Maximum score')
+
+g3 <- ggplot() +
+  geom_polygon(data = africa_fortified,
+               aes(x = long,
+                   y = lat,
+                   group = group,
+                   fill = a_median),
+               color = 'black',
+               size = 0.1) +
+  theme_databrew() +
+  coord_map() +
+  ggthemes::theme_map() +
+  scale_fill_gradientn(name ='',
+                       colors = colorRampPalette(rev(brewer.pal(9, 'Spectral')))(10),
+                       na.value = 'white') +
+  labs(title = 'Median score')
+
+g4 <- ggplot() +
+  geom_polygon(data = africa_fortified,
+               aes(x = long,
+                   y = lat,
+                   group = group,
+                   fill = a_p),
+               color = 'black',
+               size = 0.1) +
+  theme_databrew() +
+  coord_map() +
+  ggthemes::theme_map() +
+  scale_fill_gradientn(name ='',
+                       colors = colorRampPalette(rev(brewer.pal(9, 'Spectral')))(10),
+                       na.value = 'white') +
+  labs(title = 'Percent of area at > median continent score')
+
+Rmisc::multiplot(g1, g2, g3, g4, cols = 2)
+```
+
+
+# Conclusion
 
 West Africa appears to be the region with the most promise for ivermectin-infused cows. Yummy.
 
+# Data sources
+
+### Where are the cows?
+
+https://livestock.geo-wiki.org/Application/index.php
+
+### Where are the mosquitoes?  
+
+(malaria, actually)
+
+https://map.ox.ac.uk/explorer/#/explorer
 
 
 # Contact
