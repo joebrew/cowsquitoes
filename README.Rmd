@@ -65,18 +65,32 @@ plotter(mosq) +
 
 ## Cattle density  
 
-The below shows our (scaled) cattle scores for Africa.
+```{r}
+plotter(cow_original)
+```
+
+
+The below is identical to the above, but with country borders.
 
 ```{r}
-plotter(cowa)
+plotter(cow_original) +
+  layer(sp.polygons(africa))
+```
+
+The below shows our (scaled) data on cattle density rate.
+
+```{r}
+plotter(cowap)
 ```
 
 The below is identical to the above, but with country borders.
 
 ```{r}
-plotter(cowa) +
+plotter(cowap) +
   layer(sp.polygons(africa))
 ```
+
+
 
 ## Combined score
 
@@ -122,6 +136,31 @@ The below is identical to the above, but with country borders.
 ```{r}
 plotter(cowsquito) +
   layer(sp.polygons(africa))
+```
+
+The below is identical to the above, but showing a point for each "grid" of the raster surface, and removing the geogrpahic coordination (ie, scatterplot).
+
+```{r}
+xs <- coordinates(z)[,1]
+xs <- seq(min(xs), max(xs), by = 1)
+ys <- coordinates(z)[,2]
+ys <- seq(min(ys), max(ys), 1)
+the_grid <- expand.grid(x = xs,
+                        y = ys)
+coordinates(the_grid) <- ~x+y
+proj4string(the_grid) <- proj4string(africa)
+# Keep only Africa
+the_grid <- the_grid[!is.na(over(the_grid, polygons(africa)))]
+# the_grid <- spTransform(the_grid, proj4string(cowa))
+# Get values
+cow_scores <- raster::extract(cowap, coordinates(the_grid))
+mosq_scores <- raster::extract(mosq_original, coordinates(the_grid))
+the_data <- data.frame(cattle = cow_scores,
+                       mosq = mosq_scores)
+ggplot(data = the_data,
+       aes(x = cattle,
+           y = mosq)) +
+  geom_point()
 ```
 
 ### Country aggregation

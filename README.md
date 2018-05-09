@@ -38,13 +38,19 @@ The below is identical to the above, but with country borders.
 Cattle density
 --------------
 
-The below shows our (scaled) cattle scores for Africa.
-
 <img src="README-unnamed-chunk-7-1.png" style="display: block; margin: auto;" />
 
 The below is identical to the above, but with country borders.
 
 <img src="README-unnamed-chunk-8-1.png" style="display: block; margin: auto;" />
+
+The below shows our (scaled) data on cattle density rate.
+
+<img src="README-unnamed-chunk-9-1.png" style="display: block; margin: auto;" />
+
+The below is identical to the above, but with country borders.
+
+<img src="README-unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
 
 Combined score
 --------------
@@ -53,17 +59,7 @@ Combined score
 
 We can visualize both the quantity of malaria and cattle through a 2-dimensional color-scale. In the below chart, we use a 10,000 value color palette, mixing green (neither cattle nor malaria) with blue (lots of cattle, little malaria) with orange (lots of malaria, little cattle) with purple (lots of both). Below the map is key for interpretation.
 
-<img src="README-unnamed-chunk-9-1.png" style="display: block; margin: auto;" />
-
-<img src="README-unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
-
-The below is identical to the above, but with country borders.
-
 <img src="README-unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
-
-### Single score
-
-The below shows our combined score, using the product of the cattle and malaria metrics. Unlike the above multi-dimensional score, this visual does not contain as much information (ie, with a value of "40", it's not clear whether this is due to a cattle percentile of 40 and a malaria percentile of 1, or a cattle percentile of 5 and a malaria percentile of 8). That said, a one-dimensional color legend is much easier to interpret visually.
 
 <img src="README-unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
 
@@ -71,11 +67,25 @@ The below is identical to the above, but with country borders.
 
 <img src="README-unnamed-chunk-13-1.png" style="display: block; margin: auto;" />
 
+### Single score
+
+The below shows our combined score, using the product of the cattle and malaria metrics. Unlike the above multi-dimensional score, this visual does not contain as much information (ie, with a value of "40", it's not clear whether this is due to a cattle percentile of 40 and a malaria percentile of 1, or a cattle percentile of 5 and a malaria percentile of 8). That said, a one-dimensional color legend is much easier to interpret visually.
+
+<img src="README-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
+
+The below is identical to the above, but with country borders.
+
+<img src="README-unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
+
+The below is identical to the above, but showing a point for each "grid" of the raster surface, and removing the geogrpahic coordination (ie, scatterplot).
+
+<img src="README-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
+
 ### Country aggregation
 
 We aggregate at the polygonal national level so as to rank countries by suitability for intervention. The below maps show the mean, median, maximum, and % of area greater than continental median "single score" (product of Pf and cattle percentile) for each country in Africa.
 
-<img src="README-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
 
 Conclusion
 ==========

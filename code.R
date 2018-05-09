@@ -20,6 +20,7 @@ if('processed_data.RData' %in% dir('data')){
   cow <- raster('data/CATTLE/Glb_Cattle_CC2006_AD.tif')
   projection(cow) <- "+proj=utm +zone=48 +datum=WGS84"
   cow <- aggregate(cow, fact=8)
+  # cow_original <- cow
   # values(cow) <- values(cow) / max(values(cow), na.rm = TRUE)
   
   # Crop cow just to africa
@@ -34,6 +35,7 @@ if('processed_data.RData' %in% dir('data')){
                          # crs = proj4string(mosq)
   )
   cow_original <- cowap
+  # cow_original <- cowap
   values(cowap) <- dplyr::percent_rank(values(cowap)) * 100
   
   # extent(cowap) <- extent(mosq)
