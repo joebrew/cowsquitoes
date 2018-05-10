@@ -99,6 +99,10 @@ if('processed_data.RData' %in% dir('data')){
   rr <- mosq_small
   z <- rasterize(x, mosq_small, field = 'color_number')
 
+  # Get Africa level 2 and 1 shape files and combine
+  # source('get_africa_shapes_level_1.R')
+  africa1 <- readOGR('africa_level_1', 'africa1')
+  
   save(cow,
        cowa,
        cowap,
@@ -110,6 +114,7 @@ if('processed_data.RData' %in% dir('data')){
        x,
        r,
        dat,
+       africa1,
        file = 'data/processed_data.RData')
 }
 

@@ -138,7 +138,7 @@ plotter(cowsquito) +
   layer(sp.polygons(africa))
 ```
 
-The below is identical to the above, but showing a point for each "grid" of the raster surface, and removing the geogrpahic coordination (ie, scatterplot).
+The below is identical to the above, but showing a point for each "grid" of the raster surface, and removing the geogrpaphic coordination (ie, scatterplot).
 
 ```{r}
 xs <- coordinates(z)[,1]
@@ -254,6 +254,177 @@ g4 <- ggplot() +
   labs(title = 'Percent of area at > median continent score')
 
 Rmisc::multiplot(g1, g2, g3, g4, cols = 2)
+```
+
+
+The below shows a plot of country level values (excluding countries with 0 values throughout).
+
+```{r}
+plot_data <- africa_fortified %>%
+  left_join(africa@data %>% dplyr::select(COUNTRY, id)) %>%
+  dplyr::rename(country = COUNTRY) %>%
+  dplyr::select(id, country, avg, a_max, a_median, a_p) %>%
+  group_by(country) %>%
+  summarise(avg = mean(avg[!is.infinite(avg)], na.rm = TRUE),
+            a_max = max(a_max[!is.infinite(a_max)], na.rm = TRUE),
+            a_median = median(a_median[!is.infinite(a_median)], na.rm = TRUE),
+            a_p = length(which(a_p > median(values(cowsquito), na.rm = TRUE))) / length(a_p) * 100) %>%
+  ungroup %>%
+  rename(`Average score` = avg,
+         `Max score` = a_max,
+         `Median score` = a_median,
+         `% of area > African median` = a_p)
+
+pd <- plot_data %>%
+  gather(key, value, `Average score`:`% of area > African median`) %>%
+  mutate(value = ifelse(value < 0, 0, value)) %>%
+  group_by(country) %>%
+  filter(!all(value) == 0 & !all(is.na(value)))
+ggplot(data = pd,
+       aes(x = country,
+           y = value,
+           fill = key,
+           group = key)) +
+  geom_bar(stat = 'identity',
+           pos = 'dodge') +
+    theme_bw() +
+  theme(legend.position = 'bottom',
+        axis.text.x = element_text(angle = 90)) +
+  scale_fill_manual(name = '',
+                    values = brewer.pal(n = 4, name = 'Spectral')) +
+  labs(x = 'Country',
+       y = 'Value') 
+
+```
+
+The below is a table country-level values.
+
+```{r}
+knitr::kable(plot_data, format = 'html')  
+```
+
+
+
+### Administrative level 1 aggregation
+
+We aggregate at the polygonal sub-national level so as to rank administrative areas (districts, etc.) by suitability for intervention. The below maps show the mean, median, maximum, and % of area greater than continental median "single score" (product of Pf and cattle percentile) for each administrative unit in Africa.
+
+```{r, fig.width = 9, fig.height = 11}
+proj4string(cowsquito) <- proj4string(africa1)
+# a <- extract(cowsquito, africa, fun = mean, na.rm = TRUE)
+b <- extract(cowsquito, africa1)
+a_mean <- unlist(lapply(b, FUN=mean, na.rm = T))
+a_max <- unlist(lapply(b, FUN=max, na.rm = T))
+a_median <- unlist(lapply(b, function(x){y <- median(x, na.rm = TRUE); ifelse(is.null(y), 0, y)}))
+a_p <- unlist(lapply(b, FUN=function(x){length(which(x > median(values(cowsquito), na.rm = TRUE))) / length(x) * 100}))
+africa1@data$avg <- a_mean
+africa1@data$a_max <- a_max
+africa1@data$a_median <- a_median
+africa1@data$a_p <- a_p
+africa1@data$id <- as.character(1:nrow(africa1@data))
+
+library(maptools)
+library(databrew)
+africa1_fortified <- fortify(africa1, region = 'id')
+africa1_fortified <-
+  left_join(africa1_fortified,
+            africa1@data %>%
+              dplyr::select(id, avg, a_max, a_median, a_p))
+
+g1 <- ggplot() +
+  geom_polygon(data = africa1_fortified,
+               aes(x = long,
+                   y = lat,
+                   group = group,
+                   fill = avg),
+               color = 'black',
+               size = 0.1) +
+  theme_databrew() +
+  coord_map() +
+  ggthemes::theme_map() +
+  scale_fill_gradientn(name ='',
+                       colors = colorRampPalette(rev(brewer.pal(9, 'Spectral')))(10),
+                       na.value = 'white') +
+  labs(title = 'Average score') 
+
+g2 <- ggplot() +
+  geom_polygon(data = africa1_fortified,
+               aes(x = long,
+                   y = lat,
+                   group = group,
+                   fill = a_max),
+               color = 'black',
+               size = 0.1) +
+  theme_databrew() +
+  coord_map() +
+  ggthemes::theme_map() +
+  scale_fill_gradientn(name ='',
+                       colors = colorRampPalette(rev(brewer.pal(9, 'Spectral')))(10),
+                       na.value = 'white') +
+  labs(title = 'Maximum score')
+
+g3 <- ggplot() +
+  geom_polygon(data = africa1_fortified,
+               aes(x = long,
+                   y = lat,
+                   group = group,
+                   fill = a_median),
+               color = 'black',
+               size = 0.1) +
+  theme_databrew() +
+  coord_map() +
+  ggthemes::theme_map() +
+  scale_fill_gradientn(name ='',
+                       colors = colorRampPalette(rev(brewer.pal(9, 'Spectral')))(10),
+                       na.value = 'white') +
+  labs(title = 'Median score')
+
+g4 <- ggplot() +
+  geom_polygon(data = africa1_fortified,
+               aes(x = long,
+                   y = lat,
+                   group = group,
+                   fill = a_p),
+               color = 'black',
+               size = 0.1) +
+  theme_databrew() +
+  coord_map() +
+  ggthemes::theme_map() +
+  scale_fill_gradientn(name ='',
+                       colors = colorRampPalette(rev(brewer.pal(9, 'Spectral')))(10),
+                       na.value = 'white') +
+  labs(title = 'Percent of area at > median continent score')
+
+Rmisc::multiplot(g1, g2, g3, g4, cols = 2)
+```
+
+All values for all sub-national administrative units.
+
+```{r}
+plot_data <- africa1_fortified %>%
+  left_join(africa1@data %>% dplyr::select(NAME_0, NAME_1, id)) %>%
+  dplyr::mutate(country = paste0(NAME_1, ', ', NAME_0)) %>%
+  dplyr::select(id, country, avg, a_max, a_median, a_p) %>%
+  group_by(country) %>%
+  summarise(avg = mean(avg[!is.infinite(avg)], na.rm = TRUE),
+            a_max = max(a_max[!is.infinite(a_max)], na.rm = TRUE),
+            a_median = median(a_median[!is.infinite(a_median)], na.rm = TRUE),
+            a_p = length(which(a_p > median(values(cowsquito), na.rm = TRUE))) / length(a_p) * 100) %>%
+  ungroup %>%
+  rename(`Average score` = avg,
+         `Max score` = a_max,
+         `Median score` = a_median,
+         `% of area > African median` = a_p)
+knitr::kable(plot_data, format = 'html')
+```
+
+The below shows the top 20 districts in regards to average combined score.
+
+```{r}
+x <- plot_data %>%
+  arrange(desc(`Average score`)) 
+x <- x[1:20,]
+knitr::kable(x, format = 'html')
 ```
 
 
