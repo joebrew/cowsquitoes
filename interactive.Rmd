@@ -1,0 +1,98 @@
+---
+title: "Interactive map"
+author: "www.databrew.cc"
+date: "May, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(comment = NA, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE, fig.align = 'center', fig.height = 4, fig.width = 7)
+options(xtable.comment = FALSE)
+```
+
+```{r}
+source('code.R')
+```
+
+```{r}
+roundy <- function(x, digits = 0){
+  round(as.numeric(unlist(x)), digits = digits)
+}
+aa@data$cowap <- roundy(aa@data$cowap, digits = 1)
+aa@data$cow_original <- roundy(aa@data$cow_original, digits = 1)
+aa@data$mosq_original <- roundy(aa@data$mosq_original, digits = 2)
+aa@data$mosq <- roundy(aa@data$mosq, digits = 2)
+aa@data$cowsquito <- roundy(aa@data$cowsquito, digits = 1)
+
+
+library(leaflet.extras)
+pops <- aa@data %>%
+  dplyr::rename(`Cattle density (percentile)` = cowap,
+                `Cattle density` = cow_original,
+                `Malaria prevalence (2-10 yrs old)` = mosq_original,
+                `Malaria prevalence (2-10 yrs old, percentile)` = mosq,
+                `Combined cattle/malaria score (percentile)` = cowsquito,
+                `Area` = NAME_1,
+                `Country` = NAME_0) %>%
+  dplyr::select(`Cattle density (percentile)`,
+                `Cattle density`,
+                `Malaria prevalence (2-10 yrs old)`,
+                `Malaria prevalence (2-10 yrs old, percentile)`,
+                `Combined cattle/malaria score (percentile)`,
+                `Area`,
+                `Country`)
+
+popups <- lapply(rownames(pops), function(row){
+  x <- pops[row.names(pops) == row,] %>% 
+                         dplyr::select(-Area, -Country)
+  captions <- paste0(x$Area, ' ', x$Country)
+
+  htmlTable::htmlTable(x, 
+               rnames = FALSE,
+               caption = captions,
+               # align = 'lr',
+               align = paste(rep("l", ncol(x)), collapse = ''),
+               format = 'html')
+  
+  # knitr::kable(x, 
+  #              rnames = FALSE,
+  #              caption = captions,
+  #              align = 'lr',
+  #              # align = paste(rep("l", ncol(x)), collapse = ''),
+  #              format = 'html')
+})
+
+make_small <- 
+            function(x){
+              ((1 + percent_rank(x)) * 1.2)^2.2
+            }
+pal <- colorNumeric(
+  palette = "YlOrRd",
+  domain = aa@data$cowap)
+leaflet() %>%
+  addProviderTiles(providers$Stamen.Toner) %>%
+  addPolygons(data = aa,
+              smoothFactor = 0.2,
+              fill = NA,
+              fillOpacity = 0,
+              stroke = TRUE,
+              weight = 0.5,
+              # color = pal(aa@data$cowap),
+              color = 'black') %>%
+  addCircleMarkers(data = aa_coords@coords,
+                             lng = aa_coords@coords[,1],
+                             lat = aa_coords@coords[,2],
+                             color = 'black',
+                             weight = 0.5,
+                   fillOpacity = 0.9,
+                             fillColor = pal(aa@data$cowap),
+                             radius = make_small(aa@data$mosq),
+                             popup = popups) %>%
+  addFullscreenControl() %>%
+  addLegend("bottomleft", pal = pal, values = aa@data$cowap[!is.na(aa@data$cowap)],
+    title = "Color = cattle density;<br>Circle size = malaria prevalence",
+    opacity = 1
+  )
+
+```

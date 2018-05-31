@@ -63,7 +63,7 @@ if('processed_data.RData' %in% dir('data')){
   # Define color
   # Come up with a color matrix
   dat <- expand.grid(cattle=seq(0, 100, by=1), pr=seq(0, 100, by=1))
-  dat <- within(dat, color <- rgb(green=50, red=pr, blue=cattle, maxColorValue=100))
+  dat <- within(dat, color <- rgb(green=cattle, red=pr, blue=0, maxColorValue=100))
   dat$color_number <- 1:nrow(dat)
   # # Legend
   # ggplot(dat, aes(x=cattle, y=pr)) +
@@ -178,3 +178,50 @@ plotter <- function(r, colr = NULL, no_legend = FALSE){
             # at=seq(-5, 5, len=101)
   )   
 }
+
+# Leaflet map
+if('more_data.RData' %in% dir()){
+  load('more_data.RData')
+} else {
+  # Subset the level 1 data just to arabiensis area
+  aa <- raster::intersect(x = arab,
+                          y = africa1)
+  aa_coords <- coordinates(aa)
+  aa_coords <- data.frame(aa_coords)
+  names(aa_coords) <- c('lng', 'lat')
+  aa@data <- cbind(aa@data, aa_coords)
+  coordinates(aa_coords) <- ~lng+lat
+  
+  
+  # Get values
+  a <- cowap
+  values(a)[is.infinite(values(a))] <- NA 
+  proj4string(a) <- proj4string(arab)
+  aa@data$cowap <- extract(x = a, y = aa, fun = mean, na.rm = TRUE)
+  
+  a <- mosq
+  values(a)[is.infinite(values(a))] <- NA 
+  proj4string(a) <- proj4string(arab)
+  aa@data$mosq <- extract(x = a, y = aa, fun = mean, na.rm = TRUE)
+  
+  a <- cowsquito
+  values(a)[is.infinite(values(a))] <- NA 
+  proj4string(a) <- proj4string(arab)
+  aa@data$cowsquito <- extract(x = a, y = aa, fun = mean, na.rm = TRUE)
+  
+  a <- mosq_original
+  values(a)[is.infinite(values(a))] <- NA 
+  proj4string(a) <- proj4string(arab)
+  aa@data$mosq_original <- extract(x = a, y = aa, fun = mean, na.rm = TRUE)
+  
+  a <- cow_original
+  values(a)[is.infinite(values(a))] <- NA 
+  proj4string(a) <- proj4string(arab)
+  aa@data$cow_original <- extract(x = a, y = aa, fun = mean, na.rm = TRUE)
+  
+  
+  save(aa, aa_coords, 
+       file = 'more_data.RData')
+}
+library(leaflet)
+              
