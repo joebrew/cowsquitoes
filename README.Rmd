@@ -17,7 +17,6 @@ opts_chunk$set(comment = NA, echo = FALSE, warning = FALSE, message = FALSE, err
 ```{r}
 source('code.R')
 africa <- cism::africa
-
 ```
 
 # cowsquito: Identifying geographical areas of greatest potential impact for livestock ivermectin implants
@@ -33,6 +32,16 @@ africa <- cism::africa
 - Full code in this repo (`code.R`).
 
 # Results  
+
+## Arabiensis
+
+The below shows the distribution of arabiensis in Africa.
+
+```{r}
+plot(africa)
+plot(arab, col = adjustcolor('red', alpha.f = 0.6), add = TRUE)
+```
+
 
 ## Malaria prevalence on the Plasmodium falciparum parasite rate in 2-10 year-olds.
 
@@ -110,9 +119,9 @@ ggplot(dat, aes(x=cattle, y=pr)) +
   scale_fill_identity() +
     labs(x = 'Cattle percentile',
          y = 'Pr percentile',
-         title = 'Legend for intepreting above map',
-         subtitle = 'Blue = cows, orange = malaria, purple = both') +
-    databrew::theme_databrew()
+         # title = 'Legend for intepreting above map',
+         subtitle = 'Legend; Blue = cows, orange = malaria, purple = both') +
+  theme_bw()
 ```
 
 The below is identical to the above, but with country borders.
@@ -120,6 +129,13 @@ The below is identical to the above, but with country borders.
 ```{r}
 plotter(z, colr = colorRampPalette(dat$color), no_legend = TRUE) +
   layer(sp.polygons(africa))
+```
+
+The below is identical to the above, but with the distribution of arabiensis overlapped.
+
+```{r}
+plotter(z, colr = colorRampPalette(dat$color), no_legend = TRUE) +
+  layer(sp.polygons(arab))
 ```
 
 
@@ -136,6 +152,14 @@ The below is identical to the above, but with country borders.
 ```{r}
 plotter(cowsquito) +
   layer(sp.polygons(africa))
+```
+
+The below is identical to the above, but with the distribution of arabiensis as well.
+
+
+```{r}
+plotter(cowsquito) +
+  layer(sp.polygons(arab))
 ```
 
 The below is identical to the above, but showing a point for each "grid" of the raster surface, and removing the geogrpaphic coordination (ie, scatterplot).
@@ -161,6 +185,77 @@ ggplot(data = the_data,
        aes(x = cattle,
            y = mosq)) +
   geom_point()
+```
+
+### Alternative visualizations
+
+
+
+```{r}
+df_grid <- 
+  expand.grid(lng = seq(bbox(arab)[1,1],
+                        bbox(arab)[1,2],
+                        length = 60),
+              lat = seq(bbox(arab)[2,1],
+                        bbox(arab)[2,2],
+                        length = 40)) %>%
+  mutate(x = lng,
+         y = lat)
+
+coordinates(df_grid) <- ~x+y
+proj4string(df_grid) <- proj4string(arab)
+zz <- over(df_grid, polygons(arab))
+df_grid <- df_grid[!is.na(zz),]
+# Loop through and get values
+df_grid@data$cowap <- df_grid@data$mosq <- df_grid$data$cowsquito <- 0
+
+# cowap
+# mosq
+# cowsquito
+a <- cowap
+values(a)[is.infinite(values(a))] <- NA 
+proj4string(a) <- proj4string(arab)
+df_grid@data$cowap <- extract(x = a, y = df_grid)
+
+a <- mosq
+values(a)[is.infinite(values(a))] <- NA 
+proj4string(a) <- proj4string(arab)
+df_grid@data$mosq <- extract(x = a, y = df_grid)
+
+a <- cowsquito
+values(a)[is.infinite(values(a))] <- NA 
+proj4string(a) <- proj4string(arab)
+df_grid@data$cowsquito <- extract(x = a, y = df_grid)
+
+df_grid <- df_grid@data
+
+africa_fortified <- broom::tidy(africa1, id = 'OBJECTID')
+arab_fortified <- broom::tidy(arab, id = 'region')
+ggplot(data = df_grid,
+       aes(x = lng,
+           y = lat)) +
+  # geom_polygon(data = africa_fortified,
+  #              aes(x = long,
+  #                  y = lat,
+  #                  group = group),
+  #              color = 'black',
+  #              fill = NA,
+  #              lwd = 0.2) +
+  geom_point(aes(color = cowap,
+                 size = mosq)) +
+  scale_color_gradient(low = 'yellow',
+                         high = 'red',
+                       name = 'Cattle score') +
+  scale_size_continuous(range = c(0.1,3),
+                        name = 'Malaria score') +
+  ggthemes::theme_map() +
+  geom_polygon(data = arab_fortified,
+               aes(x = long,
+                   y = lat,
+                   group = group),
+               color = 'black',
+               fill = NA,
+               lwd = 0.2) 
 ```
 
 ### Country aggregation

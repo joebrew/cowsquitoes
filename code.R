@@ -118,6 +118,9 @@ if('processed_data.RData' %in% dir('data')){
        file = 'data/processed_data.RData')
 }
 
+# Read in arabiensis data
+arab <- readOGR('data/VECTORS/13071_2010_245_MOESM1_ESM/Additional file 1 - African, Euro-ME EO shapefiles/', 'arabiensis')
+
 
 # ggplot(dat, aes(x=red, y=blue)) + 
   # geom_tile(aes(fill=mix), color="white") + 
