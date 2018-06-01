@@ -58,6 +58,14 @@ plotter(mosq_original) +
   layer(sp.polygons(africa))
 ```
 
+The below is identical to the above, but with administrative borders.
+
+```{r}
+plotter(mosq_original) +
+  layer(sp.polygons(africa1))
+```
+
+
 The below shows our (scaled) data on the Plasmodium falciparum parasite rate in 2-10 year-olds.
 
 ```{r}
@@ -69,6 +77,13 @@ The below is identical to the above, but with country borders.
 ```{r}
 plotter(mosq) +
   layer(sp.polygons(africa))
+```
+
+The below is identical to the above, but with administrative borders.
+
+```{r}
+plotter(mosq) +
+  layer(sp.polygons(africa1))
 ```
 
 
@@ -86,6 +101,14 @@ plotter(cow_original) +
   layer(sp.polygons(africa))
 ```
 
+The below is identical to the above, but with administrative level 1 borders.
+
+```{r}
+plotter(cow_original) +
+  layer(sp.polygons(africa1))
+```
+
+
 The below shows our (scaled) data on cattle density rate.
 
 ```{r}
@@ -99,6 +122,12 @@ plotter(cowap) +
   layer(sp.polygons(africa))
 ```
 
+The below is identical to the above, but with administrative level 1 borders.
+
+```{r}
+plotter(cowap) +
+  layer(sp.polygons(africa1))
+```
 
 
 ## Combined score

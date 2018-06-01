@@ -40,30 +40,46 @@ The below is identical to the above, but with country borders.
 
 <img src="README-unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
 
-The below shows our (scaled) data on the Plasmodium falciparum parasite rate in 2-10 year-olds.
+The below is identical to the above, but with administrative borders.
 
 <img src="README-unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
 
-The below is identical to the above, but with country borders.
+The below shows our (scaled) data on the Plasmodium falciparum parasite rate in 2-10 year-olds.
 
 <img src="README-unnamed-chunk-7-1.png" style="display: block; margin: auto;" />
 
-Cattle density
---------------
+The below is identical to the above, but with country borders.
 
 <img src="README-unnamed-chunk-8-1.png" style="display: block; margin: auto;" />
 
-The below is identical to the above, but with country borders.
+The below is identical to the above, but with administrative borders.
 
 <img src="README-unnamed-chunk-9-1.png" style="display: block; margin: auto;" />
 
-The below shows our (scaled) data on cattle density rate.
+Cattle density
+--------------
 
 <img src="README-unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
 
 The below is identical to the above, but with country borders.
 
 <img src="README-unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
+
+The below is identical to the above, but with administrative level 1 borders.
+
+<img src="README-unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
+
+The below shows our (scaled) data on cattle density rate.
+
+<img src="README-unnamed-chunk-13-1.png" style="display: block; margin: auto;" />
+
+The below is identical to the above, but with country borders.
+
+<img src="README-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
+
+The below is identical to the above, but with administrative level 1 borders.
+
+<img src="README-unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
 
 Combined score
 --------------
@@ -72,49 +88,49 @@ Combined score
 
 We can visualize both the quantity of malaria and cattle through a 2-dimensional color-scale. In the below chart, we use a 10,000 value color palette, mixing green (neither cattle nor malaria) with blue (lots of cattle, little malaria) with orange (lots of malaria, little cattle) with purple (lots of both). Below the map is key for interpretation.
 
-<img src="README-unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
 
-<img src="README-unnamed-chunk-13-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
 
 The below is identical to the above, but with country borders.
 
-<img src="README-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
 
 The below is identical to the above, but with the distribution of arabiensis overlapped.
 
-<img src="README-unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-19-1.png" style="display: block; margin: auto;" />
 
 ### Single score
 
 The below shows our combined score, using the product of the cattle and malaria metrics. Unlike the above multi-dimensional score, this visual does not contain as much information (ie, with a value of "40", it's not clear whether this is due to a cattle percentile of 40 and a malaria percentile of 1, or a cattle percentile of 5 and a malaria percentile of 8). That said, a one-dimensional color legend is much easier to interpret visually.
 
-<img src="README-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
 
 The below is identical to the above, but with country borders.
 
-<img src="README-unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-21-1.png" style="display: block; margin: auto;" />
 
 The below is identical to the above, but with the distribution of arabiensis as well.
 
-<img src="README-unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
 
 The below is identical to the above, but showing a point for each "grid" of the raster surface, and removing the geogrpaphic coordination (ie, scatterplot).
 
-<img src="README-unnamed-chunk-19-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-23-1.png" style="display: block; margin: auto;" />
 
 ### Alternative visualizations
 
-<img src="README-unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-24-1.png" style="display: block; margin: auto;" />
 
 ### Country aggregation
 
 We aggregate at the polygonal national level so as to rank countries by suitability for intervention. The below maps show the mean, median, maximum, and % of area greater than continental median "single score" (product of Pf and cattle percentile) for each country in Africa.
 
-<img src="README-unnamed-chunk-21-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-25-1.png" style="display: block; margin: auto;" />
 
 The below shows a plot of country level values (excluding countries with 0 values throughout).
 
-<img src="README-unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-26-1.png" style="display: block; margin: auto;" />
 
 The below is a table country-level values.
 
@@ -1199,7 +1215,7 @@ Zimbabwe
 
 We aggregate at the polygonal sub-national level so as to rank administrative areas (districts, etc.) by suitability for intervention. The below maps show the mean, median, maximum, and % of area greater than continental median "single score" (product of Pf and cattle percentile) for each administrative unit in Africa.
 
-<img src="README-unnamed-chunk-24-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-28-1.png" style="display: block; margin: auto;" />
 
 All values for all sub-national administrative units.
 
