@@ -90,31 +90,10 @@ plotter(mosq) +
 ## Cattle density  
 
 ```{r}
-plotter(cow_original)
-```
-
-
-The below is identical to the above, but with country borders.
-
-```{r}
-plotter(cow_original) +
-  layer(sp.polygons(africa))
-```
-
-The below is identical to the above, but with administrative level 1 borders.
-
-```{r}
-plotter(cow_original) +
-  layer(sp.polygons(africa1))
-```
-
-
-The below shows our (scaled) data on cattle density rate.
-
-```{r}
 plotter(cowap)
 ```
 
+
 The below is identical to the above, but with country borders.
 
 ```{r}
@@ -128,49 +107,52 @@ The below is identical to the above, but with administrative level 1 borders.
 plotter(cowap) +
   layer(sp.polygons(africa1))
 ```
+
 
 
 ## Combined score
 
+
+
+```{r, eval = FALSE}
+
 ### Multidimensional score
 
-We can visualize both the quantity of malaria and cattle through a 2-dimensional color-scale. In the below chart, we use a 10,000 value color palette, mixing green (neither cattle nor malaria) with blue (lots of cattle, little malaria) with orange (lots of malaria, little cattle) with purple (lots of both). Below the map is key for interpretation.
 
-```{r}
+# We can visualize the quantity of malaria, cattle, and arabiensis density through a 3-dimensional color-scale. In the below chart, we use a 10,000 value color palette, mixing green (neither cattle nor malaria) with blue (lots of cattle, little malaria) with orange (lots of malaria, little cattle) with purple (lots of both). Below the map is key for interpretation.
 dat <- dat %>%
   arrange(color_number)
 plotter(z, colr = colorRampPalette(dat$color), no_legend = TRUE)
-```
 
-```{r, fig.height = 3.5, fig.width = 5}
-ggplot(dat, aes(x=cattle, y=pr)) +
+ggplot(dat %>%
+         filter(arab %in% c(seq(0, 98, 14))) %>%
+         mutate(arab = paste0('Arabiensis percentile: ', arab)), 
+       aes(x=cattle, y=pr)) +
   geom_tile(aes(fill=color), color=NA) +
   scale_fill_identity() +
     labs(x = 'Cattle percentile',
          y = 'Pr percentile',
          # title = 'Legend for intepreting above map',
-         subtitle = 'Legend; Blue = cows, orange = malaria, purple = both') +
-  theme_bw()
-```
+         subtitle = '') +
+  theme_bw() +
+  facet_wrap(~arab,
+             ncol = 2)
+# The below is identical to the above, but with country borders.
 
-The below is identical to the above, but with country borders.
-
-```{r}
 plotter(z, colr = colorRampPalette(dat$color), no_legend = TRUE) +
   layer(sp.polygons(africa))
-```
 
-The below is identical to the above, but with the distribution of arabiensis overlapped.
+# The below is identical to the above, but with the distribution of arabiensis overlapped.
 
-```{r}
 plotter(z, colr = colorRampPalette(dat$color), no_legend = TRUE) +
   layer(sp.polygons(arab))
+
 ```
 
 
 ### Single score
 
-The below shows our combined score, using the product of the cattle and malaria metrics. Unlike the above multi-dimensional score, this visual does not contain as much information (ie, with a value of "40", it's not clear whether this is due to a cattle percentile of 40 and a malaria percentile of 1, or a cattle percentile of 5 and a malaria percentile of 8). That said, a one-dimensional color legend is much easier to interpret visually.
+The below shows our combined score, using the product of the cattle and malaria metrics. Unlike a multi-dimensional score, this visual does not contain as much information (ie, with a value of "40", it's not clear whether this is due to a cattle percentile of 40 and a malaria percentile of 1, or a cattle percentile of 5 and a malaria percentile of 8). That said, a one-dimensional color legend is much easier to interpret visually.
 
 ```{r}
 plotter(cowsquito)
@@ -185,11 +167,11 @@ plotter(cowsquito) +
 
 The below is identical to the above, but with the distribution of arabiensis as well.
 
-
 ```{r}
 plotter(cowsquito) +
   layer(sp.polygons(arab))
 ```
+
 
 The below is identical to the above, but showing a point for each "grid" of the raster surface, and removing the geogrpaphic coordination (ie, scatterplot).
 
@@ -213,12 +195,13 @@ the_data <- data.frame(cattle = cow_scores,
 ggplot(data = the_data,
        aes(x = cattle,
            y = mosq)) +
-  geom_point()
+  geom_point() +
+  theme_bw()
 ```
 
 ### Alternative visualizations
 
-
+#### A
 
 ```{r}
 df_grid <- 
@@ -286,6 +269,87 @@ ggplot(data = df_grid,
                fill = NA,
                lwd = 0.2) 
 ```
+
+#### B
+
+
+```{r, fig.width = 9}
+df_grid <- 
+  expand.grid(lng = seq(bbox(arab)[1,1],
+                        bbox(arab)[1,2],
+                        length = 60),
+              lat = seq(bbox(arab)[2,1],
+                        bbox(arab)[2,2],
+                        length = 40)) %>%
+  mutate(x = lng,
+         y = lat)
+
+coordinates(df_grid) <- ~x+y
+proj4string(df_grid) <- proj4string(arab)
+# zz <- over(df_grid, polygons(arab))
+# df_grid <- df_grid[!is.na(zz),]
+# Loop through and get values
+df_grid@data$cowap <- df_grid@data$mosq <- df_grid@data$arab <- df_grid$data$cowsquito <- 0
+
+# cowap
+# mosq
+# cowsquito
+a <- cowap
+values(a)[is.infinite(values(a))] <- NA 
+proj4string(a) <- proj4string(arab)
+df_grid@data$cowap <- extract(x = a, y = df_grid)
+
+a <- mosq
+values(a)[is.infinite(values(a))] <- NA 
+proj4string(a) <- proj4string(arab)
+df_grid@data$mosq <- extract(x = a, y = df_grid)
+
+a <- cowsquito
+values(a)[is.infinite(values(a))] <- NA 
+proj4string(a) <- proj4string(arab)
+df_grid@data$cowsquito <- extract(x = a, y = df_grid)
+
+a <- arab_density
+values(a)[is.infinite(values(a))] <- NA 
+proj4string(a) <- proj4string(arab)
+df_grid@data$arab <- extract(x = a, y = df_grid)
+
+
+df_grid <- df_grid@data
+
+africa_fortified <- broom::tidy(africa1, id = 'OBJECTID')
+# Make arab density categorical
+df_grid$arab_density <- 
+  base::cut(df_grid$arab,
+            breaks = seq(0, 100, 20))
+# arab_fortified <- broom::tidy(arab, id = 'region')
+ggplot(data = df_grid %>%
+         filter(!is.na(arab_density)),
+       aes(x = lng,
+           y = lat)) +
+  # geom_polygon(data = africa_fortified,
+  #              aes(x = long,
+  #                  y = lat,
+  #                  group = group),
+  #              color = 'black',
+  #              fill = NA,
+  #              lwd = 0.2) +
+  geom_point(aes(color = cowap,
+                 size = mosq,
+                 pch = arab_density)) +
+  scale_color_gradient(low = 'yellow',
+                         high = 'red',
+                       name = 'Cattle score') +
+  scale_size_continuous(range = c(0.1,2),
+                        name = 'Malaria score') +
+  scale_shape_manual(name = 'Arabiensis density',
+                     values = c(3, 8, 0, 1, 9)) +
+  ggthemes::theme_map() +
+  theme(legend.position = 'bottom')
+```
+
+#### C
+
 
 ### Country aggregation
 
@@ -402,8 +466,14 @@ plot_data <- africa_fortified %>%
 pd <- plot_data %>%
   gather(key, value, `Average score`:`% of area > African median`) %>%
   mutate(value = ifelse(value < 0, 0, value)) %>%
+  filter(!is.na(value)) %>%
+  # group_by(country) %>%
+  # dplyr::filter(!all(value) == 0) %>%
+  ungroup %>%
   group_by(country) %>%
-  filter(!all(value) == 0 & !all(is.na(value)))
+  mutate(all_bad = all(value == 0) | all(is.na(value))) %>%
+  ungroup %>%
+  filter(!all_bad)
 ggplot(data = pd,
        aes(x = country,
            y = value,

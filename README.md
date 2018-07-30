@@ -69,68 +69,48 @@ The below is identical to the above, but with administrative level 1 borders.
 
 <img src="README-unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
 
-The below shows our (scaled) data on cattle density rate.
-
-<img src="README-unnamed-chunk-13-1.png" style="display: block; margin: auto;" />
-
-The below is identical to the above, but with country borders.
-
-<img src="README-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
-
-The below is identical to the above, but with administrative level 1 borders.
-
-<img src="README-unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
-
 Combined score
 --------------
 
-### Multidimensional score
-
-We can visualize both the quantity of malaria and cattle through a 2-dimensional color-scale. In the below chart, we use a 10,000 value color palette, mixing green (neither cattle nor malaria) with blue (lots of cattle, little malaria) with orange (lots of malaria, little cattle) with purple (lots of both). Below the map is key for interpretation.
-
-<img src="README-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
-
-<img src="README-unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
-
-The below is identical to the above, but with country borders.
-
-<img src="README-unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
-
-The below is identical to the above, but with the distribution of arabiensis overlapped.
-
-<img src="README-unnamed-chunk-19-1.png" style="display: block; margin: auto;" />
-
 ### Single score
 
-The below shows our combined score, using the product of the cattle and malaria metrics. Unlike the above multi-dimensional score, this visual does not contain as much information (ie, with a value of "40", it's not clear whether this is due to a cattle percentile of 40 and a malaria percentile of 1, or a cattle percentile of 5 and a malaria percentile of 8). That said, a one-dimensional color legend is much easier to interpret visually.
+The below shows our combined score, using the product of the cattle and malaria metrics. Unlike a multi-dimensional score, this visual does not contain as much information (ie, with a value of "40", it's not clear whether this is due to a cattle percentile of 40 and a malaria percentile of 1, or a cattle percentile of 5 and a malaria percentile of 8). That said, a one-dimensional color legend is much easier to interpret visually.
 
-<img src="README-unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
 
 The below is identical to the above, but with country borders.
 
-<img src="README-unnamed-chunk-21-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
 
 The below is identical to the above, but with the distribution of arabiensis as well.
 
-<img src="README-unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
 
 The below is identical to the above, but showing a point for each "grid" of the raster surface, and removing the geogrpaphic coordination (ie, scatterplot).
 
-<img src="README-unnamed-chunk-23-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
 
 ### Alternative visualizations
 
-<img src="README-unnamed-chunk-24-1.png" style="display: block; margin: auto;" />
+#### A
+
+<img src="README-unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
+
+#### B
+
+<img src="README-unnamed-chunk-19-1.png" style="display: block; margin: auto;" />
+
+#### C
 
 ### Country aggregation
 
 We aggregate at the polygonal national level so as to rank countries by suitability for intervention. The below maps show the mean, median, maximum, and % of area greater than continental median "single score" (product of Pf and cattle percentile) for each country in Africa.
 
-<img src="README-unnamed-chunk-25-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
 
 The below shows a plot of country level values (excluding countries with 0 values throughout).
 
-<img src="README-unnamed-chunk-26-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-21-1.png" style="display: block; margin: auto;" />
 
 The below is a table country-level values.
 
@@ -169,7 +149,7 @@ NaN
 NA
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -177,16 +157,16 @@ NA
 Angola
 </td>
 <td style="text-align:right;">
-22.892625
+2333.1573
 </td>
 <td style="text-align:right;">
-74.08988
+7353.563
 </td>
 <td style="text-align:right;">
-22.008223
+2209.7126
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -194,16 +174,16 @@ Angola
 Benin
 </td>
 <td style="text-align:right;">
-63.249237
+6496.9283
 </td>
 <td style="text-align:right;">
-94.23502
+9438.505
 </td>
 <td style="text-align:right;">
-68.685650
+6915.8354
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -211,16 +191,16 @@ Benin
 Botswana
 </td>
 <td style="text-align:right;">
-4.068642
+418.0155
 </td>
 <td style="text-align:right;">
-22.29976
+2234.936
 </td>
 <td style="text-align:right;">
-3.258271
+334.8742
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -228,16 +208,16 @@ Botswana
 Burkina Faso
 </td>
 <td style="text-align:right;">
-79.200221
+7957.4392
 </td>
 <td style="text-align:right;">
-97.17127
+9699.758
 </td>
 <td style="text-align:right;">
-81.558307
+8157.9491
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -245,16 +225,16 @@ Burkina Faso
 Burundi
 </td>
 <td style="text-align:right;">
-28.607608
+2957.0399
 </td>
 <td style="text-align:right;">
-61.10834
+6287.630
 </td>
 <td style="text-align:right;">
-28.587134
+2896.5428
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -262,16 +242,16 @@ Burundi
 Cameroon
 </td>
 <td style="text-align:right;">
-41.346272
+4218.5472
 </td>
 <td style="text-align:right;">
-83.62073
+8602.130
 </td>
 <td style="text-align:right;">
-41.151561
+4114.2068
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -288,7 +268,7 @@ NaN
 NA
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -302,10 +282,10 @@ NaN
 -Inf
 </td>
 <td style="text-align:right;">
-0.000000
+0.0000
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -313,16 +293,16 @@ NaN
 Central African Republic
 </td>
 <td style="text-align:right;">
-45.215421
+4561.9193
 </td>
 <td style="text-align:right;">
-87.52642
+8721.381
 </td>
 <td style="text-align:right;">
-43.536925
+4341.0485
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -330,16 +310,16 @@ Central African Republic
 Chad
 </td>
 <td style="text-align:right;">
-27.978645
+2824.2043
 </td>
 <td style="text-align:right;">
-69.49327
+6956.231
 </td>
 <td style="text-align:right;">
-28.390881
+2867.0406
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -347,16 +327,16 @@ Chad
 Comoros
 </td>
 <td style="text-align:right;">
-0.000000
+0.0000
 </td>
 <td style="text-align:right;">
-0.00000
+0.000
 </td>
 <td style="text-align:right;">
-0.000000
+0.0000
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -364,16 +344,16 @@ Comoros
 Congo
 </td>
 <td style="text-align:right;">
-23.978346
+2462.9646
 </td>
 <td style="text-align:right;">
-52.22886
+5309.806
 </td>
 <td style="text-align:right;">
-24.910121
+2524.5169
 </td>
 <td style="text-align:right;">
-99.56140
+0
 </td>
 </tr>
 <tr>
@@ -381,16 +361,16 @@ Congo
 Congo DRC
 </td>
 <td style="text-align:right;">
-20.834164
+2150.1000
 </td>
 <td style="text-align:right;">
-94.59887
+9513.570
 </td>
 <td style="text-align:right;">
-18.186842
+1855.3171
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -398,16 +378,16 @@ Congo DRC
 Côte d'Ivoire
 </td>
 <td style="text-align:right;">
-50.503862
+5168.1716
 </td>
 <td style="text-align:right;">
-95.38481
+9480.841
 </td>
 <td style="text-align:right;">
-51.119440
+5138.5712
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -415,16 +395,16 @@ Côte d'Ivoire
 Djibouti
 </td>
 <td style="text-align:right;">
-11.742705
+1226.7141
 </td>
 <td style="text-align:right;">
-28.57086
+2893.685
 </td>
 <td style="text-align:right;">
-11.527823
+1245.1138
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -432,16 +412,16 @@ Djibouti
 Egypt
 </td>
 <td style="text-align:right;">
-9.483431
+960.6049
 </td>
 <td style="text-align:right;">
-10.43539
+1070.870
 </td>
 <td style="text-align:right;">
-9.649700
+970.5191
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -449,16 +429,16 @@ Egypt
 Equatorial Guinea
 </td>
 <td style="text-align:right;">
-20.820994
+2360.2700
 </td>
 <td style="text-align:right;">
-49.63785
+5527.850
 </td>
 <td style="text-align:right;">
-22.075190
+2270.5998
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -466,16 +446,16 @@ Equatorial Guinea
 Eritrea
 </td>
 <td style="text-align:right;">
-9.188198
+974.6356
 </td>
 <td style="text-align:right;">
-29.11583
+2976.994
 </td>
 <td style="text-align:right;">
-7.108851
+714.8165
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -483,16 +463,16 @@ Eritrea
 Ethiopia
 </td>
 <td style="text-align:right;">
-2.697723
+273.6184
 </td>
 <td style="text-align:right;">
-51.38206
+5149.637
 </td>
 <td style="text-align:right;">
-2.115152
+214.5856
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -509,7 +489,7 @@ NaN
 NA
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -517,16 +497,16 @@ NA
 Gabon
 </td>
 <td style="text-align:right;">
-12.773748
+1358.5474
 </td>
 <td style="text-align:right;">
-53.11015
+6905.658
 </td>
 <td style="text-align:right;">
-9.129321
+939.8130
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -534,16 +514,16 @@ Gabon
 Gambia
 </td>
 <td style="text-align:right;">
-7.070079
+710.4505
 </td>
 <td style="text-align:right;">
-31.60281
+3141.180
 </td>
 <td style="text-align:right;">
-5.873101
+593.5252
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -551,16 +531,16 @@ Gambia
 Ghana
 </td>
 <td style="text-align:right;">
-43.427290
+4520.8183
 </td>
 <td style="text-align:right;">
-86.58593
+8636.760
 </td>
 <td style="text-align:right;">
-44.845827
+4576.7358
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -568,16 +548,16 @@ Ghana
 Guinea
 </td>
 <td style="text-align:right;">
-70.898538
+7127.4868
 </td>
 <td style="text-align:right;">
-94.83462
+9465.027
 </td>
 <td style="text-align:right;">
-76.377424
+7648.6160
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -585,16 +565,16 @@ Guinea
 Guinea-Bissau
 </td>
 <td style="text-align:right;">
-20.197636
+2048.3455
 </td>
 <td style="text-align:right;">
-75.70227
+7735.997
 </td>
 <td style="text-align:right;">
-29.363225
+2954.5109
 </td>
 <td style="text-align:right;">
-60.70301
+0
 </td>
 </tr>
 <tr>
@@ -602,16 +582,16 @@ Guinea-Bissau
 Kenya
 </td>
 <td style="text-align:right;">
-20.804461
+2341.7409
 </td>
 <td style="text-align:right;">
-92.06325
+9227.900
 </td>
 <td style="text-align:right;">
-18.009124
+1851.4142
 </td>
 <td style="text-align:right;">
-90.39707
+0
 </td>
 </tr>
 <tr>
@@ -628,7 +608,7 @@ NaN
 NA
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -636,16 +616,16 @@ NA
 Liberia
 </td>
 <td style="text-align:right;">
-31.110787
+3179.9214
 </td>
 <td style="text-align:right;">
-68.39190
+7272.294
 </td>
 <td style="text-align:right;">
-30.847390
+3126.2406
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -662,7 +642,7 @@ NaN
 NA
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -670,16 +650,16 @@ NA
 Madagascar
 </td>
 <td style="text-align:right;">
-21.104235
+2140.0323
 </td>
 <td style="text-align:right;">
-71.07312
+7108.628
 </td>
 <td style="text-align:right;">
-21.305198
+2142.0339
 </td>
 <td style="text-align:right;">
-88.49912
+0
 </td>
 </tr>
 <tr>
@@ -696,7 +676,7 @@ NaN
 NA
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -704,16 +684,16 @@ NA
 Malawi
 </td>
 <td style="text-align:right;">
-19.506304
+2242.9314
 </td>
 <td style="text-align:right;">
-63.40763
+6880.970
 </td>
 <td style="text-align:right;">
-18.708252
+2052.5274
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -721,16 +701,16 @@ Malawi
 Mali
 </td>
 <td style="text-align:right;">
-61.564252
+6201.3190
 </td>
 <td style="text-align:right;">
-97.99863
+9779.972
 </td>
 <td style="text-align:right;">
-69.731159
+6983.0188
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -738,16 +718,16 @@ Mali
 Mauritania
 </td>
 <td style="text-align:right;">
-15.588360
+1564.2885
 </td>
 <td style="text-align:right;">
-60.53024
+5996.842
 </td>
 <td style="text-align:right;">
-14.379966
+1439.5772
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -761,10 +741,10 @@ NaN
 -Inf
 </td>
 <td style="text-align:right;">
-0.000000
+0.0000
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -772,16 +752,16 @@ NaN
 Mayotte
 </td>
 <td style="text-align:right;">
-0.000000
+0.0000
 </td>
 <td style="text-align:right;">
-0.00000
+0.000
 </td>
 <td style="text-align:right;">
-0.000000
+0.0000
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -798,7 +778,7 @@ NaN
 NA
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -806,16 +786,16 @@ NA
 Mozambique
 </td>
 <td style="text-align:right;">
-24.610679
+2588.2943
 </td>
 <td style="text-align:right;">
-76.28976
+7697.740
 </td>
 <td style="text-align:right;">
-29.239727
+3003.3289
 </td>
 <td style="text-align:right;">
-87.99698
+0
 </td>
 </tr>
 <tr>
@@ -823,16 +803,16 @@ Mozambique
 Namibia
 </td>
 <td style="text-align:right;">
-23.620166
+2391.4143
 </td>
 <td style="text-align:right;">
-43.91596
+4749.421
 </td>
 <td style="text-align:right;">
-26.584822
+2655.6500
 </td>
 <td style="text-align:right;">
-95.48703
+0
 </td>
 </tr>
 <tr>
@@ -840,16 +820,16 @@ Namibia
 Niger
 </td>
 <td style="text-align:right;">
-33.511003
+3435.9288
 </td>
 <td style="text-align:right;">
-93.90925
+9578.718
 </td>
 <td style="text-align:right;">
-30.122166
+3127.1237
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -857,16 +837,16 @@ Niger
 Nigeria
 </td>
 <td style="text-align:right;">
-56.825417
+5753.6697
 </td>
 <td style="text-align:right;">
-92.83070
+9639.879
 </td>
 <td style="text-align:right;">
-60.536639
+6076.6770
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -880,10 +860,10 @@ NaN
 -Inf
 </td>
 <td style="text-align:right;">
-0.000000
+0.0000
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -891,16 +871,16 @@ NaN
 Rwanda
 </td>
 <td style="text-align:right;">
-15.884888
+1652.9504
 </td>
 <td style="text-align:right;">
-47.49927
+4753.002
 </td>
 <td style="text-align:right;">
-14.956773
+1516.5183
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -914,10 +894,10 @@ NaN
 -Inf
 </td>
 <td style="text-align:right;">
-0.000000
+0.0000
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -925,16 +905,16 @@ NaN
 Sao Tome and Principe
 </td>
 <td style="text-align:right;">
-0.000000
+0.0000
 </td>
 <td style="text-align:right;">
-0.00000
+0.000
 </td>
 <td style="text-align:right;">
-0.000000
+0.0000
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -942,16 +922,16 @@ Sao Tome and Principe
 Senegal
 </td>
 <td style="text-align:right;">
-17.857505
+1821.5846
 </td>
 <td style="text-align:right;">
-64.19023
+6483.164
 </td>
 <td style="text-align:right;">
-14.413229
+1469.6298
 </td>
 <td style="text-align:right;">
-81.22454
+0
 </td>
 </tr>
 <tr>
@@ -965,10 +945,10 @@ NaN
 -Inf
 </td>
 <td style="text-align:right;">
-0.000000
+0.0000
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -976,16 +956,16 @@ NaN
 Sierra Leone
 </td>
 <td style="text-align:right;">
-52.553836
+5368.7538
 </td>
 <td style="text-align:right;">
-88.10132
+8744.275
 </td>
 <td style="text-align:right;">
-56.791165
+5686.6299
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -993,16 +973,16 @@ Sierra Leone
 Somalia
 </td>
 <td style="text-align:right;">
-15.569213
+1560.7378
 </td>
 <td style="text-align:right;">
-43.29440
+4305.384
 </td>
 <td style="text-align:right;">
-11.974589
+1201.2161
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -1010,16 +990,16 @@ Somalia
 South Africa
 </td>
 <td style="text-align:right;">
-17.701272
+1783.3770
 </td>
 <td style="text-align:right;">
-58.48560
+5888.877
 </td>
 <td style="text-align:right;">
-14.354586
+1437.3346
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -1027,16 +1007,16 @@ South Africa
 South Sudan
 </td>
 <td style="text-align:right;">
-35.144804
+3567.5619
 </td>
 <td style="text-align:right;">
-71.90635
+7232.180
 </td>
 <td style="text-align:right;">
-36.842994
+3777.7381
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -1053,7 +1033,7 @@ NaN
 NA
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -1061,16 +1041,16 @@ NA
 Sudan
 </td>
 <td style="text-align:right;">
-11.646300
+1182.8400
 </td>
 <td style="text-align:right;">
-55.80105
+5594.066
 </td>
 <td style="text-align:right;">
-9.282781
+937.9648
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -1078,16 +1058,16 @@ Sudan
 Swaziland
 </td>
 <td style="text-align:right;">
-6.011874
+617.2870
 </td>
 <td style="text-align:right;">
-11.39467
+1152.044
 </td>
 <td style="text-align:right;">
-5.278528
+540.5806
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -1095,16 +1075,16 @@ Swaziland
 Tanzania
 </td>
 <td style="text-align:right;">
-25.890330
+2682.8123
 </td>
 <td style="text-align:right;">
-64.95233
+6876.018
 </td>
 <td style="text-align:right;">
-21.832169
+2226.8264
 </td>
 <td style="text-align:right;">
-95.32778
+0
 </td>
 </tr>
 <tr>
@@ -1112,16 +1092,16 @@ Tanzania
 Togo
 </td>
 <td style="text-align:right;">
-63.043940
+6443.2457
 </td>
 <td style="text-align:right;">
-90.14775
+9047.513
 </td>
 <td style="text-align:right;">
-64.232276
+6401.6518
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -1138,7 +1118,7 @@ NaN
 NA
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -1146,16 +1126,16 @@ NA
 Uganda
 </td>
 <td style="text-align:right;">
-37.531324
+4067.3972
 </td>
 <td style="text-align:right;">
-80.02840
+8033.209
 </td>
 <td style="text-align:right;">
-44.315822
+4679.3340
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -1169,10 +1149,10 @@ NaN
 -Inf
 </td>
 <td style="text-align:right;">
-0.000000
+0.0000
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 <tr>
@@ -1180,16 +1160,16 @@ NaN
 Zambia
 </td>
 <td style="text-align:right;">
-29.045152
+2985.0090
 </td>
 <td style="text-align:right;">
-92.15276
+9340.874
 </td>
 <td style="text-align:right;">
-28.530223
+2920.1835
 </td>
 <td style="text-align:right;">
-100.00000
+0
 </td>
 </tr>
 <tr>
@@ -1197,16 +1177,16 @@ Zambia
 Zimbabwe
 </td>
 <td style="text-align:right;">
-13.070125
+1359.0125
 </td>
 <td style="text-align:right;">
-72.99633
+9077.524
 </td>
 <td style="text-align:right;">
-11.453757
+1177.2685
 </td>
 <td style="text-align:right;">
-0.00000
+0
 </td>
 </tr>
 </tbody>
@@ -1215,7 +1195,7 @@ Zimbabwe
 
 We aggregate at the polygonal sub-national level so as to rank administrative areas (districts, etc.) by suitability for intervention. The below maps show the mean, median, maximum, and % of area greater than continental median "single score" (product of Pf and cattle percentile) for each administrative unit in Africa.
 
-<img src="README-unnamed-chunk-28-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-23-1.png" style="display: block; margin: auto;" />
 
 All values for all sub-national administrative units.
 
@@ -1242,19 +1222,36 @@ Median score
 <tbody>
 <tr>
 <td style="text-align:left;">
+!Karas, Namibia
+</td>
+<td style="text-align:right;">
+NaN
+</td>
+<td style="text-align:right;">
+-Inf
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Abia, Nigeria
 </td>
 <td style="text-align:right;">
-62.3231623
+6224.7890903
 </td>
 <td style="text-align:right;">
-74.1557223
+7475.2891486
 </td>
 <td style="text-align:right;">
-63.1247419
+6295.3502577
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -1262,16 +1259,16 @@ Abia, Nigeria
 Abidjan, Côte d'Ivoire
 </td>
 <td style="text-align:right;">
-29.9712857
+3668.7777014
 </td>
 <td style="text-align:right;">
-67.3036617
+7107.8576290
 </td>
 <td style="text-align:right;">
-32.6014602
+3336.3252324
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -1293,40 +1290,6 @@ Acoua, Mayotte
 </tr>
 <tr>
 <td style="text-align:left;">
-Adamaoua, Cameroon
-</td>
-<td style="text-align:right;">
-48.0351720
-</td>
-<td style="text-align:right;">
-83.6207252
-</td>
-<td style="text-align:right;">
-48.7097444
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Adamawa, Nigeria
-</td>
-<td style="text-align:right;">
-73.3602260
-</td>
-<td style="text-align:right;">
-91.5025723
-</td>
-<td style="text-align:right;">
-76.2034768
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Ad Daqahliyah, Egypt
 </td>
 <td style="text-align:right;">
@@ -1344,16 +1307,50 @@ NA
 </tr>
 <tr>
 <td style="text-align:left;">
+Adamaoua, Cameroon
+</td>
+<td style="text-align:right;">
+4841.2856641
+</td>
+<td style="text-align:right;">
+8602.1302746
+</td>
+<td style="text-align:right;">
+4853.1248404
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Adamawa, Nigeria
+</td>
+<td style="text-align:right;">
+7461.0675024
+</td>
+<td style="text-align:right;">
+9095.9937999
+</td>
+<td style="text-align:right;">
+7634.2251484
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Addis Abeba, Ethiopia
 </td>
 <td style="text-align:right;">
-1.1054445
+110.7115166
 </td>
 <td style="text-align:right;">
-2.0774018
+208.5884422
 </td>
 <td style="text-align:right;">
-1.0175497
+101.7340819
 </td>
 <td style="text-align:right;">
 0
@@ -1364,16 +1361,16 @@ Addis Abeba, Ethiopia
 Adjumani, Uganda
 </td>
 <td style="text-align:right;">
-44.9089245
+4758.0294466
 </td>
 <td style="text-align:right;">
-60.0900717
+6044.6785615
 </td>
 <td style="text-align:right;">
-45.9838299
+4830.2076617
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -1415,13 +1412,13 @@ NA
 Afar, Ethiopia
 </td>
 <td style="text-align:right;">
-2.3456906
+239.8549462
 </td>
 <td style="text-align:right;">
-11.2949953
+1348.9088039
 </td>
 <td style="text-align:right;">
-1.9154666
+194.1993290
 </td>
 <td style="text-align:right;">
 0
@@ -1432,13 +1429,13 @@ Afar, Ethiopia
 Agadez, Niger
 </td>
 <td style="text-align:right;">
-12.3823711
+1320.5867436
 </td>
 <td style="text-align:right;">
-45.8888004
+4591.2939568
 </td>
 <td style="text-align:right;">
-11.8758912
+1205.5407766
 </td>
 <td style="text-align:right;">
 0
@@ -1500,16 +1497,16 @@ NA
 Akwa Ibom, Nigeria
 </td>
 <td style="text-align:right;">
-70.9620746
+7108.9658788
 </td>
 <td style="text-align:right;">
-84.4592853
+8616.5865946
 </td>
 <td style="text-align:right;">
-71.6610126
+7152.3070433
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -1517,13 +1514,13 @@ Akwa Ibom, Nigeria
 Al Bahr al Ahmar, Egypt
 </td>
 <td style="text-align:right;">
-9.4834310
+960.6049278
 </td>
 <td style="text-align:right;">
-10.4353875
+1070.8699390
 </td>
 <td style="text-align:right;">
-9.6497000
+970.5190722
 </td>
 <td style="text-align:right;">
 0
@@ -1582,23 +1579,6 @@ NA
 </tr>
 <tr>
 <td style="text-align:left;">
-Alger, Algeria
-</td>
-<td style="text-align:right;">
-NaN
-</td>
-<td style="text-align:right;">
--Inf
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Al Gharbiyah, Egypt
 </td>
 <td style="text-align:right;">
@@ -1609,40 +1589,6 @@ NaN
 </td>
 <td style="text-align:right;">
 NA
-</td>
-<td style="text-align:right;">
-0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Alibori, Benin
-</td>
-<td style="text-align:right;">
-65.1524935
-</td>
-<td style="text-align:right;">
-94.2350234
-</td>
-<td style="text-align:right;">
-76.4388498
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Ali Sabieh, Djibouti
-</td>
-<td style="text-align:right;">
-22.7298748
-</td>
-<td style="text-align:right;">
-28.5708637
-</td>
-<td style="text-align:right;">
-22.3732656
 </td>
 <td style="text-align:right;">
 0
@@ -1667,7 +1613,7 @@ NA
 </tr>
 <tr>
 <td style="text-align:left;">
-Al Isma`iliyah, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Jabal al Akhdar, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Jabal al Gharbi, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Jazirah, Sudan </td>    <td style="text-align:right;"> 6.7297190 </td>    <td style="text-align:right;"> 13.2734068 </td>    <td style="text-align:right;"> 6.6327965 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Jifarah, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Jizah, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Jufrah, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Kufrah, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Marj, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Marqab, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Minufiyah, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Minya, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Qadarif, Sudan </td>    <td style="text-align:right;"> 14.6169050 </td>    <td style="text-align:right;"> 52.4298297 </td>    <td style="text-align:right;"> 11.4461275 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Qahirah, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Qalyubiyah, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Uqsur, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Wadi al Jadid, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Wahat, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Amajyaruguru, Rwanda </td>    <td style="text-align:right;"> 13.7530959 </td>    <td style="text-align:right;"> 18.3423698 </td>    <td style="text-align:right;"> 13.6721080 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Amajyepfo, Rwanda </td>    <td style="text-align:right;"> 17.8705020 </td>    <td style="text-align:right;"> 35.2335885 </td>    <td style="text-align:right;"> 16.3554304 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Amhara, Ethiopia </td>    <td style="text-align:right;"> 3.1937615 </td>    <td style="text-align:right;"> 51.3820613 </td>    <td style="text-align:right;"> 1.3893682 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Anambra, Nigeria </td>    <td style="text-align:right;"> 36.9323846 </td>    <td style="text-align:right;"> 50.5158320 </td>    <td style="text-align:right;"> 37.0029572 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Annaba, Algeria </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Annobón, Equatorial Guinea </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> An Nuqat al Khams, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Anse aux Pins, Seychelles </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Anseba, Eritrea </td>    <td style="text-align:right;"> 6.0574961 </td>    <td style="text-align:right;"> 8.5890012 </td>    <td style="text-align:right;"> 5.8173509 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Anse Boileau, Seychelles </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Anse Étoile, Seychelles </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Anse Royale, Seychelles </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Antananarivo, Madagascar </td>    <td style="text-align:right;"> 16.4230449 </td>    <td style="text-align:right;"> 31.4829553 </td>    <td style="text-align:right;"> 15.9755068 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Antsiranana, Madagascar </td>    <td style="text-align:right;"> 20.8293151 </td>    <td style="text-align:right;"> 40.2441319 </td>    <td style="text-align:right;"> 21.6280071 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Apac, Uganda </td>    <td style="text-align:right;"> 63.6342468 </td>    <td style="text-align:right;"> 74.1493889 </td>    <td style="text-align:right;"> 65.2510836 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Ariana, Tunisia </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Arua, Uganda </td>    <td style="text-align:right;"> 48.6581592 </td>    <td style="text-align:right;"> 64.2103230 </td>    <td style="text-align:right;"> 49.2224362 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Arusha, Tanzania </td>    <td style="text-align:right;"> 13.0222690 </td>    <td style="text-align:right;"> 39.6146486 </td>    <td style="text-align:right;"> 12.4861299 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Ascension, Saint Helena </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Ashanti, Ghana </td>    <td style="text-align:right;"> 46.0964106 </td>    <td style="text-align:right;"> 59.0404967 </td>    <td style="text-align:right;"> 46.0760447 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Ash Sharqiyah, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Assaba, Mauritania </td>    <td style="text-align:right;"> 15.9582228 </td>    <td style="text-align:right;"> 49.0907447 </td>    <td style="text-align:right;"> 16.0192849 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> As Suways, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Aswan, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Asyut, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Atakora, Benin </td>    <td style="text-align:right;"> 63.8652023 </td>    <td style="text-align:right;"> 88.6103851 </td>    <td style="text-align:right;"> 71.3527317 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Atlantique, Benin </td>    <td style="text-align:right;"> 54.2772067 </td>    <td style="text-align:right;"> 68.7773076 </td>    <td style="text-align:right;"> 56.7971241 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Au Cap, Seychelles </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Awdal, Somalia </td>    <td style="text-align:right;"> 17.8416619 </td>    <td style="text-align:right;"> 30.2034947 </td>    <td style="text-align:right;"> 17.7112874 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Az Zawiyah, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bafatá, Guinea-Bissau </td>    <td style="text-align:right;"> 38.6904309 </td>    <td style="text-align:right;"> 50.8293888 </td>    <td style="text-align:right;"> 38.2358918 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Baie Lazare, Seychelles </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Baie Sainte Anne, Seychelles </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bakool, Somalia </td>    <td style="text-align:right;"> 19.2094199 </td>    <td style="text-align:right;"> 33.6127263 </td>    <td style="text-align:right;"> 18.5192767 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Balaka, Malawi </td>    <td style="text-align:right;"> 17.0361768 </td>    <td style="text-align:right;"> 21.2362319 </td>    <td style="text-align:right;"> 17.3585886 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bamako, Mali </td>    <td style="text-align:right;"> 47.0818867 </td>    <td style="text-align:right;"> 63.8883579 </td>    <td style="text-align:right;"> 45.8585684 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Bamingui-Bangoran, Central African Republic </td>    <td style="text-align:right;"> 17.7857140 </td>    <td style="text-align:right;"> 60.2663297 </td>    <td style="text-align:right;"> 20.4513768 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Banaadir, Somalia </td>    <td style="text-align:right;"> 13.4904431 </td>    <td style="text-align:right;"> 20.6690599 </td>    <td style="text-align:right;"> 14.6358345 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bandraboua, Mayotte </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bandrele, Mayotte </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bandundu, Democratic Republic of the Congo </td>    <td style="text-align:right;"> 27.8534488 </td>    <td style="text-align:right;"> 62.0267153 </td>    <td style="text-align:right;"> 27.7687035 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Bangui, Central African Republic </td>    <td style="text-align:right;"> 61.3530049 </td>    <td style="text-align:right;"> 65.2740456 </td>    <td style="text-align:right;"> 61.0216928 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Bani Suwayf, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Banjul, Gambia </td>    <td style="text-align:right;"> 4.2280967 </td>    <td style="text-align:right;"> 4.5812653 </td>    <td style="text-align:right;"> 4.2280967 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Barh el Ghazel, Chad </td>    <td style="text-align:right;"> 16.6792783 </td>    <td style="text-align:right;"> 38.8999819 </td>    <td style="text-align:right;"> 14.3653695 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Baringo, Kenya </td>    <td style="text-align:right;"> 43.7247462 </td>    <td style="text-align:right;"> 55.8106989 </td>    <td style="text-align:right;"> 44.7504191 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Bari, Somalia </td>    <td style="text-align:right;"> 8.2007010 </td>    <td style="text-align:right;"> 15.2567671 </td>    <td style="text-align:right;"> 8.2378602 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bas-Congo, Democratic Republic of the Congo </td>    <td style="text-align:right;"> 36.3520857 </td>    <td style="text-align:right;"> 55.3945375 </td>    <td style="text-align:right;"> 37.0071982 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Bas-Sassandra, Côte d'Ivoire </td>    <td style="text-align:right;"> 49.4445282 </td>    <td style="text-align:right;"> 79.4500576 </td>    <td style="text-align:right;"> 53.5926255 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Basse-Kotto, Central African Republic </td>    <td style="text-align:right;"> 76.7580260 </td>    <td style="text-align:right;"> 87.5264236 </td>    <td style="text-align:right;"> 78.0471642 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Batha, Chad </td>    <td style="text-align:right;"> 21.7191789 </td>    <td style="text-align:right;"> 40.1953734 </td>    <td style="text-align:right;"> 21.6367095 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Batna, Algeria </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bauchi, Nigeria </td>    <td style="text-align:right;"> 70.6875829 </td>    <td style="text-align:right;"> 87.9705785 </td>    <td style="text-align:right;"> 73.4140574 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Bayelsa, Nigeria </td>    <td style="text-align:right;"> 45.4488582 </td>    <td style="text-align:right;"> 66.3941090 </td>    <td style="text-align:right;"> 45.5886267 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Bay, Somalia </td>    <td style="text-align:right;"> 26.1494781 </td>    <td style="text-align:right;"> 38.4210201 </td>    <td style="text-align:right;"> 26.7744299 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Beau Vallon, Seychelles </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Béchar, Algeria </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Béjaïa, Algeria </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Béja, Tunisia </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bel Air, Seychelles </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Belombre, Seychelles </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Ben Arous (Tunis Sud), Tunisia </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Benghazi, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bengo, Angola </td>    <td style="text-align:right;"> 16.6012307 </td>    <td style="text-align:right;"> 34.7316792 </td>    <td style="text-align:right;"> 19.0546199 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Benguela, Angola </td>    <td style="text-align:right;"> 29.6145318 </td>    <td style="text-align:right;"> 51.3045569 </td>    <td style="text-align:right;"> 29.4589670 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Benshangul-Gumaz, Ethiopia </td>    <td style="text-align:right;"> 2.2153460 </td>    <td style="text-align:right;"> 12.6190165 </td>    <td style="text-align:right;"> 2.1624910 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Benue, Nigeria </td>    <td style="text-align:right;"> 48.4374893 </td>    <td style="text-align:right;"> 60.5743360 </td>    <td style="text-align:right;"> 48.7909701 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Berea, Lesotho </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bié, Angola </td>    <td style="text-align:right;"> 24.1024513 </td>    <td style="text-align:right;"> 34.4700425 </td>    <td style="text-align:right;"> 24.0885906 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Bioko Norte, Equatorial Guinea </td>    <td style="text-align:right;"> 27.9265441 </td>    <td style="text-align:right;"> 48.9430592 </td>    <td style="text-align:right;"> 30.5965529 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Bioko Sur, Equatorial Guinea </td>    <td style="text-align:right;"> 22.8677403 </td>    <td style="text-align:right;"> 43.8854771 </td>    <td style="text-align:right;"> 27.0476251 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Biombo, Guinea-Bissau </td>    <td style="text-align:right;"> 18.7965973 </td>    <td style="text-align:right;"> 24.7665646 </td>    <td style="text-align:right;"> 19.1302068 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Biskra, Algeria </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bissau, Guinea-Bissau </td>    <td style="text-align:right;"> 16.9903216 </td>    <td style="text-align:right;"> 18.7213315 </td>    <td style="text-align:right;"> 18.3155125 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bizerte, Tunisia </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Black River, Mauritius </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Blantyre, Malawi </td>    <td style="text-align:right;"> 15.3621664 </td>    <td style="text-align:right;"> 19.6273996 </td>    <td style="text-align:right;"> 15.7920526 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Blida, Algeria </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Blue Nile, Sudan </td>    <td style="text-align:right;"> 12.8321803 </td>    <td style="text-align:right;"> 23.7441036 </td>    <td style="text-align:right;"> 12.7632163 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Boa Vista, Cape Verde </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Boké, Guinea </td>    <td style="text-align:right;"> 61.1778938 </td>    <td style="text-align:right;"> 93.2155452 </td>    <td style="text-align:right;"> 62.2078955 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Bolama, Guinea-Bissau </td>    <td style="text-align:right;"> 2.3434222 </td>    <td style="text-align:right;"> 21.8818909 </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bomet, Kenya </td>    <td style="text-align:right;"> 50.7294180 </td>    <td style="text-align:right;"> 68.5014701 </td>    <td style="text-align:right;"> 51.2949339 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Bomi, Liberia </td>    <td style="text-align:right;"> 34.2441441 </td>    <td style="text-align:right;"> 53.6861162 </td>    <td style="text-align:right;"> 33.2215131 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Bong, Liberia </td>    <td style="text-align:right;"> 29.3357178 </td>    <td style="text-align:right;"> 51.6823543 </td>    <td style="text-align:right;"> 28.9356263 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Bordj Bou Arréridj, Algeria </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Borgou, Benin </td>    <td style="text-align:right;"> 73.1188758 </td>    <td style="text-align:right;"> 91.1180953 </td>    <td style="text-align:right;"> 74.2912251 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Borkou, Chad </td>    <td style="text-align:right;"> 12.2513159 </td>    <td style="text-align:right;"> 30.3830233 </td>    <td style="text-align:right;"> 9.8077859 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Borno, Nigeria </td>    <td style="text-align:right;"> 41.5119419 </td>    <td style="text-align:right;"> 83.7492629 </td>    <td style="text-align:right;"> 41.4638377 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Boucle du Mouhoun, Burkina Faso </td>    <td style="text-align:right;"> 83.7397094 </td>    <td style="text-align:right;"> 95.9197872 </td>    <td style="text-align:right;"> 84.5820573 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Boueni, Mayotte </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bouenza, Republic of Congo </td>    <td style="text-align:right;"> 34.0057395 </td>    <td style="text-align:right;"> 52.1613841 </td>    <td style="text-align:right;"> 32.0978046 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Bouira, Algeria </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Boujdour, Western Sahara </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Boumerdès, Algeria </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Brakna, Mauritania </td>    <td style="text-align:right;"> 11.2194502 </td>    <td style="text-align:right;"> 16.6815482 </td>    <td style="text-align:right;"> 11.5653322 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Brava, Cape Verde </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Brazzaville, Republic of Congo </td>    <td style="text-align:right;"> 13.3434492 </td>    <td style="text-align:right;"> 23.2232279 </td>    <td style="text-align:right;"> 13.3123970 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Brong Ahafo, Ghana </td>    <td style="text-align:right;"> 29.9461287 </td>    <td style="text-align:right;"> 67.4856978 </td>    <td style="text-align:right;"> 29.1534435 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Bubanza, Burundi </td>    <td style="text-align:right;"> 27.6651720 </td>    <td style="text-align:right;"> 42.1191580 </td>    <td style="text-align:right;"> 28.4251895 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Bugiri, Uganda </td>    <td style="text-align:right;"> 57.3183575 </td>    <td style="text-align:right;"> 74.3449704 </td>    <td style="text-align:right;"> 64.3416498 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Bujumbura Mairie, Burundi </td>    <td style="text-align:right;"> 17.0317196 </td>    <td style="text-align:right;"> 27.0459947 </td>    <td style="text-align:right;"> 16.3118067 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bujumbura Rural, Burundi </td>    <td style="text-align:right;"> 14.3233947 </td>    <td style="text-align:right;"> 37.0976442 </td>    <td style="text-align:right;"> 17.2524255 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bulawayo, Zimbabwe </td>    <td style="text-align:right;"> 5.8811110 </td>    <td style="text-align:right;"> 9.2526616 </td>    <td style="text-align:right;"> 6.5191935 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bundibugyo, Uganda </td>    <td style="text-align:right;"> 35.2257243 </td>    <td style="text-align:right;"> 62.3960112 </td>    <td style="text-align:right;"> 40.1825118 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Bungoma, Kenya </td>    <td style="text-align:right;"> 60.4674307 </td>    <td style="text-align:right;"> 72.0611995 </td>    <td style="text-align:right;"> 62.3412434 </td>    <td style="text-align:right;"> 100 </td>   </tr>   <tr>    <td style="text-align:left;"> Bur Sa`id, Egypt
+Al Isma`iliyah, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Jabal al Akhdar, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Jabal al Gharbi, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Jazirah, Sudan </td>    <td style="text-align:right;"> 672.6365292 </td>    <td style="text-align:right;"> 1322.7534305 </td>    <td style="text-align:right;"> 662.9621070 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Jifarah, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Jizah, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Jufrah, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Kufrah, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Marj, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Marqab, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Minufiyah, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Minya, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Qadarif, Sudan </td>    <td style="text-align:right;"> 1494.6698131 </td>    <td style="text-align:right;"> 5294.0975777 </td>    <td style="text-align:right;"> 1175.0907152 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Qahirah, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Qalyubiyah, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Uqsur, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Wadi al Jadid, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Al Wahat, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Alger, Algeria </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Ali Sabieh, Djibouti </td>    <td style="text-align:right;"> 2356.8460666 </td>    <td style="text-align:right;"> 2893.6847002 </td>    <td style="text-align:right;"> 2354.0187551 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Alibori, Benin </td>    <td style="text-align:right;"> 6863.4218070 </td>    <td style="text-align:right;"> 9438.5047395 </td>    <td style="text-align:right;"> 7740.3790175 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Amajyaruguru, Rwanda </td>    <td style="text-align:right;"> 1378.7334256 </td>    <td style="text-align:right;"> 1830.3974014 </td>    <td style="text-align:right;"> 1371.4929423 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Amajyepfo, Rwanda </td>    <td style="text-align:right;"> 1793.8189283 </td>    <td style="text-align:right;"> 3563.6032743 </td>    <td style="text-align:right;"> 1636.2693437 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Amhara, Ethiopia </td>    <td style="text-align:right;"> 323.0684438 </td>    <td style="text-align:right;"> 5149.6369282 </td>    <td style="text-align:right;"> 142.2836800 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> An Nuqat al Khams, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Anambra, Nigeria </td>    <td style="text-align:right;"> 3694.2584241 </td>    <td style="text-align:right;"> 5174.2950273 </td>    <td style="text-align:right;"> 3691.1552189 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Annaba, Algeria </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Annobón, Equatorial Guinea </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Anse aux Pins, Seychelles </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Anse Boileau, Seychelles </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Anse Étoile, Seychelles </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Anse Royale, Seychelles </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Anseba, Eritrea </td>    <td style="text-align:right;"> 607.9048049 </td>    <td style="text-align:right;"> 864.0173752 </td>    <td style="text-align:right;"> 580.0392213 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Antananarivo, Madagascar </td>    <td style="text-align:right;"> 1643.1189467 </td>    <td style="text-align:right;"> 3162.1397028 </td>    <td style="text-align:right;"> 1595.4565191 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Antsiranana, Madagascar </td>    <td style="text-align:right;"> 2141.9622727 </td>    <td style="text-align:right;"> 4088.8385908 </td>    <td style="text-align:right;"> 2182.9324009 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Apac, Uganda </td>    <td style="text-align:right;"> 6484.2632795 </td>    <td style="text-align:right;"> 7415.4113797 </td>    <td style="text-align:right;"> 6593.9679926 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Ariana, Tunisia </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Arua, Uganda </td>    <td style="text-align:right;"> 4988.8088974 </td>    <td style="text-align:right;"> 6415.0307924 </td>    <td style="text-align:right;"> 5004.0458843 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Arusha, Tanzania </td>    <td style="text-align:right;"> 1382.2494218 </td>    <td style="text-align:right;"> 4389.8769353 </td>    <td style="text-align:right;"> 1282.4979049 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> As Suways, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Ascension, Saint Helena </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Ash Sharqiyah, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Ashanti, Ghana </td>    <td style="text-align:right;"> 4644.1037375 </td>    <td style="text-align:right;"> 5851.1386769 </td>    <td style="text-align:right;"> 4612.8911080 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Assaba, Mauritania </td>    <td style="text-align:right;"> 1607.4282686 </td>    <td style="text-align:right;"> 5001.0551899 </td>    <td style="text-align:right;"> 1595.9651367 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Aswan, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Asyut, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Atakora, Benin </td>    <td style="text-align:right;"> 6609.5458484 </td>    <td style="text-align:right;"> 8812.6474616 </td>    <td style="text-align:right;"> 7160.2254346 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Atlantique, Benin </td>    <td style="text-align:right;"> 5617.7843083 </td>    <td style="text-align:right;"> 6985.8532013 </td>    <td style="text-align:right;"> 5706.0874004 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Au Cap, Seychelles </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Awdal, Somalia </td>    <td style="text-align:right;"> 1784.6884919 </td>    <td style="text-align:right;"> 3105.1786645 </td>    <td style="text-align:right;"> 1765.4378101 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Az Zawiyah, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bafatá, Guinea-Bissau </td>    <td style="text-align:right;"> 3876.5375979 </td>    <td style="text-align:right;"> 5090.9688036 </td>    <td style="text-align:right;"> 3819.6610617 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Baie Lazare, Seychelles </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Baie Sainte Anne, Seychelles </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bakool, Somalia </td>    <td style="text-align:right;"> 1922.8432931 </td>    <td style="text-align:right;"> 3334.1723716 </td>    <td style="text-align:right;"> 1854.2542877 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Balaka, Malawi </td>    <td style="text-align:right;"> 1708.4273782 </td>    <td style="text-align:right;"> 2063.8991521 </td>    <td style="text-align:right;"> 1719.1380731 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bamako, Mali </td>    <td style="text-align:right;"> 4876.7627276 </td>    <td style="text-align:right;"> 6410.3355925 </td>    <td style="text-align:right;"> 4999.1792605 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bamingui-Bangoran, Central African Republic </td>    <td style="text-align:right;"> 2038.7972874 </td>    <td style="text-align:right;"> 6154.8695455 </td>    <td style="text-align:right;"> 2963.9685031 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Banaadir, Somalia </td>    <td style="text-align:right;"> 1516.1148349 </td>    <td style="text-align:right;"> 2075.1608640 </td>    <td style="text-align:right;"> 1459.4841163 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bandraboua, Mayotte </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bandrele, Mayotte </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bandundu, Democratic Republic of the Congo </td>    <td style="text-align:right;"> 2811.8580531 </td>    <td style="text-align:right;"> 6118.3442894 </td>    <td style="text-align:right;"> 2800.1443339 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bangui, Central African Republic </td>    <td style="text-align:right;"> 6493.8819203 </td>    <td style="text-align:right;"> 6897.6126620 </td>    <td style="text-align:right;"> 6611.5381425 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bani Suwayf, Egypt </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Banjul, Gambia </td>    <td style="text-align:right;"> 424.3950403 </td>    <td style="text-align:right;"> 460.1685043 </td>    <td style="text-align:right;"> 424.3950403 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Barh el Ghazel, Chad </td>    <td style="text-align:right;"> 1753.8319807 </td>    <td style="text-align:right;"> 4054.9409392 </td>    <td style="text-align:right;"> 1457.4177671 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bari, Somalia </td>    <td style="text-align:right;"> 823.0856593 </td>    <td style="text-align:right;"> 1510.8444151 </td>    <td style="text-align:right;"> 826.1442958 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Baringo, Kenya </td>    <td style="text-align:right;"> 4388.5882574 </td>    <td style="text-align:right;"> 5590.6437165 </td>    <td style="text-align:right;"> 4485.3139585 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bas-Congo, Democratic Republic of the Congo </td>    <td style="text-align:right;"> 3644.1281223 </td>    <td style="text-align:right;"> 5486.9995298 </td>    <td style="text-align:right;"> 3707.6703910 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bas-Sassandra, Côte d'Ivoire </td>    <td style="text-align:right;"> 5039.8359339 </td>    <td style="text-align:right;"> 8051.4767169 </td>    <td style="text-align:right;"> 5346.9874055 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Basse-Kotto, Central African Republic </td>    <td style="text-align:right;"> 7710.3563919 </td>    <td style="text-align:right;"> 8721.3805912 </td>    <td style="text-align:right;"> 7823.8109787 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Batha, Chad </td>    <td style="text-align:right;"> 2205.4413094 </td>    <td style="text-align:right;"> 4358.6252664 </td>    <td style="text-align:right;"> 2167.6879079 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Batna, Algeria </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bauchi, Nigeria </td>    <td style="text-align:right;"> 7160.6304720 </td>    <td style="text-align:right;"> 8732.6761137 </td>    <td style="text-align:right;"> 7359.7884094 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bay, Somalia </td>    <td style="text-align:right;"> 2613.6515671 </td>    <td style="text-align:right;"> 3832.4544637 </td>    <td style="text-align:right;"> 2671.9741917 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bayelsa, Nigeria </td>    <td style="text-align:right;"> 4597.7688541 </td>    <td style="text-align:right;"> 7147.0524508 </td>    <td style="text-align:right;"> 4539.5732456 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Beau Vallon, Seychelles </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Béchar, Algeria </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Béja, Tunisia </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Béjaïa, Algeria </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bel Air, Seychelles </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Belombre, Seychelles </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Ben Arous (Tunis Sud), Tunisia </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Benghazi, Libya </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bengo, Angola </td>    <td style="text-align:right;"> 1754.5144145 </td>    <td style="text-align:right;"> 3591.8052588 </td>    <td style="text-align:right;"> 1959.9198846 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Benguela, Angola </td>    <td style="text-align:right;"> 2963.9008153 </td>    <td style="text-align:right;"> 5136.5607209 </td>    <td style="text-align:right;"> 2950.1559808 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Benshangul-Gumaz, Ethiopia </td>    <td style="text-align:right;"> 223.5684151 </td>    <td style="text-align:right;"> 1277.5546024 </td>    <td style="text-align:right;"> 218.0084711 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Benue, Nigeria </td>    <td style="text-align:right;"> 4823.6749741 </td>    <td style="text-align:right;"> 6265.7002232 </td>    <td style="text-align:right;"> 4862.4352600 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Berea, Lesotho </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bié, Angola </td>    <td style="text-align:right;"> 2401.0369414 </td>    <td style="text-align:right;"> 3433.2430674 </td>    <td style="text-align:right;"> 2401.6531045 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bioko Norte, Equatorial Guinea </td>    <td style="text-align:right;"> 3303.4216765 </td>    <td style="text-align:right;"> 5527.8503147 </td>    <td style="text-align:right;"> 3102.6270897 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bioko Sur, Equatorial Guinea </td>    <td style="text-align:right;"> 2893.8532217 </td>    <td style="text-align:right;"> 5063.1690455 </td>    <td style="text-align:right;"> 3062.4830887 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Biombo, Guinea-Bissau </td>    <td style="text-align:right;"> 1904.8062447 </td>    <td style="text-align:right;"> 2477.2272958 </td>    <td style="text-align:right;"> 1914.4885363 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Biskra, Algeria </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bissau, Guinea-Bissau </td>    <td style="text-align:right;"> 1726.2800798 </td>    <td style="text-align:right;"> 1911.4922867 </td>    <td style="text-align:right;"> 1846.7450485 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bizerte, Tunisia </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Black River, Mauritius </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Blantyre, Malawi </td>    <td style="text-align:right;"> 1542.2760153 </td>    <td style="text-align:right;"> 1961.5656333 </td>    <td style="text-align:right;"> 1575.2586087 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Blida, Algeria </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Blue Nile, Sudan </td>    <td style="text-align:right;"> 1286.6524071 </td>    <td style="text-align:right;"> 2369.0474713 </td>    <td style="text-align:right;"> 1277.9038972 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Boa Vista, Cape Verde </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Boké, Guinea </td>    <td style="text-align:right;"> 6169.1709977 </td>    <td style="text-align:right;"> 9296.7871501 </td>    <td style="text-align:right;"> 6245.7660370 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bolama, Guinea-Bissau </td>    <td style="text-align:right;"> 257.7640136 </td>    <td style="text-align:right;"> 2454.9622123 </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bomet, Kenya </td>    <td style="text-align:right;"> 5078.0396639 </td>    <td style="text-align:right;"> 6855.2934680 </td>    <td style="text-align:right;"> 5121.0183688 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bomi, Liberia </td>    <td style="text-align:right;"> 3520.5515557 </td>    <td style="text-align:right;"> 5767.0024535 </td>    <td style="text-align:right;"> 3308.1250894 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bong, Liberia </td>    <td style="text-align:right;"> 2922.7029270 </td>    <td style="text-align:right;"> 5324.9534812 </td>    <td style="text-align:right;"> 2875.4337819 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bordj Bou Arréridj, Algeria </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Borgou, Benin </td>    <td style="text-align:right;"> 7319.9903223 </td>    <td style="text-align:right;"> 9087.2578007 </td>    <td style="text-align:right;"> 7455.3301738 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Borkou, Chad </td>    <td style="text-align:right;"> 1356.6198755 </td>    <td style="text-align:right;"> 3347.6366838 </td>    <td style="text-align:right;"> 981.8940959 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Borno, Nigeria </td>    <td style="text-align:right;"> 4204.3651441 </td>    <td style="text-align:right;"> 8379.7588689 </td>    <td style="text-align:right;"> 4151.6253957 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Boucle du Mouhoun, Burkina Faso </td>    <td style="text-align:right;"> 8431.4925851 </td>    <td style="text-align:right;"> 9635.2632753 </td>    <td style="text-align:right;"> 8461.9636349 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Boueni, Mayotte </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bouenza, Republic of Congo </td>    <td style="text-align:right;"> 3408.8733379 </td>    <td style="text-align:right;"> 5226.3878711 </td>    <td style="text-align:right;"> 3222.4504647 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bouira, Algeria </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Boujdour, Western Sahara </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Boumerdès, Algeria </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> NA </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Brakna, Mauritania </td>    <td style="text-align:right;"> 1116.7746179 </td>    <td style="text-align:right;"> 1639.6552445 </td>    <td style="text-align:right;"> 1150.5257212 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Brava, Cape Verde </td>    <td style="text-align:right;"> NaN </td>    <td style="text-align:right;"> -Inf </td>    <td style="text-align:right;"> 0.0000000 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Brazzaville, Republic of Congo </td>    <td style="text-align:right;"> 2538.1286041 </td>    <td style="text-align:right;"> 3384.0879479 </td>    <td style="text-align:right;"> 2339.0658119 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Brong Ahafo, Ghana </td>    <td style="text-align:right;"> 3282.4531612 </td>    <td style="text-align:right;"> 7524.1953500 </td>    <td style="text-align:right;"> 2947.9789282 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bubanza, Burundi </td>    <td style="text-align:right;"> 2812.0931274 </td>    <td style="text-align:right;"> 4265.6284054 </td>    <td style="text-align:right;"> 2899.5504104 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bugiri, Uganda </td>    <td style="text-align:right;"> 5911.5613450 </td>    <td style="text-align:right;"> 7414.9228736 </td>    <td style="text-align:right;"> 6517.2271180 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bujumbura Mairie, Burundi </td>    <td style="text-align:right;"> 2133.8402981 </td>    <td style="text-align:right;"> 3343.9454135 </td>    <td style="text-align:right;"> 1797.8059621 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bujumbura Rural, Burundi </td>    <td style="text-align:right;"> 1807.6594966 </td>    <td style="text-align:right;"> 4113.9552988 </td>    <td style="text-align:right;"> 1823.3551630 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bulawayo, Zimbabwe </td>    <td style="text-align:right;"> 670.1233927 </td>    <td style="text-align:right;"> 926.1165805 </td>    <td style="text-align:right;"> 674.2630388 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bundibugyo, Uganda </td>    <td style="text-align:right;"> 4465.2108534 </td>    <td style="text-align:right;"> 6592.1268245 </td>    <td style="text-align:right;"> 5075.6295053 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bungoma, Kenya </td>    <td style="text-align:right;"> 6049.6135053 </td>    <td style="text-align:right;"> 7206.0643971 </td>    <td style="text-align:right;"> 6238.7643917 </td>    <td style="text-align:right;"> 0 </td>   </tr>   <tr>    <td style="text-align:left;"> Bur Sa`id, Egypt
 </td>
 <td style="text-align:right;">
 NaN
@@ -1687,13 +1633,13 @@ NA
 Bururi, Burundi
 </td>
 <td style="text-align:right;">
-14.7691039
+1759.1144198
 </td>
 <td style="text-align:right;">
-25.7513645
+2998.0251279
 </td>
 <td style="text-align:right;">
-19.8554669
+2038.4675103
 </td>
 <td style="text-align:right;">
 0
@@ -1704,16 +1650,16 @@ Bururi, Burundi
 Bushenyi, Uganda
 </td>
 <td style="text-align:right;">
-26.6137157
+3003.3222685
 </td>
 <td style="text-align:right;">
-44.9814466
+4841.3040782
 </td>
 <td style="text-align:right;">
-32.0547216
+3434.2789092
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -1721,16 +1667,16 @@ Bushenyi, Uganda
 Busia, Kenya
 </td>
 <td style="text-align:right;">
-66.2598766
+6846.3386024
 </td>
 <td style="text-align:right;">
-76.5261725
+7628.5335892
 </td>
 <td style="text-align:right;">
-69.6086880
+6943.7150333
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -1738,16 +1684,16 @@ Busia, Kenya
 Busia, Uganda
 </td>
 <td style="text-align:right;">
-63.5929910
+6531.6930506
 </td>
 <td style="text-align:right;">
-73.3169056
+7419.1251761
 </td>
 <td style="text-align:right;">
-64.4011830
+6599.7800035
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -1772,16 +1718,16 @@ NA
 Cabinda, Angola
 </td>
 <td style="text-align:right;">
-28.3823880
+2875.0649733
 </td>
 <td style="text-align:right;">
-37.9902739
+4295.4973118
 </td>
 <td style="text-align:right;">
-28.3729857
+2845.5844558
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -1789,16 +1735,16 @@ Cabinda, Angola
 Cabo Delgado, Mozambique
 </td>
 <td style="text-align:right;">
-21.0470392
+2282.0167008
 </td>
 <td style="text-align:right;">
-66.3326066
+7254.1786817
 </td>
 <td style="text-align:right;">
-23.7767894
+2626.4761637
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -1806,13 +1752,13 @@ Cabo Delgado, Mozambique
 Cacheu, Guinea-Bissau
 </td>
 <td style="text-align:right;">
-12.3954671
+1258.3285664
 </td>
 <td style="text-align:right;">
-22.0044473
+2361.3910581
 </td>
 <td style="text-align:right;">
-12.2677863
+1235.5169616
 </td>
 <td style="text-align:right;">
 0
@@ -1823,33 +1769,16 @@ Cacheu, Guinea-Bissau
 Cankuzo, Burundi
 </td>
 <td style="text-align:right;">
-38.3203823
+3879.1812936
 </td>
 <td style="text-align:right;">
-52.5177263
+5304.0912238
 </td>
 <td style="text-align:right;">
-38.4911738
+3871.2898105
 </td>
 <td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Cascades, Burkina Faso
-</td>
-<td style="text-align:right;">
-81.2870313
-</td>
-<td style="text-align:right;">
-92.0780521
-</td>
-<td style="text-align:right;">
-83.4606610
-</td>
-<td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -1871,16 +1800,16 @@ NaN
 </tr>
 <tr>
 <td style="text-align:left;">
-Central, Botswana
+Cascades, Burkina Faso
 </td>
 <td style="text-align:right;">
-3.8471462
+8125.2369521
 </td>
 <td style="text-align:right;">
-15.5067385
+9191.8952412
 </td>
 <td style="text-align:right;">
-3.7303921
+8344.7828143
 </td>
 <td style="text-align:right;">
 0
@@ -1891,16 +1820,16 @@ Central, Botswana
 Central Darfur, Sudan
 </td>
 <td style="text-align:right;">
-20.3219573
+2031.1458050
 </td>
 <td style="text-align:right;">
-40.5607667
+4047.5570672
 </td>
 <td style="text-align:right;">
-19.3501314
+1932.9436420
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -1908,16 +1837,33 @@ Central Darfur, Sudan
 Central Equatoria, South Sudan
 </td>
 <td style="text-align:right;">
-46.4888241
+4743.1570669
 </td>
 <td style="text-align:right;">
-69.7618725
+7053.3304941
 </td>
 <td style="text-align:right;">
-54.4654192
+5455.2985113
 </td>
 <td style="text-align:right;">
-100
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Central, Botswana
+</td>
+<td style="text-align:right;">
+394.8407924
+</td>
+<td style="text-align:right;">
+1584.3883705
+</td>
+<td style="text-align:right;">
+378.4717622
+</td>
+<td style="text-align:right;">
+0
 </td>
 </tr>
 <tr>
@@ -1925,16 +1871,16 @@ Central Equatoria, South Sudan
 Central, Ghana
 </td>
 <td style="text-align:right;">
-48.1490304
+4817.9001296
 </td>
 <td style="text-align:right;">
-59.8687297
+6081.9325116
 </td>
 <td style="text-align:right;">
-47.7291700
+4771.5386447
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -1942,50 +1888,16 @@ Central, Ghana
 Central, Zambia
 </td>
 <td style="text-align:right;">
-33.0695272
+3374.7403605
 </td>
 <td style="text-align:right;">
-63.3386138
+6300.9865227
 </td>
 <td style="text-align:right;">
-33.3526849
+3351.9751678
 </td>
 <td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Centre, Burkina Faso
-</td>
-<td style="text-align:right;">
-65.2444383
-</td>
-<td style="text-align:right;">
-76.9890566
-</td>
-<td style="text-align:right;">
-66.2054746
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Centre, Cameroon
-</td>
-<td style="text-align:right;">
-41.2642612
-</td>
-<td style="text-align:right;">
-56.2021504
-</td>
-<td style="text-align:right;">
-42.3230468
-</td>
-<td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -1993,16 +1905,16 @@ Centre, Cameroon
 Centre-Est, Burkina Faso
 </td>
 <td style="text-align:right;">
-70.8986800
+7094.3168765
 </td>
 <td style="text-align:right;">
-85.5579411
+8558.9982337
 </td>
 <td style="text-align:right;">
-70.8855545
+7113.3539366
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2010,16 +1922,16 @@ Centre-Est, Burkina Faso
 Centre-Nord, Burkina Faso
 </td>
 <td style="text-align:right;">
-83.8127349
+8382.4576567
 </td>
 <td style="text-align:right;">
-93.9601269
+9399.1996556
 </td>
 <td style="text-align:right;">
-86.0457732
+8596.6794015
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2027,16 +1939,16 @@ Centre-Nord, Burkina Faso
 Centre-Ouest, Burkina Faso
 </td>
 <td style="text-align:right;">
-79.9243773
+8030.5983519
 </td>
 <td style="text-align:right;">
-92.7098017
+9231.7110287
 </td>
 <td style="text-align:right;">
-80.1565951
+8029.2124894
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2044,16 +1956,50 @@ Centre-Ouest, Burkina Faso
 Centre-Sud, Burkina Faso
 </td>
 <td style="text-align:right;">
-66.2319350
+6957.2709445
 </td>
 <td style="text-align:right;">
-85.8034353
+8602.9705632
 </td>
 <td style="text-align:right;">
-70.9865247
+7148.4773635
 </td>
 <td style="text-align:right;">
-100
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Centre, Burkina Faso
+</td>
+<td style="text-align:right;">
+6550.9122362
+</td>
+<td style="text-align:right;">
+7731.7314896
+</td>
+<td style="text-align:right;">
+6595.6290310
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Centre, Cameroon
+</td>
+<td style="text-align:right;">
+4134.3506356
+</td>
+<td style="text-align:right;">
+5543.5206296
+</td>
+<td style="text-align:right;">
+4205.2561773
+</td>
+<td style="text-align:right;">
+0
 </td>
 </tr>
 <tr>
@@ -2061,16 +2007,16 @@ Centre-Sud, Burkina Faso
 Centre, Togo
 </td>
 <td style="text-align:right;">
-56.9261398
+5980.1849308
 </td>
 <td style="text-align:right;">
-69.5991875
+6880.0598555
 </td>
 <td style="text-align:right;">
-63.2879496
+6302.6176259
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2078,16 +2024,16 @@ Centre, Togo
 Centro Sur, Equatorial Guinea
 </td>
 <td style="text-align:right;">
-19.0639753
+2026.9765668
 </td>
 <td style="text-align:right;">
-30.1181965
+2968.9473595
 </td>
 <td style="text-align:right;">
-21.0693129
+2165.6993597
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2112,16 +2058,16 @@ NA
 Chari-Baguirmi, Chad
 </td>
 <td style="text-align:right;">
-27.3194372
+2727.9976513
 </td>
 <td style="text-align:right;">
-45.5245538
+4785.4431208
 </td>
 <td style="text-align:right;">
-27.6188200
+2750.0948274
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2146,13 +2092,13 @@ Chiconi, Mayotte
 Chikwawa, Malawi
 </td>
 <td style="text-align:right;">
-17.7099331
+1777.2195953
 </td>
 <td style="text-align:right;">
-31.3023484
+3138.2494146
 </td>
 <td style="text-align:right;">
-16.8207366
+1668.1491936
 </td>
 <td style="text-align:right;">
 0
@@ -2163,13 +2109,13 @@ Chikwawa, Malawi
 Chiradzulu, Malawi
 </td>
 <td style="text-align:right;">
-14.7103614
+1473.3254748
 </td>
 <td style="text-align:right;">
-20.7281018
+2092.9858230
 </td>
 <td style="text-align:right;">
-13.5558395
+1342.5575267
 </td>
 <td style="text-align:right;">
 0
@@ -2197,16 +2143,16 @@ Chirongui, Mayotte
 Chitipa, Malawi
 </td>
 <td style="text-align:right;">
-22.5279557
+2360.4445239
 </td>
 <td style="text-align:right;">
-33.8534638
+3352.5806042
 </td>
 <td style="text-align:right;">
-23.6577279
+2441.7081733
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2231,13 +2177,13 @@ NA
 Chobe, Botswana
 </td>
 <td style="text-align:right;">
-5.2578958
+571.2267501
 </td>
 <td style="text-align:right;">
-20.9337932
+2125.1236209
 </td>
 <td style="text-align:right;">
-2.1907490
+343.3012877
 </td>
 <td style="text-align:right;">
 0
@@ -2248,16 +2194,16 @@ Chobe, Botswana
 Cibitoke, Burundi
 </td>
 <td style="text-align:right;">
-33.1811150
+3400.4742646
 </td>
 <td style="text-align:right;">
-48.4782771
+4848.4014102
 </td>
 <td style="text-align:right;">
-31.7954792
+3389.4135041
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2265,16 +2211,16 @@ Cibitoke, Burundi
 Collines, Benin
 </td>
 <td style="text-align:right;">
-58.4612793
+5846.2804938
 </td>
 <td style="text-align:right;">
-75.4144952
+7515.9593892
 </td>
 <td style="text-align:right;">
-58.9119471
+5893.5618991
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2282,16 +2228,16 @@ Collines, Benin
 Comoé, Côte d'Ivoire
 </td>
 <td style="text-align:right;">
-44.1432552
+4648.9353325
 </td>
 <td style="text-align:right;">
-91.1316045
+9168.6125720
 </td>
 <td style="text-align:right;">
-48.7566163
+5039.6946207
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2299,16 +2245,16 @@ Comoé, Côte d'Ivoire
 Conakry, Guinea
 </td>
 <td style="text-align:right;">
-27.9921832
+2952.5468126
 </td>
 <td style="text-align:right;">
-46.0734053
+4827.6380086
 </td>
 <td style="text-align:right;">
-28.6934767
+3074.6510650
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2333,16 +2279,16 @@ NA
 Copperbelt, Zambia
 </td>
 <td style="text-align:right;">
-34.8646353
+3478.8927163
 </td>
 <td style="text-align:right;">
-53.9402052
+5369.3302391
 </td>
 <td style="text-align:right;">
-35.7452490
+3561.8939560
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2350,16 +2296,16 @@ Copperbelt, Zambia
 Cross River, Nigeria
 </td>
 <td style="text-align:right;">
-46.1420998
+4873.6067148
 </td>
 <td style="text-align:right;">
-79.7571624
+8202.0082583
 </td>
 <td style="text-align:right;">
-51.7959361
+5161.5888538
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2367,16 +2313,16 @@ Cross River, Nigeria
 Cuando Cubango, Angola
 </td>
 <td style="text-align:right;">
-22.8999472
+2283.1928960
 </td>
 <td style="text-align:right;">
-40.9295308
+4246.9203639
 </td>
 <td style="text-align:right;">
-22.2957289
+2220.7320947
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2384,16 +2330,16 @@ Cuando Cubango, Angola
 Cuanza Norte, Angola
 </td>
 <td style="text-align:right;">
-30.6871458
+3126.5827159
 </td>
 <td style="text-align:right;">
-54.2774901
+5425.5639526
 </td>
 <td style="text-align:right;">
-30.8731779
+3119.7756287
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2401,16 +2347,16 @@ Cuanza Norte, Angola
 Cuanza Sul, Angola
 </td>
 <td style="text-align:right;">
-25.0544180
+2513.2189996
 </td>
 <td style="text-align:right;">
-38.7512929
+3873.8250259
 </td>
 <td style="text-align:right;">
-25.4642891
+2556.0587717
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2418,16 +2364,16 @@ Cuanza Sul, Angola
 Cunene, Angola
 </td>
 <td style="text-align:right;">
-23.5777748
+2414.4632491
 </td>
 <td style="text-align:right;">
-47.3180708
+4756.0894916
 </td>
 <td style="text-align:right;">
-23.7635346
+2414.3412489
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2435,16 +2381,16 @@ Cunene, Angola
 Cuvette-Ouest, Republic of Congo
 </td>
 <td style="text-align:right;">
-23.2613047
+2438.3027188
 </td>
 <td style="text-align:right;">
-42.1907765
+4157.7390678
 </td>
 <td style="text-align:right;">
-28.7453796
+2922.7883672
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2452,16 +2398,16 @@ Cuvette-Ouest, Republic of Congo
 Cuvette, Republic of Congo
 </td>
 <td style="text-align:right;">
-30.1193346
+3015.8555354
 </td>
 <td style="text-align:right;">
-42.1279370
+4158.2893084
 </td>
 <td style="text-align:right;">
-30.6987243
+3063.1280912
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2469,13 +2415,13 @@ Cuvette, Republic of Congo
 Dakar, Senegal
 </td>
 <td style="text-align:right;">
-14.1885280
+1617.4995378
 </td>
 <td style="text-align:right;">
-19.3717689
+1984.8490923
 </td>
 <td style="text-align:right;">
-15.4860783
+1641.1098853
 </td>
 <td style="text-align:right;">
 0
@@ -2503,16 +2449,16 @@ NA
 Dar es Salaam, Tanzania
 </td>
 <td style="text-align:right;">
-31.2086239
+3148.9065628
 </td>
 <td style="text-align:right;">
-49.6174884
+4969.5111824
 </td>
 <td style="text-align:right;">
-31.3226795
+3126.0697311
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2534,16 +2480,16 @@ NA
 </tr>
 <tr>
 <td style="text-align:left;">
-Debubawi Keyih Bahri, Eritrea
+Debub, Eritrea
 </td>
 <td style="text-align:right;">
-9.0107309
+640.0848064
 </td>
 <td style="text-align:right;">
-29.1158344
+2544.2846881
 </td>
 <td style="text-align:right;">
-8.1983925
+501.4925669
 </td>
 <td style="text-align:right;">
 0
@@ -2551,16 +2497,16 @@ Debubawi Keyih Bahri, Eritrea
 </tr>
 <tr>
 <td style="text-align:left;">
-Debub, Eritrea
+Debubawi Keyih Bahri, Eritrea
 </td>
 <td style="text-align:right;">
-6.3384198
+917.0826188
 </td>
 <td style="text-align:right;">
-19.9798270
+2976.9938573
 </td>
 <td style="text-align:right;">
-5.0262691
+816.8753887
 </td>
 <td style="text-align:right;">
 0
@@ -2571,13 +2517,13 @@ Debub, Eritrea
 Dedza, Malawi
 </td>
 <td style="text-align:right;">
-16.1472794
+1921.5968153
 </td>
 <td style="text-align:right;">
-40.4378445
+6131.4476559
 </td>
 <td style="text-align:right;">
-18.4221932
+1987.9986696
 </td>
 <td style="text-align:right;">
 0
@@ -2588,16 +2534,16 @@ Dedza, Malawi
 Delta, Nigeria
 </td>
 <td style="text-align:right;">
-41.7477519
+4220.0724421
 </td>
 <td style="text-align:right;">
-64.0819391
+6700.3057591
 </td>
 <td style="text-align:right;">
-41.3214950
+4115.3888828
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2622,16 +2568,16 @@ Dembeni, Mayotte
 Denguélé, Côte d'Ivoire
 </td>
 <td style="text-align:right;">
-64.8246359
+6470.9326601
 </td>
 <td style="text-align:right;">
-80.5670632
+8093.6254876
 </td>
 <td style="text-align:right;">
-65.0524781
+6485.3343466
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2639,13 +2585,13 @@ Denguélé, Côte d'Ivoire
 Diffa, Niger
 </td>
 <td style="text-align:right;">
-27.9335415
+2841.7405360
 </td>
 <td style="text-align:right;">
-62.5660586
+6272.1590037
 </td>
 <td style="text-align:right;">
-28.1837990
+2823.2470469
 </td>
 <td style="text-align:right;">
 0
@@ -2656,13 +2602,13 @@ Diffa, Niger
 Dikhil, Djibouti
 </td>
 <td style="text-align:right;">
-4.1354220
+463.1278863
 </td>
 <td style="text-align:right;">
-9.1039054
+1010.4307476
 </td>
 <td style="text-align:right;">
-3.9145544
+404.2573394
 </td>
 <td style="text-align:right;">
 0
@@ -2673,13 +2619,13 @@ Dikhil, Djibouti
 Diourbel, Senegal
 </td>
 <td style="text-align:right;">
-13.5317895
+1357.0605447
 </td>
 <td style="text-align:right;">
-18.4959005
+1853.4812122
 </td>
 <td style="text-align:right;">
-13.4521654
+1342.8398204
 </td>
 <td style="text-align:right;">
 0
@@ -2690,13 +2636,13 @@ Diourbel, Senegal
 Dire Dawa, Ethiopia
 </td>
 <td style="text-align:right;">
-1.8863996
+190.2029704
 </td>
 <td style="text-align:right;">
-2.7938094
+281.1948772
 </td>
 <td style="text-align:right;">
-1.9960756
+203.1200973
 </td>
 <td style="text-align:right;">
 0
@@ -2724,13 +2670,13 @@ NA
 Djibouti, Djibouti
 </td>
 <td style="text-align:right;">
-23.6622153
+2418.1225558
 </td>
 <td style="text-align:right;">
-24.3849572
+2540.5171931
 </td>
 <td style="text-align:right;">
-23.6622153
+2418.1225558
 </td>
 <td style="text-align:right;">
 0
@@ -2741,16 +2687,16 @@ Djibouti, Djibouti
 Dodoma, Tanzania
 </td>
 <td style="text-align:right;">
-19.4944735
+1963.0757761
 </td>
 <td style="text-align:right;">
-38.3980857
+3837.9849869
 </td>
 <td style="text-align:right;">
-19.5682799
+1965.4538820
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2758,16 +2704,16 @@ Dodoma, Tanzania
 Donga, Benin
 </td>
 <td style="text-align:right;">
-67.7102752
+6765.7689166
 </td>
 <td style="text-align:right;">
-83.2522509
+8350.9731704
 </td>
 <td style="text-align:right;">
-69.4794314
+6962.0206268
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2775,16 +2721,16 @@ Donga, Benin
 Dosso, Niger
 </td>
 <td style="text-align:right;">
-61.2600378
+6372.3904156
 </td>
 <td style="text-align:right;">
-93.9092534
+9578.7179017
 </td>
 <td style="text-align:right;">
-63.5052370
+6563.2305440
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2809,16 +2755,16 @@ NA
 Dowa, Malawi
 </td>
 <td style="text-align:right;">
-31.2076487
+3109.3595676
 </td>
 <td style="text-align:right;">
-37.6123994
+3780.2559262
 </td>
 <td style="text-align:right;">
-34.2829411
+3398.7162631
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2860,13 +2806,13 @@ Dzaoudzi, Mayotte
 East Darfur, Sudan
 </td>
 <td style="text-align:right;">
-13.9714456
+1397.8370716
 </td>
 <td style="text-align:right;">
-33.7069210
+3384.6233026
 </td>
 <td style="text-align:right;">
-11.3218934
+1137.9372238
 </td>
 <td style="text-align:right;">
 0
@@ -2894,16 +2840,16 @@ NA
 Eastern Equatoria, South Sudan
 </td>
 <td style="text-align:right;">
-30.9609554
+3205.7834716
 </td>
 <td style="text-align:right;">
-65.7835594
+6663.3005798
 </td>
 <td style="text-align:right;">
-35.4675431
+3670.1717064
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2911,16 +2857,16 @@ Eastern Equatoria, South Sudan
 Eastern, Ghana
 </td>
 <td style="text-align:right;">
-28.6782831
+3276.5088616
 </td>
 <td style="text-align:right;">
-71.6678602
+7577.2190136
 </td>
 <td style="text-align:right;">
-24.8441072
+2686.2081531
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2928,16 +2874,16 @@ Eastern, Ghana
 Eastern, Sierra Leone
 </td>
 <td style="text-align:right;">
-62.4253763
+6246.1499684
 </td>
 <td style="text-align:right;">
-83.4456225
+8413.6270086
 </td>
 <td style="text-align:right;">
-63.5659408
+6351.7559947
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2945,16 +2891,16 @@ Eastern, Sierra Leone
 Eastern, Zambia
 </td>
 <td style="text-align:right;">
-45.8144410
+4705.3218676
 </td>
 <td style="text-align:right;">
-61.8773538
+6239.0410463
 </td>
 <td style="text-align:right;">
-49.0987695
+4901.0079284
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2962,16 +2908,16 @@ Eastern, Zambia
 Ebonyi, Nigeria
 </td>
 <td style="text-align:right;">
-68.6990891
+6905.5061043
 </td>
 <td style="text-align:right;">
-82.8394008
+8237.2606916
 </td>
 <td style="text-align:right;">
-69.3788493
+6982.7601628
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2979,16 +2925,16 @@ Ebonyi, Nigeria
 Edo, Nigeria
 </td>
 <td style="text-align:right;">
-50.0728334
+5101.2752634
 </td>
 <td style="text-align:right;">
-67.7147730
+6803.9057122
 </td>
 <td style="text-align:right;">
-52.4213328
+5227.6884817
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -2996,16 +2942,16 @@ Edo, Nigeria
 Ekiti, Nigeria
 </td>
 <td style="text-align:right;">
-60.3267159
+6018.0734732
 </td>
 <td style="text-align:right;">
-69.5545127
+6976.0739667
 </td>
 <td style="text-align:right;">
-60.4850642
+6025.9982207
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -3023,23 +2969,6 @@ NA
 </td>
 <td style="text-align:right;">
 0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Elgeyo-Marakwet, Kenya
-</td>
-<td style="text-align:right;">
-41.4214913
-</td>
-<td style="text-align:right;">
-53.4576641
-</td>
-<td style="text-align:right;">
-41.6493194
-</td>
-<td style="text-align:right;">
-100
 </td>
 </tr>
 <tr>
@@ -3078,19 +3007,36 @@ NA
 </tr>
 <tr>
 <td style="text-align:left;">
+Elgeyo-Marakwet, Kenya
+</td>
+<td style="text-align:right;">
+4181.5752693
+</td>
+<td style="text-align:right;">
+5365.3389573
+</td>
+<td style="text-align:right;">
+4234.5878448
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Embu, Kenya
 </td>
 <td style="text-align:right;">
-29.0366900
+2909.1439594
 </td>
 <td style="text-align:right;">
-36.1056683
+3598.8206223
 </td>
 <td style="text-align:right;">
-29.0235345
+2912.0257440
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -3115,13 +3061,13 @@ NaN
 Ennedi Est, Chad
 </td>
 <td style="text-align:right;">
-9.8103488
+1004.3508710
 </td>
 <td style="text-align:right;">
-26.8996777
+2790.6068922
 </td>
 <td style="text-align:right;">
-9.5362797
+965.5242195
 </td>
 <td style="text-align:right;">
 0
@@ -3132,13 +3078,13 @@ Ennedi Est, Chad
 Ennedi Ouest, Chad
 </td>
 <td style="text-align:right;">
-9.3685121
+968.7320177
 </td>
 <td style="text-align:right;">
-27.5509287
+2858.7590080
 </td>
 <td style="text-align:right;">
-8.9830808
+906.6043494
 </td>
 <td style="text-align:right;">
 0
@@ -3149,16 +3095,16 @@ Ennedi Ouest, Chad
 Enugu, Nigeria
 </td>
 <td style="text-align:right;">
-42.4546100
+4238.7578374
 </td>
 <td style="text-align:right;">
-75.0661824
+7550.0175586
 </td>
 <td style="text-align:right;">
-41.2859216
+4106.9155249
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -3166,13 +3112,13 @@ Enugu, Nigeria
 Équateur, Democratic Republic of the Congo
 </td>
 <td style="text-align:right;">
-17.2046861
+1753.5392039
 </td>
 <td style="text-align:right;">
-63.8507421
+6648.4490896
 </td>
 <td style="text-align:right;">
-16.3758082
+1658.7703750
 </td>
 <td style="text-align:right;">
 0
@@ -3183,13 +3129,13 @@ Enugu, Nigeria
 Erongo, Namibia
 </td>
 <td style="text-align:right;">
-27.4710343
+2739.7525168
 </td>
 <td style="text-align:right;">
-31.9386586
+3175.3768481
 </td>
 <td style="text-align:right;">
-27.7418837
+2760.1535500
 </td>
 <td style="text-align:right;">
 0
@@ -3217,16 +3163,16 @@ NA
 Est, Burkina Faso
 </td>
 <td style="text-align:right;">
-68.6416473
+6932.6271854
 </td>
 <td style="text-align:right;">
-91.4043987
+9128.2503805
 </td>
 <td style="text-align:right;">
-72.0131232
+7226.4071675
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -3234,16 +3180,16 @@ Est, Burkina Faso
 Est, Cameroon
 </td>
 <td style="text-align:right;">
-35.6097945
+3618.0296140
 </td>
 <td style="text-align:right;">
-72.2932965
+7708.9760861
 </td>
 <td style="text-align:right;">
-37.8378751
+3775.7639917
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -3251,13 +3197,13 @@ Est, Cameroon
 Estuaire, Gabon
 </td>
 <td style="text-align:right;">
-1.4618669
+188.8929884
 </td>
 <td style="text-align:right;">
-17.6093833
+3944.7585422
 </td>
 <td style="text-align:right;">
-0.0006816
+0.1217707
 </td>
 <td style="text-align:right;">
 0
@@ -3268,16 +3214,16 @@ Estuaire, Gabon
 Extrême-Nord, Cameroon
 </td>
 <td style="text-align:right;">
-48.2073284
+4931.2255548
 </td>
 <td style="text-align:right;">
-80.5936618
+8087.1667059
 </td>
 <td style="text-align:right;">
-49.2513290
+4948.6169685
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -3285,16 +3231,16 @@ Extrême-Nord, Cameroon
 Faranah, Guinea
 </td>
 <td style="text-align:right;">
-73.4986528
+7344.0714968
 </td>
 <td style="text-align:right;">
-87.6100642
+9065.5525352
 </td>
 <td style="text-align:right;">
-73.6079778
+7332.5862661
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -3302,13 +3248,13 @@ Faranah, Guinea
 Fatick, Senegal
 </td>
 <td style="text-align:right;">
-11.1625799
+1152.7028664
 </td>
 <td style="text-align:right;">
-19.1300467
+1970.8866230
 </td>
 <td style="text-align:right;">
-11.2226981
+1145.7595097
 </td>
 <td style="text-align:right;">
 0
@@ -3319,16 +3265,16 @@ Fatick, Senegal
 Federal Capital Territory, Nigeria
 </td>
 <td style="text-align:right;">
-55.4617606
+5541.5765989
 </td>
 <td style="text-align:right;">
-71.6027237
+7178.1756992
 </td>
 <td style="text-align:right;">
-55.2241102
+5524.8840264
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -3353,16 +3299,16 @@ NA
 Fianarantsoa, Madagascar
 </td>
 <td style="text-align:right;">
-21.2984185
+2137.5829486
 </td>
 <td style="text-align:right;">
-61.4654504
+6111.4588073
 </td>
 <td style="text-align:right;">
-17.2923393
+1733.9710781
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -3387,13 +3333,13 @@ NaN
 Francistown, Botswana
 </td>
 <td style="text-align:right;">
-1.8877449
+188.9905030
 </td>
 <td style="text-align:right;">
-2.2208699
+223.2762746
 </td>
 <td style="text-align:right;">
-1.8996411
+190.0188257
 </td>
 <td style="text-align:right;">
 0
@@ -3404,13 +3350,13 @@ Francistown, Botswana
 Free State, South Africa
 </td>
 <td style="text-align:right;">
-14.0579897
+1410.4819662
 </td>
 <td style="text-align:right;">
-14.0579897
+1410.4819662
 </td>
 <td style="text-align:right;">
-14.0579897
+1410.4819662
 </td>
 <td style="text-align:right;">
 0
@@ -3455,16 +3401,16 @@ NA
 Gabú, Guinea-Bissau
 </td>
 <td style="text-align:right;">
-37.6854341
+3771.1937035
 </td>
 <td style="text-align:right;">
-68.1526794
+6919.1810838
 </td>
 <td style="text-align:right;">
-38.0676428
+3807.7969089
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -3489,13 +3435,13 @@ NA
 Galguduud, Somalia
 </td>
 <td style="text-align:right;">
-5.4986055
+558.6340210
 </td>
 <td style="text-align:right;">
-12.4577270
+1356.8205431
 </td>
 <td style="text-align:right;">
-5.1387673
+509.9210245
 </td>
 <td style="text-align:right;">
 0
@@ -3506,13 +3452,13 @@ Galguduud, Somalia
 Gambela Peoples, Ethiopia
 </td>
 <td style="text-align:right;">
-4.8297194
+515.9227150
 </td>
 <td style="text-align:right;">
-34.5228300
+3661.4204912
 </td>
 <td style="text-align:right;">
-2.6811150
+287.8217420
 </td>
 <td style="text-align:right;">
 0
@@ -3523,16 +3469,16 @@ Gambela Peoples, Ethiopia
 Gao, Mali
 </td>
 <td style="text-align:right;">
-27.6138397
+2852.2081773
 </td>
 <td style="text-align:right;">
-74.8198298
+7435.3524694
 </td>
 <td style="text-align:right;">
-21.2262330
+2177.2021002
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -3540,16 +3486,16 @@ Gao, Mali
 Garissa, Kenya
 </td>
 <td style="text-align:right;">
-20.0068960
+2000.4608190
 </td>
 <td style="text-align:right;">
-38.5186115
+3861.9988077
 </td>
 <td style="text-align:right;">
-19.1444945
+1915.7112240
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -3557,13 +3503,13 @@ Garissa, Kenya
 Gash Barka, Eritrea
 </td>
 <td style="text-align:right;">
-10.8838102
+1089.8817781
 </td>
 <td style="text-align:right;">
-20.5189538
+2059.1737169
 </td>
 <td style="text-align:right;">
-10.8571137
+1088.9831501
 </td>
 <td style="text-align:right;">
 0
@@ -3574,13 +3520,13 @@ Gash Barka, Eritrea
 Gauteng, South Africa
 </td>
 <td style="text-align:right;">
-17.0539821
+1709.1067252
 </td>
 <td style="text-align:right;">
-22.3588453
+2242.3599646
 </td>
 <td style="text-align:right;">
-17.6869431
+1776.7849898
 </td>
 <td style="text-align:right;">
 0
@@ -3591,16 +3537,16 @@ Gauteng, South Africa
 Gaza, Mozambique
 </td>
 <td style="text-align:right;">
-31.7119249
+3348.7115179
 </td>
 <td style="text-align:right;">
-73.6657840
+7357.3677209
 </td>
 <td style="text-align:right;">
-34.4162811
+3508.8639614
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -3608,16 +3554,16 @@ Gaza, Mozambique
 Gbapolu, Liberia
 </td>
 <td style="text-align:right;">
-37.3317009
+3736.9846822
 </td>
 <td style="text-align:right;">
-45.8361788
+4793.6247506
 </td>
 <td style="text-align:right;">
-37.2237335
+3728.3534712
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -3625,16 +3571,16 @@ Gbapolu, Liberia
 Gedo, Somalia
 </td>
 <td style="text-align:right;">
-18.3074984
+1830.2637409
 </td>
 <td style="text-align:right;">
-41.1274531
+4108.8842419
 </td>
 <td style="text-align:right;">
-18.4641636
+1845.5637387
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -3642,16 +3588,16 @@ Gedo, Somalia
 Geita, Tanzania
 </td>
 <td style="text-align:right;">
-40.8166872
+4147.8000156
 </td>
 <td style="text-align:right;">
-64.9523270
+6435.1745092
 </td>
 <td style="text-align:right;">
-40.1390620
+4220.8941376
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -3659,13 +3605,13 @@ Geita, Tanzania
 Ghanzi, Botswana
 </td>
 <td style="text-align:right;">
-2.4993293
+261.0239394
 </td>
 <td style="text-align:right;">
-11.5292567
+1458.2337335
 </td>
 <td style="text-align:right;">
-1.9986479
+199.6429523
 </td>
 <td style="text-align:right;">
 0
@@ -3727,16 +3673,16 @@ NA
 Gitega, Burundi
 </td>
 <td style="text-align:right;">
-23.9018118
+2399.9137504
 </td>
 <td style="text-align:right;">
-30.3347971
+3004.9347970
 </td>
 <td style="text-align:right;">
-23.7212342
+2384.0485053
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -3761,47 +3707,13 @@ NaN
 Gôh-Djiboua, Côte d'Ivoire
 </td>
 <td style="text-align:right;">
-41.5014997
+4170.1841938
 </td>
 <td style="text-align:right;">
-63.3900492
+7695.7255439
 </td>
 <td style="text-align:right;">
-41.6798187
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Gombe, Nigeria
-</td>
-<td style="text-align:right;">
-77.2840835
-</td>
-<td style="text-align:right;">
-90.1210197
-</td>
-<td style="text-align:right;">
-78.8192114
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Gorgol, Mauritania
-</td>
-<td style="text-align:right;">
-6.9854721
-</td>
-<td style="text-align:right;">
-11.6169409
-</td>
-<td style="text-align:right;">
-6.7954934
+4193.3821493
 </td>
 <td style="text-align:right;">
 0
@@ -3809,7 +3721,75 @@ Gorgol, Mauritania
 </tr>
 <tr>
 <td style="text-align:left;">
-Grand'Anse Praslin, Seychelles
+Gombe, Nigeria
+</td>
+<td style="text-align:right;">
+7747.9393629
+</td>
+<td style="text-align:right;">
+8968.5701090
+</td>
+<td style="text-align:right;">
+7873.4841215
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gorgol, Mauritania
+</td>
+<td style="text-align:right;">
+696.2760668
+</td>
+<td style="text-align:right;">
+1156.5400303
+</td>
+<td style="text-align:right;">
+677.3583513
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Grand Cape Mount, Liberia
+</td>
+<td style="text-align:right;">
+1786.1153009
+</td>
+<td style="text-align:right;">
+5788.7472424
+</td>
+<td style="text-align:right;">
+871.3913154
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Grand Casablanca, Morocco
+</td>
+<td style="text-align:right;">
+NaN
+</td>
+<td style="text-align:right;">
+-Inf
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Grand Port, Mauritius
 </td>
 <td style="text-align:right;">
 NaN
@@ -3843,92 +3823,7 @@ NaN
 </tr>
 <tr>
 <td style="text-align:left;">
-GrandBassa, Liberia
-</td>
-<td style="text-align:right;">
-24.8329516
-</td>
-<td style="text-align:right;">
-49.6784201
-</td>
-<td style="text-align:right;">
-24.1396488
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Grand Cape Mount, Liberia
-</td>
-<td style="text-align:right;">
-14.7127483
-</td>
-<td style="text-align:right;">
-50.9960915
-</td>
-<td style="text-align:right;">
-8.9065436
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Grand Casablanca, Morocco
-</td>
-<td style="text-align:right;">
-NaN
-</td>
-<td style="text-align:right;">
--Inf
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-GrandGedeh, Liberia
-</td>
-<td style="text-align:right;">
-30.0347015
-</td>
-<td style="text-align:right;">
-41.2306201
-</td>
-<td style="text-align:right;">
-29.9563255
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-GrandKru, Liberia
-</td>
-<td style="text-align:right;">
-50.0396749
-</td>
-<td style="text-align:right;">
-68.3919033
-</td>
-<td style="text-align:right;">
-49.7083655
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Grand Port, Mauritius
+Grand'Anse Praslin, Seychelles
 </td>
 <td style="text-align:right;">
 NaN
@@ -3945,19 +3840,70 @@ NaN
 </tr>
 <tr>
 <td style="text-align:left;">
+GrandBassa, Liberia
+</td>
+<td style="text-align:right;">
+2567.2650530
+</td>
+<td style="text-align:right;">
+5528.0648930
+</td>
+<td style="text-align:right;">
+2430.5265002
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GrandGedeh, Liberia
+</td>
+<td style="text-align:right;">
+3012.1687125
+</td>
+<td style="text-align:right;">
+4095.0083483
+</td>
+<td style="text-align:right;">
+3005.2503046
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GrandKru, Liberia
+</td>
+<td style="text-align:right;">
+5111.7322548
+</td>
+<td style="text-align:right;">
+7272.2937094
+</td>
+<td style="text-align:right;">
+4979.7428452
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Greater Accra, Ghana
 </td>
 <td style="text-align:right;">
-38.1244312
+4025.2369565
 </td>
 <td style="text-align:right;">
-55.6656069
+5522.6155544
 </td>
 <td style="text-align:right;">
-41.2705059
+4254.5663196
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -3999,16 +3945,16 @@ NA
 Guéra, Chad
 </td>
 <td style="text-align:right;">
-37.4457607
+3769.5863473
 </td>
 <td style="text-align:right;">
-47.2205766
+4691.0118945
 </td>
 <td style="text-align:right;">
-38.4607125
+3846.1032534
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4016,13 +3962,13 @@ Guéra, Chad
 Guidimaka, Mauritania
 </td>
 <td style="text-align:right;">
-11.9187382
+1191.4740718
 </td>
 <td style="text-align:right;">
-37.7983951
+3811.9789357
 </td>
 <td style="text-align:right;">
-11.6099680
+1158.2155800
 </td>
 <td style="text-align:right;">
 0
@@ -4033,16 +3979,16 @@ Guidimaka, Mauritania
 Gulu, Uganda
 </td>
 <td style="text-align:right;">
-36.1843660
+4129.0726330
 </td>
 <td style="text-align:right;">
-68.5642507
+6929.0430538
 </td>
 <td style="text-align:right;">
-42.7500410
+4560.0057669
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4050,16 +3996,16 @@ Gulu, Uganda
 Hadjer-Lamis, Chad
 </td>
 <td style="text-align:right;">
-27.6411989
+2772.0320220
 </td>
 <td style="text-align:right;">
-58.0462673
+5821.7547365
 </td>
 <td style="text-align:right;">
-27.1054965
+2703.1878550
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4067,13 +4013,13 @@ Hadjer-Lamis, Chad
 Harare, Zimbabwe
 </td>
 <td style="text-align:right;">
-5.1021463
+660.5995799
 </td>
 <td style="text-align:right;">
-9.8307531
+981.9144993
 </td>
 <td style="text-align:right;">
-5.6111186
+665.1753838
 </td>
 <td style="text-align:right;">
 0
@@ -4084,13 +4030,13 @@ Harare, Zimbabwe
 Harari People, Ethiopia
 </td>
 <td style="text-align:right;">
-0.0000102
+0.0018169
 </td>
 <td style="text-align:right;">
-0.0000185
+0.0033067
 </td>
 <td style="text-align:right;">
-0.0000097
+0.0017303
 </td>
 <td style="text-align:right;">
 0
@@ -4118,33 +4064,16 @@ NA
 Haut-Bassins, Burkina Faso
 </td>
 <td style="text-align:right;">
-91.6000800
+9172.7260527
 </td>
 <td style="text-align:right;">
-97.1712740
+9699.7576806
 </td>
 <td style="text-align:right;">
-92.7714889
+9260.9452051
 </td>
 <td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Haute-Kotto, Central African Republic
-</td>
-<td style="text-align:right;">
-40.1886833
-</td>
-<td style="text-align:right;">
-70.8716185
-</td>
-<td style="text-align:right;">
-40.2892548
-</td>
-<td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4152,16 +4081,16 @@ Haute-Kotto, Central African Republic
 Haut-Mbomou, Central African Republic
 </td>
 <td style="text-align:right;">
-26.8028182
+2739.0711004
 </td>
 <td style="text-align:right;">
-62.1271964
+6337.9470611
 </td>
 <td style="text-align:right;">
-25.6380352
+2575.2721083
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4169,16 +4098,33 @@ Haut-Mbomou, Central African Republic
 Haut-Ogooué, Gabon
 </td>
 <td style="text-align:right;">
-24.8277996
+2544.5733515
 </td>
 <td style="text-align:right;">
-38.3452577
+3793.5924045
 </td>
 <td style="text-align:right;">
-26.1302660
+2643.4682154
 </td>
 <td style="text-align:right;">
-100
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Haute-Kotto, Central African Republic
+</td>
+<td style="text-align:right;">
+4016.1763132
+</td>
+<td style="text-align:right;">
+7584.0920795
+</td>
+<td style="text-align:right;">
+4013.8111153
+</td>
+<td style="text-align:right;">
+0
 </td>
 </tr>
 <tr>
@@ -4186,13 +4132,13 @@ Haut-Ogooué, Gabon
 Hhohho, Swaziland
 </td>
 <td style="text-align:right;">
-4.5300298
+456.1707466
 </td>
 <td style="text-align:right;">
-5.7319491
+586.1027843
 </td>
 <td style="text-align:right;">
-4.5139877
+453.1130535
 </td>
 <td style="text-align:right;">
 0
@@ -4203,13 +4149,13 @@ Hhohho, Swaziland
 Hiiraan, Somalia
 </td>
 <td style="text-align:right;">
-12.8270722
+1283.3975396
 </td>
 <td style="text-align:right;">
-25.4218198
+2684.6981943
 </td>
 <td style="text-align:right;">
-13.0180991
+1301.1685817
 </td>
 <td style="text-align:right;">
 0
@@ -4220,13 +4166,13 @@ Hiiraan, Somalia
 Hodh ech Chargui, Mauritania
 </td>
 <td style="text-align:right;">
-28.0178662
+2795.0452060
 </td>
 <td style="text-align:right;">
-60.5302433
+5996.8420222
 </td>
 <td style="text-align:right;">
-27.4769775
+2747.1126712
 </td>
 <td style="text-align:right;">
 0
@@ -4237,13 +4183,13 @@ Hodh ech Chargui, Mauritania
 Hodh el Gharbi, Mauritania
 </td>
 <td style="text-align:right;">
-17.1141283
+1719.2466932
 </td>
 <td style="text-align:right;">
-43.1706507
+4344.3405539
 </td>
 <td style="text-align:right;">
-16.7891572
+1672.6502724
 </td>
 <td style="text-align:right;">
 0
@@ -4254,16 +4200,16 @@ Hodh el Gharbi, Mauritania
 Hoima, Uganda
 </td>
 <td style="text-align:right;">
-48.1964146
+5273.0557233
 </td>
 <td style="text-align:right;">
-68.3337252
+6853.8177793
 </td>
 <td style="text-align:right;">
-53.1362757
+5480.4740951
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4271,16 +4217,16 @@ Hoima, Uganda
 Homa Bay, Kenya
 </td>
 <td style="text-align:right;">
-47.3085537
+5773.6276852
 </td>
 <td style="text-align:right;">
-92.0632546
+9227.8997156
 </td>
 <td style="text-align:right;">
-55.3849565
+5968.1125466
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4288,16 +4234,16 @@ Homa Bay, Kenya
 Huambo, Angola
 </td>
 <td style="text-align:right;">
-25.8815325
+2580.6639025
 </td>
 <td style="text-align:right;">
-40.2820218
+4042.4463527
 </td>
 <td style="text-align:right;">
-25.1513252
+2506.8316062
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4305,16 +4251,16 @@ Huambo, Angola
 Huíla, Angola
 </td>
 <td style="text-align:right;">
-39.0476860
+3986.4286647
 </td>
 <td style="text-align:right;">
-74.0898766
+7353.5625789
 </td>
 <td style="text-align:right;">
-41.7174612
+4208.0527158
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4322,13 +4268,13 @@ Huíla, Angola
 Iburasirazuba, Rwanda
 </td>
 <td style="text-align:right;">
-16.8536285
+1746.8125873
 </td>
 <td style="text-align:right;">
-47.4992692
+4753.0022297
 </td>
 <td style="text-align:right;">
-14.9314961
+1498.5437891
 </td>
 <td style="text-align:right;">
 0
@@ -4339,13 +4285,13 @@ Iburasirazuba, Rwanda
 Iburengerazuba, Rwanda
 </td>
 <td style="text-align:right;">
-12.1670236
+1409.6523483
 </td>
 <td style="text-align:right;">
-21.6062147
+2166.3968720
 </td>
 <td style="text-align:right;">
-13.7949894
+1481.2707025
 </td>
 <td style="text-align:right;">
 0
@@ -4356,16 +4302,16 @@ Iburengerazuba, Rwanda
 Iganga, Uganda
 </td>
 <td style="text-align:right;">
-65.2801877
+6527.6775708
 </td>
 <td style="text-align:right;">
-75.1336467
+7485.1423726
 </td>
 <td style="text-align:right;">
-66.0557106
+6605.4519211
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4390,16 +4336,16 @@ NA
 Imo, Nigeria
 </td>
 <td style="text-align:right;">
-55.8849928
+5577.4152865
 </td>
 <td style="text-align:right;">
-70.2790093
+6997.1841529
 </td>
 <td style="text-align:right;">
-57.2643381
+5702.0651223
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4424,16 +4370,16 @@ NA
 Inhambane, Mozambique
 </td>
 <td style="text-align:right;">
-35.4816568
+3592.9360156
 </td>
 <td style="text-align:right;">
-67.5724388
+7151.6267039
 </td>
 <td style="text-align:right;">
-34.3261705
+3423.1308866
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4441,13 +4387,13 @@ Inhambane, Mozambique
 Iringa, Tanzania
 </td>
 <td style="text-align:right;">
-15.9630411
+1731.7929617
 </td>
 <td style="text-align:right;">
-47.3780010
+4853.8114864
 </td>
 <td style="text-align:right;">
-18.0472878
+1874.4580442
 </td>
 <td style="text-align:right;">
 0
@@ -4458,13 +4404,13 @@ Iringa, Tanzania
 Isiolo, Kenya
 </td>
 <td style="text-align:right;">
-16.3131514
+1634.5174034
 </td>
 <td style="text-align:right;">
-37.0222324
+3682.1556116
 </td>
 <td style="text-align:right;">
-15.6879500
+1573.8175101
 </td>
 <td style="text-align:right;">
 0
@@ -4509,16 +4455,16 @@ NA
 Jigawa, Nigeria
 </td>
 <td style="text-align:right;">
-57.1938965
+5780.8408000
 </td>
 <td style="text-align:right;">
-86.1036779
+8597.9588833
 </td>
 <td style="text-align:right;">
-56.4441451
+5745.5673180
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4543,16 +4489,16 @@ NA
 Jinja, Uganda
 </td>
 <td style="text-align:right;">
-43.9545594
+4453.0968597
 </td>
 <td style="text-align:right;">
-52.6586178
+5247.7604141
 </td>
 <td style="text-align:right;">
-45.7262628
+4575.1928572
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4560,16 +4506,16 @@ Jinja, Uganda
 Jubbada Dhexe, Somalia
 </td>
 <td style="text-align:right;">
-30.2036951
+3019.9988248
 </td>
 <td style="text-align:right;">
-38.6112471
+3862.8554121
 </td>
 <td style="text-align:right;">
-30.3760692
+3038.0127316
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4577,16 +4523,16 @@ Jubbada Dhexe, Somalia
 Jubbada Hoose, Somalia
 </td>
 <td style="text-align:right;">
-23.9695230
+2397.8277911
 </td>
 <td style="text-align:right;">
-38.7505187
+3872.7958158
 </td>
 <td style="text-align:right;">
-23.7328741
+2374.6650320
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4594,16 +4540,16 @@ Jubbada Hoose, Somalia
 Jungoli, South Sudan
 </td>
 <td style="text-align:right;">
-22.8866726
+2329.2447628
 </td>
 <td style="text-align:right;">
-48.8256533
+4930.9013609
 </td>
 <td style="text-align:right;">
-26.8832440
+2696.0585060
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4628,13 +4574,13 @@ NA
 Kabale, Uganda
 </td>
 <td style="text-align:right;">
-15.3742949
+1552.0237439
 </td>
 <td style="text-align:right;">
-20.4921500
+2060.2264706
 </td>
 <td style="text-align:right;">
-14.4027234
+1466.5551422
 </td>
 <td style="text-align:right;">
 0
@@ -4645,16 +4591,16 @@ Kabale, Uganda
 Kabarole, Uganda
 </td>
 <td style="text-align:right;">
-46.6407365
+5081.1861161
 </td>
 <td style="text-align:right;">
-60.7986473
+6080.7899656
 </td>
 <td style="text-align:right;">
-49.9265918
+5304.4272014
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4662,16 +4608,16 @@ Kabarole, Uganda
 Kaberamaido, Uganda
 </td>
 <td style="text-align:right;">
-52.5163474
+5881.6982824
 </td>
 <td style="text-align:right;">
-65.3716181
+6594.7847061
 </td>
 <td style="text-align:right;">
-58.8462167
+5990.4726566
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4679,16 +4625,16 @@ Kaberamaido, Uganda
 Kaduna, Nigeria
 </td>
 <td style="text-align:right;">
-77.2492445
+7753.9960260
 </td>
 <td style="text-align:right;">
-88.7889907
+8857.5626194
 </td>
 <td style="text-align:right;">
-78.5010058
+7846.1384822
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4696,13 +4642,13 @@ Kaduna, Nigeria
 Kaffrine, Senegal
 </td>
 <td style="text-align:right;">
-10.4789179
+1049.6270983
 </td>
 <td style="text-align:right;">
-20.0996346
+2004.9557103
 </td>
 <td style="text-align:right;">
-9.8443502
+981.7358915
 </td>
 <td style="text-align:right;">
 0
@@ -4730,16 +4676,16 @@ NA
 Kagera, Tanzania
 </td>
 <td style="text-align:right;">
-18.1048088
+1942.6770614
 </td>
 <td style="text-align:right;">
-54.8883550
+5475.0214796
 </td>
 <td style="text-align:right;">
-19.7357130
+2021.0176350
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4764,16 +4710,16 @@ NA
 Kajiado, Kenya
 </td>
 <td style="text-align:right;">
-26.4183825
+2673.5754731
 </td>
 <td style="text-align:right;">
-42.0911456
+4220.9129385
 </td>
 <td style="text-align:right;">
-27.7436429
+2783.8625232
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4781,16 +4727,16 @@ Kajiado, Kenya
 Kakamega, Kenya
 </td>
 <td style="text-align:right;">
-61.8420739
+6225.8548342
 </td>
 <td style="text-align:right;">
-73.5762971
+7355.6159871
 </td>
 <td style="text-align:right;">
-62.0612243
+6200.2996728
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4798,16 +4744,16 @@ Kakamega, Kenya
 Kalangala, Uganda
 </td>
 <td style="text-align:right;">
-22.8813807
+3042.9396830
 </td>
 <td style="text-align:right;">
-50.3895130
+5576.8315626
 </td>
 <td style="text-align:right;">
-28.5021044
+3261.9065965
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4815,16 +4761,16 @@ Kalangala, Uganda
 Kampala, Uganda
 </td>
 <td style="text-align:right;">
-30.8946892
+3257.4761760
 </td>
 <td style="text-align:right;">
-43.6472239
+4352.0604048
 </td>
 <td style="text-align:right;">
-29.8540958
+3071.7747709
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4832,16 +4778,16 @@ Kampala, Uganda
 Kamuli, Uganda
 </td>
 <td style="text-align:right;">
-56.2997204
+5914.1763146
 </td>
 <td style="text-align:right;">
-71.4783848
+7176.0821927
 </td>
 <td style="text-align:right;">
-59.5721697
+6018.5798712
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4849,16 +4795,16 @@ Kamuli, Uganda
 Kamwenge, Uganda
 </td>
 <td style="text-align:right;">
-50.2882212
+5403.3694463
 </td>
 <td style="text-align:right;">
-63.3879779
+6330.6652625
 </td>
 <td style="text-align:right;">
-52.9571425
+5424.0004920
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4866,13 +4812,13 @@ Kamwenge, Uganda
 Kanem, Chad
 </td>
 <td style="text-align:right;">
-11.9283055
+1195.5440184
 </td>
 <td style="text-align:right;">
-21.5241033
+2201.4915667
 </td>
 <td style="text-align:right;">
-11.4344798
+1147.3629917
 </td>
 <td style="text-align:right;">
 0
@@ -4900,16 +4846,16 @@ Kani-Keli, Mayotte
 Kankan, Guinea
 </td>
 <td style="text-align:right;">
-83.5434922
+8359.6789853
 </td>
 <td style="text-align:right;">
-94.3156428
+9465.0269676
 </td>
 <td style="text-align:right;">
-84.6233540
+8485.7277273
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4917,16 +4863,16 @@ Kankan, Guinea
 Kano, Nigeria
 </td>
 <td style="text-align:right;">
-76.5260998
+7715.6368817
 </td>
 <td style="text-align:right;">
-91.0078493
+9070.1810111
 </td>
 <td style="text-align:right;">
-77.8148963
+7787.1689188
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4934,16 +4880,16 @@ Kano, Nigeria
 Kanungu, Uganda
 </td>
 <td style="text-align:right;">
-21.3517153
+2269.4692130
 </td>
 <td style="text-align:right;">
-32.0961371
+3218.7608366
 </td>
 <td style="text-align:right;">
-23.8573588
+2540.5630347
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -4951,13 +4897,13 @@ Kanungu, Uganda
 Kaolack, Senegal
 </td>
 <td style="text-align:right;">
-12.6938237
+1282.5276242
 </td>
 <td style="text-align:right;">
-23.1681937
+2319.6559338
 </td>
 <td style="text-align:right;">
-11.8973851
+1215.4334665
 </td>
 <td style="text-align:right;">
 0
@@ -4968,30 +4914,13 @@ Kaolack, Senegal
 Kapchorwa, Uganda
 </td>
 <td style="text-align:right;">
-43.7432590
+4707.4457504
 </td>
 <td style="text-align:right;">
-60.8768795
+6136.7013392
 </td>
 <td style="text-align:right;">
-45.5777839
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-!Karas, Namibia
-</td>
-<td style="text-align:right;">
-NaN
-</td>
-<td style="text-align:right;">
--Inf
-</td>
-<td style="text-align:right;">
-NA
+4757.8372491
 </td>
 <td style="text-align:right;">
 0
@@ -5002,16 +4931,16 @@ NA
 Kara, Togo
 </td>
 <td style="text-align:right;">
-73.5581983
+7478.6240850
 </td>
 <td style="text-align:right;">
-90.1477455
+9047.5125159
 </td>
 <td style="text-align:right;">
-75.1582824
+7526.7487179
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5019,16 +4948,16 @@ Kara, Togo
 Karonga, Malawi
 </td>
 <td style="text-align:right;">
-21.3766550
+2952.2678218
 </td>
 <td style="text-align:right;">
-62.1660889
+6225.9468437
 </td>
 <td style="text-align:right;">
-22.4828362
+3218.8227749
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5036,16 +4965,16 @@ Karonga, Malawi
 Karuzi, Burundi
 </td>
 <td style="text-align:right;">
-35.1967118
+3530.4500617
 </td>
 <td style="text-align:right;">
-44.3354244
+4412.2428964
 </td>
 <td style="text-align:right;">
-36.1498774
+3618.3399866
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5053,16 +4982,16 @@ Karuzi, Burundi
 Kasaï-Occidental, Democratic Republic of the Congo
 </td>
 <td style="text-align:right;">
-30.4126753
+3059.0907795
 </td>
 <td style="text-align:right;">
-52.9302165
+5258.9772906
 </td>
 <td style="text-align:right;">
-30.8791490
+3105.8739477
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5070,16 +4999,16 @@ Kasaï-Occidental, Democratic Republic of the Congo
 Kasaï-Oriental, Democratic Republic of the Congo
 </td>
 <td style="text-align:right;">
-22.4742518
+2270.6279792
 </td>
 <td style="text-align:right;">
-45.3399197
+4510.1809212
 </td>
 <td style="text-align:right;">
-22.8967361
+2308.7133780
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5087,16 +5016,16 @@ Kasaï-Oriental, Democratic Republic of the Congo
 Kasese, Uganda
 </td>
 <td style="text-align:right;">
-20.4318298
+3009.5226052
 </td>
 <td style="text-align:right;">
-54.2105268
+5767.8334696
 </td>
 <td style="text-align:right;">
-21.7638366
+3208.2070594
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5104,13 +5033,13 @@ Kasese, Uganda
 Kassala, Sudan
 </td>
 <td style="text-align:right;">
-11.3323785
+1145.4347258
 </td>
 <td style="text-align:right;">
-21.4624817
+2148.8476989
 </td>
 <td style="text-align:right;">
-11.0396909
+1121.8798853
 </td>
 <td style="text-align:right;">
 0
@@ -5138,16 +5067,16 @@ NA
 Kasungu, Malawi
 </td>
 <td style="text-align:right;">
-28.7650950
+3243.3606369
 </td>
 <td style="text-align:right;">
-51.6326838
+5842.5363034
 </td>
 <td style="text-align:right;">
-34.8630213
+3512.8133864
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5155,16 +5084,16 @@ Kasungu, Malawi
 Katakwi, Uganda
 </td>
 <td style="text-align:right;">
-50.6298766
+5094.5470543
 </td>
 <td style="text-align:right;">
-61.9265179
+6230.8397763
 </td>
 <td style="text-align:right;">
-51.6082989
+5180.7951997
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5172,13 +5101,13 @@ Katakwi, Uganda
 Katanga, Democratic Republic of the Congo
 </td>
 <td style="text-align:right;">
-16.5682155
+1763.7031631
 </td>
 <td style="text-align:right;">
-85.0783226
+8827.8087161
 </td>
 <td style="text-align:right;">
-16.2615000
+1717.8897835
 </td>
 <td style="text-align:right;">
 0
@@ -5189,16 +5118,16 @@ Katanga, Democratic Republic of the Congo
 Katavi, Tanzania
 </td>
 <td style="text-align:right;">
-28.1786076
+2882.9376445
 </td>
 <td style="text-align:right;">
-49.8490588
+4947.9343284
 </td>
 <td style="text-align:right;">
-30.8021450
+3071.8597291
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5206,16 +5135,16 @@ Katavi, Tanzania
 Katsina, Nigeria
 </td>
 <td style="text-align:right;">
-76.4203254
+7635.2743323
 </td>
 <td style="text-align:right;">
-90.6581545
+9050.0007751
 </td>
 <td style="text-align:right;">
-76.3544414
+7622.6862767
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5223,16 +5152,16 @@ Katsina, Nigeria
 Kavango, Namibia
 </td>
 <td style="text-align:right;">
-26.0961133
+2660.5172499
 </td>
 <td style="text-align:right;">
-43.9159649
+4749.4214900
 </td>
 <td style="text-align:right;">
-28.1072987
+2803.7792086
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5240,13 +5169,13 @@ Kavango, Namibia
 Kayanza, Burundi
 </td>
 <td style="text-align:right;">
-20.8488563
+2104.6310666
 </td>
 <td style="text-align:right;">
-32.9052227
+3342.2221730
 </td>
 <td style="text-align:right;">
-20.8224594
+2096.1098543
 </td>
 <td style="text-align:right;">
 0
@@ -5257,16 +5186,16 @@ Kayanza, Burundi
 Kayes, Mali
 </td>
 <td style="text-align:right;">
-60.9158167
+6152.8338410
 </td>
 <td style="text-align:right;">
-89.4023781
+8957.2899796
 </td>
 <td style="text-align:right;">
-66.9153412
+6687.3529299
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5274,16 +5203,16 @@ Kayes, Mali
 Kayunga, Uganda
 </td>
 <td style="text-align:right;">
-53.2939992
+5428.5165622
 </td>
 <td style="text-align:right;">
-63.9474363
+6380.0941829
 </td>
 <td style="text-align:right;">
-54.8076571
+5527.1656961
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5291,16 +5220,16 @@ Kayunga, Uganda
 Kebbi, Nigeria
 </td>
 <td style="text-align:right;">
-68.2137060
+6904.4505787
 </td>
 <td style="text-align:right;">
-92.8307029
+9639.8792337
 </td>
 <td style="text-align:right;">
-68.6567696
+6901.0129122
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5325,16 +5254,16 @@ NA
 Kédougou, Senegal
 </td>
 <td style="text-align:right;">
-34.9226165
+3617.7625721
 </td>
 <td style="text-align:right;">
-68.2664985
+6825.2290798
 </td>
 <td style="text-align:right;">
-40.8147743
+4072.1099407
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5342,16 +5271,16 @@ Kédougou, Senegal
 Kémo, Central African Republic
 </td>
 <td style="text-align:right;">
-47.1510592
+4736.9181993
 </td>
 <td style="text-align:right;">
-67.1012004
+6869.7677105
 </td>
 <td style="text-align:right;">
-46.5158226
+4634.2396255
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5359,16 +5288,16 @@ Kémo, Central African Republic
 Kericho, Kenya
 </td>
 <td style="text-align:right;">
-65.3235124
+6531.5134134
 </td>
 <td style="text-align:right;">
-84.8915807
+8501.6938377
 </td>
 <td style="text-align:right;">
-66.8734192
+6682.2847440
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5376,13 +5305,13 @@ Kericho, Kenya
 Kgalagadi, Botswana
 </td>
 <td style="text-align:right;">
-11.0891043
+1110.7395252
 </td>
 <td style="text-align:right;">
-13.5904586
+1334.9915185
 </td>
 <td style="text-align:right;">
-11.4794494
+1156.3252678
 </td>
 <td style="text-align:right;">
 0
@@ -5393,13 +5322,13 @@ Kgalagadi, Botswana
 Kgatleng, Botswana
 </td>
 <td style="text-align:right;">
-3.5918705
+359.8369226
 </td>
 <td style="text-align:right;">
-4.9287670
+492.2770661
 </td>
 <td style="text-align:right;">
-3.5434196
+354.1497850
 </td>
 <td style="text-align:right;">
 0
@@ -5410,13 +5339,13 @@ Kgatleng, Botswana
 Khartoum, Sudan
 </td>
 <td style="text-align:right;">
-5.6296342
+568.4696828
 </td>
 <td style="text-align:right;">
-11.9859704
+1198.6508401
 </td>
 <td style="text-align:right;">
-5.3390379
+533.3814349
 </td>
 <td style="text-align:right;">
 0
@@ -5444,13 +5373,13 @@ NA
 Khomas, Namibia
 </td>
 <td style="text-align:right;">
-30.6117319
+3052.0075935
 </td>
 <td style="text-align:right;">
-39.0900105
+3903.0544454
 </td>
 <td style="text-align:right;">
-30.5842826
+3037.3225515
 </td>
 <td style="text-align:right;">
 0
@@ -5461,16 +5390,16 @@ Khomas, Namibia
 Kiambu, Kenya
 </td>
 <td style="text-align:right;">
-36.8163231
+3689.2010534
 </td>
 <td style="text-align:right;">
-48.7352965
+4871.8090795
 </td>
 <td style="text-align:right;">
-36.7251748
+3708.9198413
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5478,16 +5407,16 @@ Kiambu, Kenya
 Kibale, Uganda
 </td>
 <td style="text-align:right;">
-54.3032985
+5527.5225629
 </td>
 <td style="text-align:right;">
-70.6826480
+7056.3801571
 </td>
 <td style="text-align:right;">
-54.2455107
+5556.8135495
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5495,16 +5424,16 @@ Kibale, Uganda
 Kiboga, Uganda
 </td>
 <td style="text-align:right;">
-62.4144525
+6288.0193324
 </td>
 <td style="text-align:right;">
-69.9503828
+6986.4603974
 </td>
 <td style="text-align:right;">
-64.0273851
+6420.9248658
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5512,13 +5441,13 @@ Kiboga, Uganda
 Kidal, Mali
 </td>
 <td style="text-align:right;">
-21.4079819
+2172.6000653
 </td>
 <td style="text-align:right;">
-40.5557424
+4624.1940809
 </td>
 <td style="text-align:right;">
-21.7838278
+2178.4848926
 </td>
 <td style="text-align:right;">
 0
@@ -5529,16 +5458,16 @@ Kidal, Mali
 Kié-Ntem, Equatorial Guinea
 </td>
 <td style="text-align:right;">
-23.9017355
+2451.3838432
 </td>
 <td style="text-align:right;">
-32.7837429
+3300.6575318
 </td>
 <td style="text-align:right;">
-24.2368417
+2468.0264989
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5546,16 +5475,16 @@ Kié-Ntem, Equatorial Guinea
 Kigoma, Tanzania
 </td>
 <td style="text-align:right;">
-28.0281275
+2942.7115125
 </td>
 <td style="text-align:right;">
-52.7976611
+6876.0177973
 </td>
 <td style="text-align:right;">
-33.5624048
+3396.3622118
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5563,16 +5492,16 @@ Kigoma, Tanzania
 Kilifi, Kenya
 </td>
 <td style="text-align:right;">
-58.7370458
+5899.6206044
 </td>
 <td style="text-align:right;">
-74.1947599
+7431.1898761
 </td>
 <td style="text-align:right;">
-59.2618476
+5944.9439799
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5580,16 +5509,16 @@ Kilifi, Kenya
 Kilimanjaro, Tanzania
 </td>
 <td style="text-align:right;">
-24.6509537
+2558.1818426
 </td>
 <td style="text-align:right;">
-51.1026575
+5103.9855674
 </td>
 <td style="text-align:right;">
-22.9226553
+2366.5809498
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5597,16 +5526,16 @@ Kilimanjaro, Tanzania
 Kindia, Guinea
 </td>
 <td style="text-align:right;">
-79.6347362
+7978.2068684
 </td>
 <td style="text-align:right;">
-94.8346225
+9446.0558134
 </td>
 <td style="text-align:right;">
-83.4642018
+8360.6964681
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5614,16 +5543,16 @@ Kindia, Guinea
 Kinshasa City, Democratic Republic of the Congo
 </td>
 <td style="text-align:right;">
-32.3305956
+3327.5960887
 </td>
 <td style="text-align:right;">
-46.7595881
+4915.1675549
 </td>
 <td style="text-align:right;">
-32.8439771
+3322.8371122
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5631,16 +5560,16 @@ Kinshasa City, Democratic Republic of the Congo
 Kirinyaga, Kenya
 </td>
 <td style="text-align:right;">
-30.3882780
+3040.9811204
 </td>
 <td style="text-align:right;">
-38.7585659
+3867.5233286
 </td>
 <td style="text-align:right;">
-30.1445761
+3005.5989102
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5648,16 +5577,16 @@ Kirinyaga, Kenya
 Kirundo, Burundi
 </td>
 <td style="text-align:right;">
-48.4714704
+4875.4661003
 </td>
 <td style="text-align:right;">
-61.1083367
+6287.6304345
 </td>
 <td style="text-align:right;">
-47.4280962
+4766.0979482
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5665,16 +5594,16 @@ Kirundo, Burundi
 Kisii, Kenya
 </td>
 <td style="text-align:right;">
-63.5169868
+6356.2455396
 </td>
 <td style="text-align:right;">
-86.4029103
+8653.3515080
 </td>
 <td style="text-align:right;">
-62.3920226
+6248.8841109
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5682,13 +5611,13 @@ Kisii, Kenya
 Kisoro, Uganda
 </td>
 <td style="text-align:right;">
-13.9993798
+1524.4061939
 </td>
 <td style="text-align:right;">
-16.6116557
+1708.8576946
 </td>
 <td style="text-align:right;">
-14.8113436
+1532.2872479
 </td>
 <td style="text-align:right;">
 0
@@ -5699,16 +5628,16 @@ Kisoro, Uganda
 Kisumu, Kenya
 </td>
 <td style="text-align:right;">
-64.0712114
+6980.4258225
 </td>
 <td style="text-align:right;">
-89.2386842
+8954.7094913
 </td>
 <td style="text-align:right;">
-72.7268890
+7383.0714583
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5716,16 +5645,16 @@ Kisumu, Kenya
 Kitgum, Uganda
 </td>
 <td style="text-align:right;">
-27.3039799
+3339.7880367
 </td>
 <td style="text-align:right;">
-55.4156301
+5670.9980338
 </td>
 <td style="text-align:right;">
-30.8055376
+3454.8350299
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5733,16 +5662,16 @@ Kitgum, Uganda
 Kitui, Kenya
 </td>
 <td style="text-align:right;">
-20.6535456
+2127.1545133
 </td>
 <td style="text-align:right;">
-36.8042096
+4280.1937077
 </td>
 <td style="text-align:right;">
-24.1695089
+2428.7642216
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5750,13 +5679,13 @@ Kitui, Kenya
 Kivu, Democratic Republic of the Congo
 </td>
 <td style="text-align:right;">
-12.4202943
+1315.8118636
 </td>
 <td style="text-align:right;">
-53.9058068
+5831.7607235
 </td>
 <td style="text-align:right;">
-12.8600278
+1339.1303351
 </td>
 <td style="text-align:right;">
 0
@@ -5767,16 +5696,16 @@ Kivu, Democratic Republic of the Congo
 Kogi, Nigeria
 </td>
 <td style="text-align:right;">
-63.3230357
+6342.3746559
 </td>
 <td style="text-align:right;">
-80.4269704
+8000.2631871
 </td>
 <td style="text-align:right;">
-63.2798408
+6326.0517988
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5784,16 +5713,16 @@ Kogi, Nigeria
 Kolda, Senegal
 </td>
 <td style="text-align:right;">
-34.5037598
+3504.0656523
 </td>
 <td style="text-align:right;">
-51.7282828
+5151.5599994
 </td>
 <td style="text-align:right;">
-36.3470250
+3647.4552231
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5801,13 +5730,13 @@ Kolda, Senegal
 Kotido, Uganda
 </td>
 <td style="text-align:right;">
-2.5670670
+606.9284480
 </td>
 <td style="text-align:right;">
-40.5125947
+4084.7397229
 </td>
 <td style="text-align:right;">
-0.0004248
+0.0761575
 </td>
 <td style="text-align:right;">
 0
@@ -5818,16 +5747,16 @@ Kotido, Uganda
 Kouffo, Benin
 </td>
 <td style="text-align:right;">
-56.0011400
+5588.9376009
 </td>
 <td style="text-align:right;">
-66.3449753
+6607.7517027
 </td>
 <td style="text-align:right;">
-57.0272712
+5696.1082284
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5835,13 +5764,13 @@ Kouffo, Benin
 Kouilou, Republic of Congo
 </td>
 <td style="text-align:right;">
-11.0288404
+1245.8298277
 </td>
 <td style="text-align:right;">
-37.9446058
+3876.9926092
 </td>
 <td style="text-align:right;">
-12.6238330
+1306.9205469
 </td>
 <td style="text-align:right;">
 0
@@ -5852,16 +5781,16 @@ Kouilou, Republic of Congo
 Koulikoro, Mali
 </td>
 <td style="text-align:right;">
-75.9532828
+7600.0427503
 </td>
 <td style="text-align:right;">
-93.5249746
+9385.2199675
 </td>
 <td style="text-align:right;">
-77.2517552
+7724.9063627
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5886,16 +5815,16 @@ Koungou, Mayotte
 Kumi, Uganda
 </td>
 <td style="text-align:right;">
-61.6276706
+6219.4072043
 </td>
 <td style="text-align:right;">
-74.9260138
+7464.1888772
 </td>
 <td style="text-align:right;">
-63.4671496
+6373.3852830
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5903,13 +5832,13 @@ Kumi, Uganda
 Kunene, Namibia
 </td>
 <td style="text-align:right;">
-18.2891149
+1848.2030424
 </td>
 <td style="text-align:right;">
-38.7573882
+3835.2207295
 </td>
 <td style="text-align:right;">
-18.4806464
+1841.4240606
 </td>
 <td style="text-align:right;">
 0
@@ -5920,16 +5849,16 @@ Kunene, Namibia
 Kwale, Kenya
 </td>
 <td style="text-align:right;">
-45.5367023
+4580.6972885
 </td>
 <td style="text-align:right;">
-67.8727537
+6777.8834351
 </td>
 <td style="text-align:right;">
-47.9087399
+4806.1640090
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5937,16 +5866,16 @@ Kwale, Kenya
 Kwara, Nigeria
 </td>
 <td style="text-align:right;">
-55.2002777
+5599.5269720
 </td>
 <td style="text-align:right;">
-82.2447108
+8560.5321368
 </td>
 <td style="text-align:right;">
-57.7215287
+5753.4458696
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -5954,13 +5883,13 @@ Kwara, Nigeria
 KwaZulu-Natal, South Africa
 </td>
 <td style="text-align:right;">
-10.8120168
+1159.5609556
 </td>
 <td style="text-align:right;">
-27.7576731
+2777.1211888
 </td>
 <td style="text-align:right;">
-10.7831526
+1127.7035953
 </td>
 <td style="text-align:right;">
 0
@@ -5971,13 +5900,13 @@ KwaZulu-Natal, South Africa
 Kweneng, Botswana
 </td>
 <td style="text-align:right;">
-5.8716646
+584.6080336
 </td>
 <td style="text-align:right;">
-9.5414985
+943.3388224
 </td>
 <td style="text-align:right;">
-5.3749497
+539.9055196
 </td>
 <td style="text-align:right;">
 0
@@ -5988,16 +5917,33 @@ Kweneng, Botswana
 Kyenjojo, Uganda
 </td>
 <td style="text-align:right;">
-57.0397810
+5766.7359058
 </td>
 <td style="text-align:right;">
-67.7658877
+6770.9002152
 </td>
 <td style="text-align:right;">
-57.2916904
+5763.1038960
 </td>
 <td style="text-align:right;">
-100
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+La Digue and Inner Islands, Seychelles
+</td>
+<td style="text-align:right;">
+NaN
+</td>
+<td style="text-align:right;">
+-Inf
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+0
 </td>
 </tr>
 <tr>
@@ -6039,16 +5985,16 @@ NA
 Labé, Guinea
 </td>
 <td style="text-align:right;">
-79.0353917
+7904.8353990
 </td>
 <td style="text-align:right;">
-92.6367078
+9268.5937725
 </td>
 <td style="text-align:right;">
-79.4891173
+7948.1115634
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6056,16 +6002,16 @@ Labé, Guinea
 Lac, Chad
 </td>
 <td style="text-align:right;">
-29.4754305
+3046.1512389
 </td>
 <td style="text-align:right;">
-69.4932735
+6937.4531036
 </td>
 <td style="text-align:right;">
-26.0715796
+2788.5460242
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6073,30 +6019,13 @@ Lac, Chad
 Lacs, Côte d'Ivoire
 </td>
 <td style="text-align:right;">
-48.8588056
+4914.4055276
 </td>
 <td style="text-align:right;">
-86.6379355
+8747.4244033
 </td>
 <td style="text-align:right;">
-51.7325595
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-La Digue and Inner Islands, Seychelles
-</td>
-<td style="text-align:right;">
-NaN
-</td>
-<td style="text-align:right;">
--Inf
-</td>
-<td style="text-align:right;">
-0.0000000
+5158.3518673
 </td>
 <td style="text-align:right;">
 0
@@ -6124,16 +6053,16 @@ NA
 Lagos, Nigeria
 </td>
 <td style="text-align:right;">
-37.6823106
+4411.7481229
 </td>
 <td style="text-align:right;">
-76.8648342
+7908.3604297
 </td>
 <td style="text-align:right;">
-39.4703191
+4691.7590731
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6141,16 +6070,16 @@ Lagos, Nigeria
 Lagunes, Côte d'Ivoire
 </td>
 <td style="text-align:right;">
-45.7045101
+4723.4752505
 </td>
 <td style="text-align:right;">
-86.6806422
+8711.5214757
 </td>
 <td style="text-align:right;">
-50.3702494
+5306.2245047
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6158,16 +6087,16 @@ Lagunes, Côte d'Ivoire
 Laikipia, Kenya
 </td>
 <td style="text-align:right;">
-29.9833434
+3001.6615057
 </td>
 <td style="text-align:right;">
-47.6020024
+4773.3590618
 </td>
 <td style="text-align:right;">
-29.6280998
+2962.1271288
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6175,33 +6104,16 @@ Laikipia, Kenya
 Lake Albert, Uganda
 </td>
 <td style="text-align:right;">
-11.5801722
+2269.8661960
 </td>
 <td style="text-align:right;">
-60.2697586
+6545.0221414
 </td>
 <td style="text-align:right;">
-3.2520376
+2135.1228588
 </td>
 <td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Lakes, South Sudan
-</td>
-<td style="text-align:right;">
-39.8381574
-</td>
-<td style="text-align:right;">
-55.9682545
-</td>
-<td style="text-align:right;">
-46.4991244
-</td>
-<td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6209,13 +6121,30 @@ Lakes, South Sudan
 Lake Victoria, Uganda
 </td>
 <td style="text-align:right;">
-3.5975540
+804.1571712
 </td>
 <td style="text-align:right;">
-57.7189990
+6429.1463139
 </td>
 <td style="text-align:right;">
-0.0004442
+0.0800101
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lakes, South Sudan
+</td>
+<td style="text-align:right;">
+4151.8102099
+</td>
+<td style="text-align:right;">
+5565.2876738
+</td>
+<td style="text-align:right;">
+4662.2286894
 </td>
 <td style="text-align:right;">
 0
@@ -6226,16 +6155,16 @@ Lake Victoria, Uganda
 Lamu, Kenya
 </td>
 <td style="text-align:right;">
-26.5961122
+2769.8712978
 </td>
 <td style="text-align:right;">
-48.1387253
+4813.8756213
 </td>
 <td style="text-align:right;">
-24.0417903
+2498.3349573
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6260,16 +6189,16 @@ NA
 Lékoumou, Republic of Congo
 </td>
 <td style="text-align:right;">
-25.3055659
+2556.3012171
 </td>
 <td style="text-align:right;">
-39.9491885
+4007.5360875
 </td>
 <td style="text-align:right;">
-25.2095180
+2547.6746715
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6311,13 +6240,13 @@ NaN
 Likoma, Malawi
 </td>
 <td style="text-align:right;">
-0.0003783
+0.0675486
 </td>
 <td style="text-align:right;">
-0.0003783
+0.0675486
 </td>
 <td style="text-align:right;">
-0.0003783
+0.0675486
 </td>
 <td style="text-align:right;">
 0
@@ -6328,16 +6257,16 @@ Likoma, Malawi
 Likouala, Republic of Congo
 </td>
 <td style="text-align:right;">
-16.6051857
+1730.8162638
 </td>
 <td style="text-align:right;">
-53.6374414
+5732.3249951
 </td>
 <td style="text-align:right;">
-17.3550618
+1774.1654142
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6345,16 +6274,16 @@ Likouala, Republic of Congo
 Lilongwe, Malawi
 </td>
 <td style="text-align:right;">
-24.1626962
+2411.6063353
 </td>
 <td style="text-align:right;">
-36.5829496
+3612.9130299
 </td>
 <td style="text-align:right;">
-22.8296675
+2273.9650726
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6362,13 +6291,13 @@ Lilongwe, Malawi
 Limpopo, South Africa
 </td>
 <td style="text-align:right;">
-15.9064467
+1595.7081488
 </td>
 <td style="text-align:right;">
-43.4406841
+4310.8301885
 </td>
 <td style="text-align:right;">
-13.7775355
+1378.3060205
 </td>
 <td style="text-align:right;">
 0
@@ -6379,16 +6308,16 @@ Limpopo, South Africa
 Lindi, Tanzania
 </td>
 <td style="text-align:right;">
-26.2030776
+2634.5339979
 </td>
 <td style="text-align:right;">
-52.9553222
+5503.2056368
 </td>
 <td style="text-align:right;">
-25.5676510
+2562.6868334
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6396,16 +6325,16 @@ Lindi, Tanzania
 Lira, Uganda
 </td>
 <td style="text-align:right;">
-53.4730254
+5616.7914819
 </td>
 <td style="text-align:right;">
-72.8242751
+7310.5494351
 </td>
 <td style="text-align:right;">
-56.6415563
+5816.5145289
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6413,16 +6342,16 @@ Lira, Uganda
 Litoral, Equatorial Guinea
 </td>
 <td style="text-align:right;">
-23.7846792
+2606.1352873
 </td>
 <td style="text-align:right;">
-48.4579923
+5272.0572593
 </td>
 <td style="text-align:right;">
-24.5533629
+2510.9952319
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6430,13 +6359,13 @@ Litoral, Equatorial Guinea
 Littoral, Benin
 </td>
 <td style="text-align:right;">
-2.5254516
+2732.0839196
 </td>
 <td style="text-align:right;">
-2.8362122
+3026.0353329
 </td>
 <td style="text-align:right;">
-2.5254516
+2732.0839196
 </td>
 <td style="text-align:right;">
 0
@@ -6447,16 +6376,16 @@ Littoral, Benin
 Littoral, Cameroon
 </td>
 <td style="text-align:right;">
-34.4369727
+3456.5607495
 </td>
 <td style="text-align:right;">
-52.5299403
+6204.1658736
 </td>
 <td style="text-align:right;">
-34.9616068
+3494.5460494
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6481,16 +6410,16 @@ NA
 Lobaye, Central African Republic
 </td>
 <td style="text-align:right;">
-62.2768486
+6236.2350003
 </td>
 <td style="text-align:right;">
-77.7755772
+7802.1221560
 </td>
 <td style="text-align:right;">
-63.0252030
+6301.7179260
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6498,16 +6427,16 @@ Lobaye, Central African Republic
 Lofa, Liberia
 </td>
 <td style="text-align:right;">
-26.8765499
+2751.9917382
 </td>
 <td style="text-align:right;">
-57.0303734
+5771.2330988
 </td>
 <td style="text-align:right;">
-25.9298264
+2597.6915627
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6515,16 +6444,16 @@ Lofa, Liberia
 Logone Occidental, Chad
 </td>
 <td style="text-align:right;">
-30.7083844
+3067.8405933
 </td>
 <td style="text-align:right;">
-46.3530973
+4664.7996906
 </td>
 <td style="text-align:right;">
-30.3522938
+3022.9730958
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6532,16 +6461,16 @@ Logone Occidental, Chad
 Logone Oriental, Chad
 </td>
 <td style="text-align:right;">
-39.4281042
+3948.1538878
 </td>
 <td style="text-align:right;">
-56.3877521
+5868.9898574
 </td>
 <td style="text-align:right;">
-39.8185911
+3991.1760868
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6549,13 +6478,13 @@ Logone Oriental, Chad
 Louga, Senegal
 </td>
 <td style="text-align:right;">
-12.4946875
+1251.0550751
 </td>
 <td style="text-align:right;">
-16.8227533
+1694.7471339
 </td>
 <td style="text-align:right;">
-12.7162570
+1272.2599105
 </td>
 <td style="text-align:right;">
 0
@@ -6566,13 +6495,13 @@ Louga, Senegal
 Lower River, Gambia
 </td>
 <td style="text-align:right;">
-6.3837048
+646.4455837
 </td>
 <td style="text-align:right;">
-22.0513617
+2264.7441768
 </td>
 <td style="text-align:right;">
-5.4110727
+542.6316829
 </td>
 <td style="text-align:right;">
 0
@@ -6583,13 +6512,13 @@ Lower River, Gambia
 Luanda, Angola
 </td>
 <td style="text-align:right;">
-15.9771061
+1721.9049185
 </td>
 <td style="text-align:right;">
-28.7640502
+2882.7734162
 </td>
 <td style="text-align:right;">
-16.8533172
+1712.5159789
 </td>
 <td style="text-align:right;">
 0
@@ -6600,13 +6529,13 @@ Luanda, Angola
 Luapula, Zambia
 </td>
 <td style="text-align:right;">
-17.1717792
+1845.9662141
 </td>
 <td style="text-align:right;">
-82.3846828
+8668.6264634
 </td>
 <td style="text-align:right;">
-17.5269357
+1794.8075694
 </td>
 <td style="text-align:right;">
 0
@@ -6617,13 +6546,13 @@ Luapula, Zambia
 Lubombo, Swaziland
 </td>
 <td style="text-align:right;">
-7.4977363
+783.7705549
 </td>
 <td style="text-align:right;">
-18.7442128
+1994.2007105
 </td>
 <td style="text-align:right;">
-6.7809155
+723.8233213
 </td>
 <td style="text-align:right;">
 0
@@ -6634,13 +6563,13 @@ Lubombo, Swaziland
 Lunda Norte, Angola
 </td>
 <td style="text-align:right;">
-15.4904782
+1571.9450382
 </td>
 <td style="text-align:right;">
-31.5126773
+3194.9124266
 </td>
 <td style="text-align:right;">
-15.2790816
+1539.4839155
 </td>
 <td style="text-align:right;">
 0
@@ -6651,13 +6580,13 @@ Lunda Norte, Angola
 Lunda Sul, Angola
 </td>
 <td style="text-align:right;">
-14.4383567
+1461.8435297
 </td>
 <td style="text-align:right;">
-27.0490150
+2620.4677922
 </td>
 <td style="text-align:right;">
-13.9794990
+1417.7726310
 </td>
 <td style="text-align:right;">
 0
@@ -6668,16 +6597,16 @@ Lunda Sul, Angola
 Lusaka, Zambia
 </td>
 <td style="text-align:right;">
-27.5431415
+2943.6348695
 </td>
 <td style="text-align:right;">
-58.3776794
+5811.1920954
 </td>
 <td style="text-align:right;">
-27.7802852
+2839.8857518
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6685,16 +6614,50 @@ Lusaka, Zambia
 Luwero, Uganda
 </td>
 <td style="text-align:right;">
-54.9779389
+5627.6726218
 </td>
 <td style="text-align:right;">
-69.0754708
+6908.4881133
 </td>
 <td style="text-align:right;">
-55.3070428
+5609.3010908
 </td>
 <td style="text-align:right;">
-100
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+M'Sila, Algeria
+</td>
+<td style="text-align:right;">
+NaN
+</td>
+<td style="text-align:right;">
+-Inf
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+M'tsangamouji, Mayotte
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+0
 </td>
 </tr>
 <tr>
@@ -6702,13 +6665,13 @@ Luwero, Uganda
 Maccarthy Island, Gambia
 </td>
 <td style="text-align:right;">
-7.4894247
+750.3649091
 </td>
 <td style="text-align:right;">
-27.6046924
+2761.8585955
 </td>
 <td style="text-align:right;">
-6.4636519
+650.3609069
 </td>
 <td style="text-align:right;">
 0
@@ -6719,16 +6682,16 @@ Maccarthy Island, Gambia
 Machakos, Kenya
 </td>
 <td style="text-align:right;">
-34.9486140
+3497.7005674
 </td>
 <td style="text-align:right;">
-46.2302761
+4625.8585895
 </td>
 <td style="text-align:right;">
-35.5617888
+3564.8582915
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6736,13 +6699,13 @@ Machakos, Kenya
 Machinga, Malawi
 </td>
 <td style="text-align:right;">
-16.5699037
+1731.4953274
 </td>
 <td style="text-align:right;">
-29.2562625
+2950.5838649
 </td>
 <td style="text-align:right;">
-16.9668750
+1714.9984565
 </td>
 <td style="text-align:right;">
 0
@@ -6753,13 +6716,13 @@ Machinga, Malawi
 Maekel, Eritrea
 </td>
 <td style="text-align:right;">
-7.2467849
+724.6119210
 </td>
 <td style="text-align:right;">
-12.2616750
+1229.7503444
 </td>
 <td style="text-align:right;">
-7.1285635
+713.1501551
 </td>
 <td style="text-align:right;">
 0
@@ -6787,16 +6750,16 @@ NA
 Mahajanga, Madagascar
 </td>
 <td style="text-align:right;">
-27.6344180
+2798.4061025
 </td>
 <td style="text-align:right;">
-53.9027452
+5589.9146617
 </td>
 <td style="text-align:right;">
-26.1901442
+2634.6058095
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6838,16 +6801,16 @@ NaN
 Makamba, Burundi
 </td>
 <td style="text-align:right;">
-18.6141280
+2074.6619667
 </td>
 <td style="text-align:right;">
-33.5689532
+3376.9381855
 </td>
 <td style="text-align:right;">
-22.9270857
+2393.0354662
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6855,16 +6818,16 @@ Makamba, Burundi
 Makueni, Kenya
 </td>
 <td style="text-align:right;">
-34.0386402
+3478.6790981
 </td>
 <td style="text-align:right;">
-50.6328514
+5528.7083651
 </td>
 <td style="text-align:right;">
-35.1296532
+3550.1338584
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6872,16 +6835,16 @@ Makueni, Kenya
 Malanje, Angola
 </td>
 <td style="text-align:right;">
-22.7284861
+2292.0797577
 </td>
 <td style="text-align:right;">
-46.1432385
+4625.4466934
 </td>
 <td style="text-align:right;">
-23.0063502
+2317.8728901
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -6889,16 +6852,33 @@ Malanje, Angola
 Mambéré-Kadéï, Central African Republic
 </td>
 <td style="text-align:right;">
-57.7139834
+5770.9486495
 </td>
 <td style="text-align:right;">
-68.8019311
+6850.3168753
 </td>
 <td style="text-align:right;">
-57.8864434
+5793.0939843
 </td>
 <td style="text-align:right;">
-100
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mamou, Guinea
+</td>
+<td style="text-align:right;">
+6710.9518912
+</td>
+<td style="text-align:right;">
+8984.5487064
+</td>
+<td style="text-align:right;">
+6724.8248835
+</td>
+<td style="text-align:right;">
+0
 </td>
 </tr>
 <tr>
@@ -6920,33 +6900,16 @@ Mamoudzou, Mayotte
 </tr>
 <tr>
 <td style="text-align:left;">
-Mamou, Guinea
-</td>
-<td style="text-align:right;">
-66.8677096
-</td>
-<td style="text-align:right;">
-88.7361783
-</td>
-<td style="text-align:right;">
-67.0287000
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Mandera, Kenya
 </td>
 <td style="text-align:right;">
-10.2602746
+1032.6709135
 </td>
 <td style="text-align:right;">
-15.3419963
+1542.7358979
 </td>
 <td style="text-align:right;">
-10.8901818
+1090.4534028
 </td>
 <td style="text-align:right;">
 0
@@ -6957,30 +6920,13 @@ Mandera, Kenya
 Mandoul, Chad
 </td>
 <td style="text-align:right;">
-36.2827122
+3697.2451142
 </td>
 <td style="text-align:right;">
-50.9490907
+5100.2246811
 </td>
 <td style="text-align:right;">
-36.8920577
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Mangochi, Malawi
-</td>
-<td style="text-align:right;">
-11.4340739
-</td>
-<td style="text-align:right;">
-49.9974751
-</td>
-<td style="text-align:right;">
-7.4984737
+3693.8137805
 </td>
 <td style="text-align:right;">
 0
@@ -6988,16 +6934,16 @@ Mangochi, Malawi
 </tr>
 <tr>
 <td style="text-align:left;">
-Manicaland, Zimbabwe
+Mangochi, Malawi
 </td>
 <td style="text-align:right;">
-16.0991206
+1659.3325072
 </td>
 <td style="text-align:right;">
-35.5613784
+5501.7085033
 </td>
 <td style="text-align:right;">
-15.5060872
+915.6596166
 </td>
 <td style="text-align:right;">
 0
@@ -7008,16 +6954,33 @@ Manicaland, Zimbabwe
 Manica, Mozambique
 </td>
 <td style="text-align:right;">
-31.5143125
+3206.7802260
 </td>
 <td style="text-align:right;">
-63.6932784
+6744.0374800
 </td>
 <td style="text-align:right;">
-31.1197624
+3143.2555389
 </td>
 <td style="text-align:right;">
-100
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Manicaland, Zimbabwe
+</td>
+<td style="text-align:right;">
+1613.9556492
+</td>
+<td style="text-align:right;">
+3669.5491969
+</td>
+<td style="text-align:right;">
+1551.7961424
+</td>
+<td style="text-align:right;">
+0
 </td>
 </tr>
 <tr>
@@ -7042,13 +7005,13 @@ NA
 Manyara, Tanzania
 </td>
 <td style="text-align:right;">
-17.3866650
+1787.3375268
 </td>
 <td style="text-align:right;">
-36.3674559
+3635.1733544
 </td>
 <td style="text-align:right;">
-17.3668520
+1794.6693030
 </td>
 <td style="text-align:right;">
 0
@@ -7076,16 +7039,16 @@ NA
 Maputo City, Mozambique
 </td>
 <td style="text-align:right;">
-35.3656169
+3588.7248407
 </td>
 <td style="text-align:right;">
-56.7417801
+5676.9236506
 </td>
 <td style="text-align:right;">
-34.4454195
+3499.6904448
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7093,33 +7056,16 @@ Maputo City, Mozambique
 Maputo, Mozambique
 </td>
 <td style="text-align:right;">
-43.2202448
+4344.1112980
 </td>
 <td style="text-align:right;">
-71.7190105
+7176.6040955
 </td>
 <td style="text-align:right;">
-42.8912109
+4311.6638587
 </td>
 <td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Maradi, Niger
-</td>
-<td style="text-align:right;">
-50.3436785
-</td>
-<td style="text-align:right;">
-74.2901251
-</td>
-<td style="text-align:right;">
-48.7786081
-</td>
-<td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7127,16 +7073,33 @@ Maradi, Niger
 Mara, Tanzania
 </td>
 <td style="text-align:right;">
-15.9819285
+1853.9919248
 </td>
 <td style="text-align:right;">
-61.2413292
+6431.6406906
 </td>
 <td style="text-align:right;">
-7.8989253
+2011.0132413
 </td>
 <td style="text-align:right;">
-100
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Maradi, Niger
+</td>
+<td style="text-align:right;">
+5124.3298487
+</td>
+<td style="text-align:right;">
+7780.9928954
+</td>
+<td style="text-align:right;">
+5328.5880392
+</td>
+<td style="text-align:right;">
+0
 </td>
 </tr>
 <tr>
@@ -7144,16 +7107,16 @@ Mara, Tanzania
 Margibi, Liberia
 </td>
 <td style="text-align:right;">
-35.2235151
+3573.4482168
 </td>
 <td style="text-align:right;">
-50.8954236
+5448.6107274
 </td>
 <td style="text-align:right;">
-34.4536555
+3464.9035734
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7161,16 +7124,16 @@ Margibi, Liberia
 Maritime, Togo
 </td>
 <td style="text-align:right;">
-57.5648225
+5769.2064079
 </td>
 <td style="text-align:right;">
-69.9553340
+7053.8238838
 </td>
 <td style="text-align:right;">
-62.1588392
+6185.6612700
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7195,13 +7158,13 @@ NA
 Marsabit, Kenya
 </td>
 <td style="text-align:right;">
-10.2955673
+1070.6924960
 </td>
 <td style="text-align:right;">
-27.4494503
+2838.1235743
 </td>
 <td style="text-align:right;">
-10.4768329
+1075.4473526
 </td>
 <td style="text-align:right;">
 0
@@ -7212,16 +7175,16 @@ Marsabit, Kenya
 Maryland, Liberia
 </td>
 <td style="text-align:right;">
-42.1575494
+4231.6567442
 </td>
 <td style="text-align:right;">
-51.8656743
+5534.0227796
 </td>
 <td style="text-align:right;">
-42.0849862
+4219.7658817
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7229,16 +7192,16 @@ Maryland, Liberia
 Masaka, Uganda
 </td>
 <td style="text-align:right;">
-48.2901506
+5019.0109733
 </td>
 <td style="text-align:right;">
-65.5241618
+6600.5867585
 </td>
 <td style="text-align:right;">
-49.8798629
+5091.0921346
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7280,13 +7243,13 @@ NA
 Mashonaland Central, Zimbabwe
 </td>
 <td style="text-align:right;">
-16.0424937
+1611.7086069
 </td>
 <td style="text-align:right;">
-34.3575000
+3471.8396409
 </td>
 <td style="text-align:right;">
-14.8082125
+1481.5725579
 </td>
 <td style="text-align:right;">
 0
@@ -7297,13 +7260,13 @@ Mashonaland Central, Zimbabwe
 Mashonaland East, Zimbabwe
 </td>
 <td style="text-align:right;">
-12.9199164
+1294.0359477
 </td>
 <td style="text-align:right;">
-37.7386996
+3800.7326807
 </td>
 <td style="text-align:right;">
-11.0538393
+1104.2138774
 </td>
 <td style="text-align:right;">
 0
@@ -7314,13 +7277,13 @@ Mashonaland East, Zimbabwe
 Mashonaland West, Zimbabwe
 </td>
 <td style="text-align:right;">
-13.5089097
+1450.1729278
 </td>
 <td style="text-align:right;">
-57.2343869
+8527.7669869
 </td>
 <td style="text-align:right;">
-12.7583387
+1301.9928416
 </td>
 <td style="text-align:right;">
 0
@@ -7331,16 +7294,16 @@ Mashonaland West, Zimbabwe
 Masindi, Uganda
 </td>
 <td style="text-align:right;">
-34.9949897
+3987.9394575
 </td>
 <td style="text-align:right;">
-69.4191565
+6936.7207726
 </td>
 <td style="text-align:right;">
-47.6004523
+5323.3851488
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7348,13 +7311,13 @@ Masindi, Uganda
 Masvingo, Zimbabwe
 </td>
 <td style="text-align:right;">
-10.8298955
+1135.2051773
 </td>
 <td style="text-align:right;">
-39.7927932
+3948.8667269
 </td>
 <td style="text-align:right;">
-10.6277858
+1105.8500545
 </td>
 <td style="text-align:right;">
 0
@@ -7365,16 +7328,16 @@ Masvingo, Zimbabwe
 Matabeleland North, Zimbabwe
 </td>
 <td style="text-align:right;">
-15.4736181
+1690.6157601
 </td>
 <td style="text-align:right;">
-72.9938360
+9077.5242544
 </td>
 <td style="text-align:right;">
-13.3441331
+1428.8768749
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7382,13 +7345,13 @@ Matabeleland North, Zimbabwe
 Matabeleland South, Zimbabwe
 </td>
 <td style="text-align:right;">
-6.3643891
+636.8548899
 </td>
 <td style="text-align:right;">
-16.2284594
+1624.5511652
 </td>
 <td style="text-align:right;">
-6.0665542
+608.6666953
 </td>
 <td style="text-align:right;">
 0
@@ -7399,13 +7362,13 @@ Matabeleland South, Zimbabwe
 Matam, Senegal
 </td>
 <td style="text-align:right;">
-13.9947669
+1401.5933062
 </td>
 <td style="text-align:right;">
-33.6918349
+3418.7586208
 </td>
 <td style="text-align:right;">
-12.9142014
+1295.9700831
 </td>
 <td style="text-align:right;">
 0
@@ -7433,16 +7396,16 @@ NA
 Mayo-Kebbi Est, Chad
 </td>
 <td style="text-align:right;">
-43.4090048
+4349.3360863
 </td>
 <td style="text-align:right;">
-65.9052764
+6956.2311492
 </td>
 <td style="text-align:right;">
-45.0493541
+4515.6699569
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7450,16 +7413,16 @@ Mayo-Kebbi Est, Chad
 Mayo-Kebbi Ouest, Chad
 </td>
 <td style="text-align:right;">
-51.7631213
+5191.9760872
 </td>
 <td style="text-align:right;">
-63.3101173
+6357.7214592
 </td>
 <td style="text-align:right;">
-51.9901958
+5204.9535463
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7467,16 +7430,16 @@ Mayo-Kebbi Ouest, Chad
 Mayuge, Uganda
 </td>
 <td style="text-align:right;">
-47.7776485
+4959.2557373
 </td>
 <td style="text-align:right;">
-65.0979748
+6487.8449351
 </td>
 <td style="text-align:right;">
-51.5890060
+5317.5700528
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7484,16 +7447,16 @@ Mayuge, Uganda
 Mbale, Uganda
 </td>
 <td style="text-align:right;">
-68.2443952
+6885.3474990
 </td>
 <td style="text-align:right;">
-77.0378434
+7697.3509431
 </td>
 <td style="text-align:right;">
-69.6017188
+6973.8612686
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7501,16 +7464,16 @@ Mbale, Uganda
 Mbarara, Uganda
 </td>
 <td style="text-align:right;">
-38.5027353
+3924.4835861
 </td>
 <td style="text-align:right;">
-61.8289285
+6192.5064639
 </td>
 <td style="text-align:right;">
-39.3602491
+3960.7601436
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7518,16 +7481,16 @@ Mbarara, Uganda
 Mbeya, Tanzania
 </td>
 <td style="text-align:right;">
-25.1679878
+2588.6982938
 </td>
 <td style="text-align:right;">
-47.2167336
+4826.1215984
 </td>
 <td style="text-align:right;">
-26.8320803
+2697.5061245
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7535,16 +7498,16 @@ Mbeya, Tanzania
 Mbomou, Central African Republic
 </td>
 <td style="text-align:right;">
-39.6486867
+3970.4707218
 </td>
 <td style="text-align:right;">
-66.0751943
+6941.9029882
 </td>
 <td style="text-align:right;">
-40.0902315
+3993.1487743
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7552,16 +7515,16 @@ Mbomou, Central African Republic
 Mchinji, Malawi
 </td>
 <td style="text-align:right;">
-40.8880672
+4117.6167767
 </td>
 <td style="text-align:right;">
-56.7244138
+5709.7006371
 </td>
 <td style="text-align:right;">
-40.6671806
+4069.5113621
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7620,16 +7583,16 @@ NA
 Meru, Kenya
 </td>
 <td style="text-align:right;">
-20.9028406
+2244.9814291
 </td>
 <td style="text-align:right;">
-63.3710360
+6320.4196134
 </td>
 <td style="text-align:right;">
-22.0737362
+2269.5816657
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7637,13 +7600,13 @@ Meru, Kenya
 Midlands, Zimbabwe
 </td>
 <td style="text-align:right;">
-15.4206585
+1545.3595936
 </td>
 <td style="text-align:right;">
-56.4140338
+5720.2146319
 </td>
 <td style="text-align:right;">
-10.1412721
+1017.0110216
 </td>
 <td style="text-align:right;">
 0
@@ -7654,16 +7617,16 @@ Midlands, Zimbabwe
 Migori, Kenya
 </td>
 <td style="text-align:right;">
-48.1732625
+5092.2475656
 </td>
 <td style="text-align:right;">
-78.4795045
+7862.6556264
 </td>
 <td style="text-align:right;">
-55.8798735
+5634.7580937
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7756,16 +7719,16 @@ NA
 Mombasa, Kenya
 </td>
 <td style="text-align:right;">
-51.7240366
+5228.4373023
 </td>
 <td style="text-align:right;">
-59.5924041
+5951.3564759
 </td>
 <td style="text-align:right;">
-51.9796187
+5239.9955609
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7790,33 +7753,16 @@ NA
 Mono, Benin
 </td>
 <td style="text-align:right;">
-55.0150724
+5521.6712159
 </td>
 <td style="text-align:right;">
-65.3819376
+6558.8090657
 </td>
 <td style="text-align:right;">
-54.6599748
+5484.0772536
 </td>
 <td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Montagnes, Côte d'Ivoire
-</td>
-<td style="text-align:right;">
-45.0520374
-</td>
-<td style="text-align:right;">
-70.0889330
-</td>
-<td style="text-align:right;">
-48.4830131
-</td>
-<td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7855,19 +7801,36 @@ NaN
 </tr>
 <tr>
 <td style="text-align:left;">
+Montagnes, Côte d'Ivoire
+</td>
+<td style="text-align:right;">
+4570.9444060
+</td>
+<td style="text-align:right;">
+7034.2657134
+</td>
+<td style="text-align:right;">
+4841.0974340
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Montserrado, Liberia
 </td>
 <td style="text-align:right;">
-22.9329063
+2519.9431919
 </td>
 <td style="text-align:right;">
-33.9388192
+5131.3399664
 </td>
 <td style="text-align:right;">
-23.4819137
+2510.4033908
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7875,16 +7838,16 @@ Montserrado, Liberia
 Mopti, Mali
 </td>
 <td style="text-align:right;">
-88.2703499
+8839.2932022
 </td>
 <td style="text-align:right;">
-97.9986348
+9779.9723116
 </td>
 <td style="text-align:right;">
-91.2059136
+9118.0643773
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7892,16 +7855,16 @@ Mopti, Mali
 Morogoro, Tanzania
 </td>
 <td style="text-align:right;">
-28.5922571
+2910.1816209
 </td>
 <td style="text-align:right;">
-55.2332562
+5560.5951704
 </td>
 <td style="text-align:right;">
-29.1259905
+2967.5073801
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7909,16 +7872,16 @@ Morogoro, Tanzania
 Moroto, Uganda
 </td>
 <td style="text-align:right;">
-27.9917852
+3163.1352474
 </td>
 <td style="text-align:right;">
-52.3637409
+5226.2389261
 </td>
 <td style="text-align:right;">
-34.2641742
+3550.7303187
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7960,16 +7923,16 @@ NaN
 Moxico, Angola
 </td>
 <td style="text-align:right;">
-22.4326339
+2261.3694780
 </td>
 <td style="text-align:right;">
-48.6323604
+5161.4875193
 </td>
 <td style="text-align:right;">
-22.7824847
+2276.4221051
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7977,16 +7940,16 @@ Moxico, Angola
 Moyen-Chari, Chad
 </td>
 <td style="text-align:right;">
-39.0711803
+3946.0505566
 </td>
 <td style="text-align:right;">
-49.7903560
+4974.5116659
 </td>
 <td style="text-align:right;">
-39.6412035
+3963.8795422
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -7994,13 +7957,13 @@ Moyen-Chari, Chad
 Moyen-Ogooué, Gabon
 </td>
 <td style="text-align:right;">
-10.0699607
+1022.1123300
 </td>
 <td style="text-align:right;">
-35.2206674
+3544.8955361
 </td>
 <td style="text-align:right;">
-8.8427702
+862.6183383
 </td>
 <td style="text-align:right;">
 0
@@ -8011,47 +7974,13 @@ Moyen-Ogooué, Gabon
 Moyo, Uganda
 </td>
 <td style="text-align:right;">
-46.9881022
+4948.5998968
 </td>
 <td style="text-align:right;">
-57.9299163
+5847.4567847
 </td>
 <td style="text-align:right;">
-49.4489745
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Mpigi, Uganda
-</td>
-<td style="text-align:right;">
-55.3437900
-</td>
-<td style="text-align:right;">
-68.7525267
-</td>
-<td style="text-align:right;">
-57.2450678
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Mpumalanga, South Africa
-</td>
-<td style="text-align:right;">
-26.7105340
-</td>
-<td style="text-align:right;">
-58.4856028
-</td>
-<td style="text-align:right;">
-24.3415567
+5022.5863352
 </td>
 <td style="text-align:right;">
 0
@@ -8059,16 +7988,33 @@ Mpumalanga, South Africa
 </tr>
 <tr>
 <td style="text-align:left;">
-M'Sila, Algeria
+Mpigi, Uganda
 </td>
 <td style="text-align:right;">
-NaN
+5577.7388049
 </td>
 <td style="text-align:right;">
--Inf
+6856.0525309
 </td>
 <td style="text-align:right;">
-NA
+5719.1515012
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mpumalanga, South Africa
+</td>
+<td style="text-align:right;">
+2674.6749667
+</td>
+<td style="text-align:right;">
+5888.8769626
+</td>
+<td style="text-align:right;">
+2445.6935105
 </td>
 <td style="text-align:right;">
 0
@@ -8093,16 +8039,16 @@ Mtsamboro, Mayotte
 </tr>
 <tr>
 <td style="text-align:left;">
-M'tsangamouji, Mayotte
+Mtwara, Tanzania
 </td>
 <td style="text-align:right;">
-0.0000000
+3066.0464249
 </td>
 <td style="text-align:right;">
-0.0000000
+6021.3901039
 </td>
 <td style="text-align:right;">
-0.0000000
+2836.7907866
 </td>
 <td style="text-align:right;">
 0
@@ -8110,36 +8056,19 @@ M'tsangamouji, Mayotte
 </tr>
 <tr>
 <td style="text-align:left;">
-Mtwara, Tanzania
-</td>
-<td style="text-align:right;">
-30.3059074
-</td>
-<td style="text-align:right;">
-59.8231253
-</td>
-<td style="text-align:right;">
-28.1193797
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Mubende, Uganda
 </td>
 <td style="text-align:right;">
-58.1985247
+5856.4292131
 </td>
 <td style="text-align:right;">
-66.3730711
+6659.2629666
 </td>
 <td style="text-align:right;">
-58.5750449
+5880.7917788
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8147,16 +8076,16 @@ Mubende, Uganda
 Muchinga, Zambia
 </td>
 <td style="text-align:right;">
-24.5328962
+2554.4381921
 </td>
 <td style="text-align:right;">
-53.4037467
+5321.5058179
 </td>
 <td style="text-align:right;">
-25.7269922
+2603.1109790
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8164,13 +8093,13 @@ Muchinga, Zambia
 Mudug, Somalia
 </td>
 <td style="text-align:right;">
-6.0131705
+615.4779088
 </td>
 <td style="text-align:right;">
-20.2803722
+2136.7632938
 </td>
 <td style="text-align:right;">
-5.7258117
+571.0701460
 </td>
 <td style="text-align:right;">
 0
@@ -8181,16 +8110,16 @@ Mudug, Somalia
 Mukono, Uganda
 </td>
 <td style="text-align:right;">
-37.1051515
+3902.8831199
 </td>
 <td style="text-align:right;">
-49.8899906
+4982.0422768
 </td>
 <td style="text-align:right;">
-41.0514162
+4169.8270433
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8198,13 +8127,13 @@ Mukono, Uganda
 Mulanje, Malawi
 </td>
 <td style="text-align:right;">
-11.5388425
+1178.9340711
 </td>
 <td style="text-align:right;">
-27.9186489
+2757.3373989
 </td>
 <td style="text-align:right;">
-10.3594810
+1059.8499903
 </td>
 <td style="text-align:right;">
 0
@@ -8215,13 +8144,13 @@ Mulanje, Malawi
 Muramvya, Burundi
 </td>
 <td style="text-align:right;">
-16.4992337
+1664.6110978
 </td>
 <td style="text-align:right;">
-22.0522480
+2191.2383101
 </td>
 <td style="text-align:right;">
-15.8498315
+1626.5491209
 </td>
 <td style="text-align:right;">
 0
@@ -8232,16 +8161,16 @@ Muramvya, Burundi
 Murang'a, Kenya
 </td>
 <td style="text-align:right;">
-32.0381217
+3209.1970337
 </td>
 <td style="text-align:right;">
-40.3405035
+4034.7400413
 </td>
 <td style="text-align:right;">
-32.2384718
+3220.5640674
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8266,16 +8195,16 @@ NA
 Muyinga, Burundi
 </td>
 <td style="text-align:right;">
-41.7002228
+4290.5404455
 </td>
 <td style="text-align:right;">
-54.0462739
+5596.2910611
 </td>
 <td style="text-align:right;">
-41.1576393
+4193.2803927
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8300,16 +8229,16 @@ Mwali, Comoros
 Mwanza, Malawi
 </td>
 <td style="text-align:right;">
-23.9406554
+2436.8022382
 </td>
 <td style="text-align:right;">
-33.1877424
+3541.6247160
 </td>
 <td style="text-align:right;">
-23.1252617
+2336.9524643
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8317,16 +8246,16 @@ Mwanza, Malawi
 Mwanza, Tanzania
 </td>
 <td style="text-align:right;">
-15.3637723
+1995.7972501
 </td>
 <td style="text-align:right;">
-48.7490979
+5468.7027935
 </td>
 <td style="text-align:right;">
-16.8006503
+2050.0269053
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8334,13 +8263,13 @@ Mwanza, Tanzania
 Mwaro, Burundi
 </td>
 <td style="text-align:right;">
-20.9686516
+2104.5851879
 </td>
 <td style="text-align:right;">
-23.7629849
+2377.5887574
 </td>
 <td style="text-align:right;">
-20.8925310
+2090.2334353
 </td>
 <td style="text-align:right;">
 0
@@ -8351,16 +8280,16 @@ Mwaro, Burundi
 Mzimba, Malawi
 </td>
 <td style="text-align:right;">
-28.1290021
+2819.8524516
 </td>
 <td style="text-align:right;">
-49.8388829
+5227.6226855
 </td>
 <td style="text-align:right;">
-25.7969261
+2599.6695155
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8402,16 +8331,16 @@ NA
 Nairobi, Kenya
 </td>
 <td style="text-align:right;">
-33.1644949
+3433.7791374
 </td>
 <td style="text-align:right;">
-41.3794149
+4243.7775287
 </td>
 <td style="text-align:right;">
-34.0225223
+3417.9635930
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8419,16 +8348,16 @@ Nairobi, Kenya
 Nakapiripirit, Uganda
 </td>
 <td style="text-align:right;">
-40.4200703
+4609.5652088
 </td>
 <td style="text-align:right;">
-61.5748586
+6160.9186813
 </td>
 <td style="text-align:right;">
-48.3662963
+4954.9842040
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8436,16 +8365,16 @@ Nakapiripirit, Uganda
 Nakasongola, Uganda
 </td>
 <td style="text-align:right;">
-58.5062009
+5986.9391886
 </td>
 <td style="text-align:right;">
-67.2978136
+6743.4563139
 </td>
 <td style="text-align:right;">
-59.5290078
+6058.8872454
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8453,16 +8382,16 @@ Nakasongola, Uganda
 Nakuru, Kenya
 </td>
 <td style="text-align:right;">
-30.5770894
+3178.7939286
 </td>
 <td style="text-align:right;">
-47.1367564
+4706.5287960
 </td>
 <td style="text-align:right;">
-29.5304844
+3063.8736193
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8487,16 +8416,16 @@ NA
 Namibe, Angola
 </td>
 <td style="text-align:right;">
-18.5849003
+1903.9929741
 </td>
 <td style="text-align:right;">
-40.5356984
+4028.1409784
 </td>
 <td style="text-align:right;">
-21.6453716
+2173.9402398
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8504,16 +8433,16 @@ Namibe, Angola
 Nampula, Mozambique
 </td>
 <td style="text-align:right;">
-31.7634069
+3265.2701959
 </td>
 <td style="text-align:right;">
-76.2897614
+7697.7403734
 </td>
 <td style="text-align:right;">
-31.0263466
+3180.2938650
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8521,16 +8450,16 @@ Nampula, Mozambique
 Nana-Grébizi, Central African Republic
 </td>
 <td style="text-align:right;">
-43.9775370
+4416.4702234
 </td>
 <td style="text-align:right;">
-59.9222151
+6030.7683321
 </td>
 <td style="text-align:right;">
-43.8981045
+4366.9412487
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8538,16 +8467,16 @@ Nana-Grébizi, Central African Republic
 Nana-Mambéré, Central African Republic
 </td>
 <td style="text-align:right;">
-65.7588201
+6580.4292956
 </td>
 <td style="text-align:right;">
-76.6879347
+7695.6060455
 </td>
 <td style="text-align:right;">
-65.7133794
+6576.5627990
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8555,16 +8484,16 @@ Nana-Mambéré, Central African Republic
 Nandi, Kenya
 </td>
 <td style="text-align:right;">
-55.7717298
+5579.3851159
 </td>
 <td style="text-align:right;">
-71.8033022
+7215.1130266
 </td>
 <td style="text-align:right;">
-56.1906667
+5633.6840564
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8572,16 +8501,16 @@ Nandi, Kenya
 Narok, Kenya
 </td>
 <td style="text-align:right;">
-21.4842410
+2241.4129307
 </td>
 <td style="text-align:right;">
-55.7815621
+5580.0671784
 </td>
 <td style="text-align:right;">
-20.8575891
+2114.3521908
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8589,16 +8518,16 @@ Narok, Kenya
 Nassa, Mozambique
 </td>
 <td style="text-align:right;">
-10.9399122
+1209.9772397
 </td>
 <td style="text-align:right;">
-39.6487230
+3945.9810944
 </td>
 <td style="text-align:right;">
-5.7338428
+1037.6667191
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8606,16 +8535,16 @@ Nassa, Mozambique
 Nassarawa, Nigeria
 </td>
 <td style="text-align:right;">
-53.6506508
+5345.0801096
 </td>
 <td style="text-align:right;">
-68.5829940
+6859.1433615
 </td>
 <td style="text-align:right;">
-53.1195152
+5282.9738543
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8623,16 +8552,16 @@ Nassarawa, Nigeria
 Nebbi, Uganda
 </td>
 <td style="text-align:right;">
-44.7726899
+4818.3374901
 </td>
 <td style="text-align:right;">
-58.5577955
+6083.3516141
 </td>
 <td style="text-align:right;">
-46.5408304
+4913.3313703
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8640,13 +8569,13 @@ Nebbi, Uganda
 Neno, Malawi
 </td>
 <td style="text-align:right;">
-18.7128093
+1906.5675579
 </td>
 <td style="text-align:right;">
-28.0669280
+3111.6052596
 </td>
 <td style="text-align:right;">
-18.5971113
+1882.7235027
 </td>
 <td style="text-align:right;">
 0
@@ -8657,16 +8586,16 @@ Neno, Malawi
 Ngounié, Gabon
 </td>
 <td style="text-align:right;">
-23.9445821
+2474.5211743
 </td>
 <td style="text-align:right;">
-37.7333278
+3755.6586709
 </td>
 <td style="text-align:right;">
-24.4514981
+2510.9334173
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8674,16 +8603,16 @@ Ngounié, Gabon
 Ngozi, Burundi
 </td>
 <td style="text-align:right;">
-34.1987063
+3419.2901110
 </td>
 <td style="text-align:right;">
-45.7971080
+4577.7605961
 </td>
 <td style="text-align:right;">
-35.5398111
+3543.3958089
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8691,16 +8620,16 @@ Ngozi, Burundi
 Niamey, Niger
 </td>
 <td style="text-align:right;">
-53.5969009
+5384.1492786
 </td>
 <td style="text-align:right;">
-59.4272198
+5957.7527616
 </td>
 <td style="text-align:right;">
-53.6244106
+5401.2343504
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8708,16 +8637,16 @@ Niamey, Niger
 Niari, Republic of Congo
 </td>
 <td style="text-align:right;">
-26.0160633
+2646.1762710
 </td>
 <td style="text-align:right;">
-45.0396056
+4613.1944235
 </td>
 <td style="text-align:right;">
-26.1670769
+2651.2847340
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8725,16 +8654,16 @@ Niari, Republic of Congo
 Niger, Nigeria
 </td>
 <td style="text-align:right;">
-55.2668647
+5632.8635667
 </td>
 <td style="text-align:right;">
-91.2193657
+9404.1960221
 </td>
 <td style="text-align:right;">
-56.9429557
+5675.4411623
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8742,16 +8671,16 @@ Niger, Nigeria
 Nimba, Liberia
 </td>
 <td style="text-align:right;">
-24.4700165
+2493.7347061
 </td>
 <td style="text-align:right;">
-63.4360246
+6451.2061580
 </td>
 <td style="text-align:right;">
-22.5824757
+2285.1381803
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8776,16 +8705,16 @@ Njazídja, Comoros
 Njombe, Tanzania
 </td>
 <td style="text-align:right;">
-21.4905588
+2160.9107919
 </td>
 <td style="text-align:right;">
-39.5022739
+3991.6907033
 </td>
 <td style="text-align:right;">
-21.3068865
+2132.4965324
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8793,13 +8722,13 @@ Njombe, Tanzania
 Nkhata Bay, Malawi
 </td>
 <td style="text-align:right;">
-10.4872790
+1520.9754288
 </td>
 <td style="text-align:right;">
-62.8471762
+6880.9699192
 </td>
 <td style="text-align:right;">
-2.5588845
+1240.5673275
 </td>
 <td style="text-align:right;">
 0
@@ -8810,50 +8739,16 @@ Nkhata Bay, Malawi
 Nkhotakota, Malawi
 </td>
 <td style="text-align:right;">
-14.6879955
+2095.6916270
 </td>
 <td style="text-align:right;">
-63.4076267
+6507.7034942
 </td>
 <td style="text-align:right;">
-8.8947466
+1443.3403346
 </td>
 <td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Nord, Burkina Faso
-</td>
-<td style="text-align:right;">
-85.8341229
-</td>
-<td style="text-align:right;">
-94.0605503
-</td>
-<td style="text-align:right;">
-87.6618081
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Nord, Cameroon
-</td>
-<td style="text-align:right;">
-41.8048319
-</td>
-<td style="text-align:right;">
-71.3256218
-</td>
-<td style="text-align:right;">
-45.6354343
-</td>
-<td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8861,16 +8756,50 @@ Nord, Cameroon
 Nord-Ouest, Cameroon
 </td>
 <td style="text-align:right;">
-32.4920410
+3262.1565009
 </td>
 <td style="text-align:right;">
-52.8993633
+5239.3638961
 </td>
 <td style="text-align:right;">
-32.0498334
+3249.1943789
 </td>
 <td style="text-align:right;">
-100
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Nord, Burkina Faso
+</td>
+<td style="text-align:right;">
+8583.3925574
+</td>
+<td style="text-align:right;">
+9347.9882193
+</td>
+<td style="text-align:right;">
+8787.0475045
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Nord, Cameroon
+</td>
+<td style="text-align:right;">
+4347.0515975
+</td>
+<td style="text-align:right;">
+7525.4743646
+</td>
+<td style="text-align:right;">
+4575.3858219
+</td>
+<td style="text-align:right;">
+0
 </td>
 </tr>
 <tr>
@@ -8878,16 +8807,16 @@ Nord-Ouest, Cameroon
 North Bahr-al-Ghazal, South Sudan
 </td>
 <td style="text-align:right;">
-41.4078477
+4138.5080574
 </td>
 <td style="text-align:right;">
-58.0794572
+5826.0906803
 </td>
 <td style="text-align:right;">
-39.7100569
+3967.1190782
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8895,13 +8824,13 @@ North Bahr-al-Ghazal, South Sudan
 North Bank, Gambia
 </td>
 <td style="text-align:right;">
-4.8061139
+483.2350915
 </td>
 <td style="text-align:right;">
-8.5423605
+851.0064607
 </td>
 <td style="text-align:right;">
-4.5391226
+456.7059358
 </td>
 <td style="text-align:right;">
 0
@@ -8912,13 +8841,47 @@ North Bank, Gambia
 North Darfur, Sudan
 </td>
 <td style="text-align:right;">
-5.8549640
+594.3853928
 </td>
 <td style="text-align:right;">
-22.7160525
+2525.4236948
 </td>
 <td style="text-align:right;">
-5.6590047
+566.9891038
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+North Kurdufan, Sudan
+</td>
+<td style="text-align:right;">
+938.8726354
+</td>
+<td style="text-align:right;">
+2029.9675631
+</td>
+<td style="text-align:right;">
+849.8058253
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+North West, South Africa
+</td>
+<td style="text-align:right;">
+1017.4341522
+</td>
+<td style="text-align:right;">
+1634.8511672
+</td>
+<td style="text-align:right;">
+1060.3676265
 </td>
 <td style="text-align:right;">
 0
@@ -8929,13 +8892,47 @@ North Darfur, Sudan
 North-East, Botswana
 </td>
 <td style="text-align:right;">
-3.3982957
+340.1964904
 </td>
 <td style="text-align:right;">
-5.2925548
+535.3047777
 </td>
 <td style="text-align:right;">
-3.3682307
+336.2287850
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+North-West, Botswana
+</td>
+<td style="text-align:right;">
+580.5374373
+</td>
+<td style="text-align:right;">
+2113.0958287
+</td>
+<td style="text-align:right;">
+458.6952244
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+North-Western, Zambia
+</td>
+<td style="text-align:right;">
+3774.6131012
+</td>
+<td style="text-align:right;">
+6345.7938764
+</td>
+<td style="text-align:right;">
+3914.8988066
 </td>
 <td style="text-align:right;">
 0
@@ -8963,16 +8960,16 @@ NA
 Northern, Ghana
 </td>
 <td style="text-align:right;">
-47.9650604
+4947.8680262
 </td>
 <td style="text-align:right;">
-79.5715708
+8628.1035771
 </td>
 <td style="text-align:right;">
-49.8899953
+4987.7108020
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8980,16 +8977,16 @@ Northern, Ghana
 Northern, Sierra Leone
 </td>
 <td style="text-align:right;">
-61.0473212
+6170.2248014
 </td>
 <td style="text-align:right;">
-88.1013245
+8744.2754419
 </td>
 <td style="text-align:right;">
-59.2378785
+5920.0861881
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -8997,13 +8994,13 @@ Northern, Sierra Leone
 Northern, Sudan
 </td>
 <td style="text-align:right;">
-3.1594632
+319.3953654
 </td>
 <td style="text-align:right;">
-9.4313773
+1015.9170481
 </td>
 <td style="text-align:right;">
-2.7586065
+281.0805398
 </td>
 <td style="text-align:right;">
 0
@@ -9014,81 +9011,13 @@ Northern, Sudan
 Northern, Zambia
 </td>
 <td style="text-align:right;">
-19.3448014
+2059.2815781
 </td>
 <td style="text-align:right;">
-60.0549089
+7229.5975352
 </td>
 <td style="text-align:right;">
-19.6073902
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-North Kurdufan, Sudan
-</td>
-<td style="text-align:right;">
-9.3924925
-</td>
-<td style="text-align:right;">
-20.3176662
-</td>
-<td style="text-align:right;">
-8.4525402
-</td>
-<td style="text-align:right;">
-0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-North-West, Botswana
-</td>
-<td style="text-align:right;">
-5.7430017
-</td>
-<td style="text-align:right;">
-21.3692481
-</td>
-<td style="text-align:right;">
-4.4474811
-</td>
-<td style="text-align:right;">
-0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-North-Western, Zambia
-</td>
-<td style="text-align:right;">
-37.2493162
-</td>
-<td style="text-align:right;">
-64.0987310
-</td>
-<td style="text-align:right;">
-39.0505540
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-North West, South Africa
-</td>
-<td style="text-align:right;">
-10.1621943
-</td>
-<td style="text-align:right;">
-16.3481378
-</td>
-<td style="text-align:right;">
-10.5181209
+1992.9449925
 </td>
 <td style="text-align:right;">
 0
@@ -9099,13 +9028,13 @@ North West, South Africa
 Nouakchott, Mauritania
 </td>
 <td style="text-align:right;">
-10.1202827
+1247.1146923
 </td>
 <td style="text-align:right;">
-17.1507008
+1898.5695634
 </td>
 <td style="text-align:right;">
-9.8478958
+1056.8972364
 </td>
 <td style="text-align:right;">
 0
@@ -9116,13 +9045,13 @@ Nouakchott, Mauritania
 Nsanje, Malawi
 </td>
 <td style="text-align:right;">
-18.7680812
+1882.7629308
 </td>
 <td style="text-align:right;">
-33.0059799
+3302.5435169
 </td>
 <td style="text-align:right;">
-18.7386682
+1861.5647435
 </td>
 <td style="text-align:right;">
 0
@@ -9133,13 +9062,13 @@ Nsanje, Malawi
 Ntcheu, Malawi
 </td>
 <td style="text-align:right;">
-16.4372021
+1691.8011574
 </td>
 <td style="text-align:right;">
-23.0896593
+3046.5081559
 </td>
 <td style="text-align:right;">
-16.2791460
+1656.2766057
 </td>
 <td style="text-align:right;">
 0
@@ -9150,16 +9079,16 @@ Ntcheu, Malawi
 Ntchisi, Malawi
 </td>
 <td style="text-align:right;">
-29.9457133
+3019.8989838
 </td>
 <td style="text-align:right;">
-37.7920858
+3725.2409321
 </td>
 <td style="text-align:right;">
-29.9654679
+2988.1708464
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9167,16 +9096,16 @@ Ntchisi, Malawi
 Ntungamo, Uganda
 </td>
 <td style="text-align:right;">
-23.9565100
+2407.1688341
 </td>
 <td style="text-align:right;">
-39.8283788
+3962.1128058
 </td>
 <td style="text-align:right;">
-23.7099454
+2370.1930087
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9184,13 +9113,13 @@ Ntungamo, Uganda
 Nugaal, Somalia
 </td>
 <td style="text-align:right;">
-6.9704588
+698.9115537
 </td>
 <td style="text-align:right;">
-16.3433323
+1759.7082203
 </td>
 <td style="text-align:right;">
-6.8634929
+686.0743420
 </td>
 <td style="text-align:right;">
 0
@@ -9201,16 +9130,16 @@ Nugaal, Somalia
 Nyamira, Kenya
 </td>
 <td style="text-align:right;">
-71.0600898
+7101.9193767
 </td>
 <td style="text-align:right;">
-91.8739011
+9150.6521062
 </td>
 <td style="text-align:right;">
-72.9408574
+7279.2683102
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9218,13 +9147,13 @@ Nyamira, Kenya
 Nyandarua, Kenya
 </td>
 <td style="text-align:right;">
-25.9202933
+2588.9740265
 </td>
 <td style="text-align:right;">
-29.4530227
+2937.7725794
 </td>
 <td style="text-align:right;">
-25.9202933
+2588.9740265
 </td>
 <td style="text-align:right;">
 0
@@ -9235,16 +9164,16 @@ Nyandarua, Kenya
 Nyanga, Gabon
 </td>
 <td style="text-align:right;">
-19.9664742
+2143.0205676
 </td>
 <td style="text-align:right;">
-56.3231044
+6905.6575910
 </td>
 <td style="text-align:right;">
-19.6765637
+2045.4171295
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9252,16 +9181,16 @@ Nyanga, Gabon
 Nyeri, Kenya
 </td>
 <td style="text-align:right;">
-27.9020471
+2785.4567659
 </td>
 <td style="text-align:right;">
-33.9164831
+3383.8250773
 </td>
 <td style="text-align:right;">
-27.8370335
+2783.6180694
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9269,16 +9198,16 @@ Nyeri, Kenya
 Nzérékoré, Guinea
 </td>
 <td style="text-align:right;">
-71.8914161
+7181.6469052
 </td>
 <td style="text-align:right;">
-86.9891474
+8714.0966191
 </td>
 <td style="text-align:right;">
-71.3240413
+7124.0414365
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9303,13 +9232,13 @@ Nzwani, Comoros
 Obock, Djibouti
 </td>
 <td style="text-align:right;">
-11.2374146
+1223.6876592
 </td>
 <td style="text-align:right;">
-20.4515596
+2169.5475213
 </td>
 <td style="text-align:right;">
-10.1448874
+1129.4534370
 </td>
 <td style="text-align:right;">
 0
@@ -9320,13 +9249,13 @@ Obock, Djibouti
 Ogooué-Ivindo, Gabon
 </td>
 <td style="text-align:right;">
-8.4863838
+864.7382199
 </td>
 <td style="text-align:right;">
-39.2135064
+4002.7954218
 </td>
 <td style="text-align:right;">
-8.2508283
+790.5762635
 </td>
 <td style="text-align:right;">
 0
@@ -9337,13 +9266,13 @@ Ogooué-Ivindo, Gabon
 Ogooué-Lolo, Gabon
 </td>
 <td style="text-align:right;">
-11.5306426
+1225.0430455
 </td>
 <td style="text-align:right;">
-34.4950503
+3488.1753145
 </td>
 <td style="text-align:right;">
-11.2254546
+1267.8122331
 </td>
 <td style="text-align:right;">
 0
@@ -9354,13 +9283,13 @@ Ogooué-Lolo, Gabon
 Ogooué-Maritime, Gabon
 </td>
 <td style="text-align:right;">
-8.0141138
+820.4999289
 </td>
 <td style="text-align:right;">
-33.6373787
+3431.5913547
 </td>
 <td style="text-align:right;">
-6.3804617
+546.9961458
 </td>
 <td style="text-align:right;">
 0
@@ -9371,16 +9300,16 @@ Ogooué-Maritime, Gabon
 Ogun, Nigeria
 </td>
 <td style="text-align:right;">
-49.9672904
+5053.3792049
 </td>
 <td style="text-align:right;">
-83.6145676
+8578.9431097
 </td>
 <td style="text-align:right;">
-49.7028834
+4986.9006821
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9388,16 +9317,16 @@ Ogun, Nigeria
 Ohangwena, Namibia
 </td>
 <td style="text-align:right;">
-32.9601087
+3302.0341260
 </td>
 <td style="text-align:right;">
-40.8700223
+4087.7423515
 </td>
 <td style="text-align:right;">
-32.8419207
+3281.0629692
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9405,16 +9334,16 @@ Ohangwena, Namibia
 Oio, Guinea-Bissau
 </td>
 <td style="text-align:right;">
-23.7783600
+2381.3846208
 </td>
 <td style="text-align:right;">
-36.9299595
+3662.5088922
 </td>
 <td style="text-align:right;">
-24.0211323
+2403.2469502
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9422,16 +9351,16 @@ Oio, Guinea-Bissau
 Omaheke, Namibia
 </td>
 <td style="text-align:right;">
-25.6336299
+2560.4511819
 </td>
 <td style="text-align:right;">
-34.0341520
+3414.7872144
 </td>
 <td style="text-align:right;">
-26.0386035
+2600.1334188
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9439,16 +9368,16 @@ Omaheke, Namibia
 Ombella-M'Poko, Central African Republic
 </td>
 <td style="text-align:right;">
-67.0880361
+6719.7527088
 </td>
 <td style="text-align:right;">
-86.5039630
+8720.7128193
 </td>
 <td style="text-align:right;">
-66.7120921
+6683.3833426
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9456,16 +9385,16 @@ Ombella-M'Poko, Central African Republic
 Omusati, Namibia
 </td>
 <td style="text-align:right;">
-18.9603958
+1991.2618754
 </td>
 <td style="text-align:right;">
-37.0387211
+3671.5748901
 </td>
 <td style="text-align:right;">
-22.7062209
+2291.7730783
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9473,16 +9402,16 @@ Omusati, Namibia
 Ondo, Nigeria
 </td>
 <td style="text-align:right;">
-47.3497092
+4746.2302881
 </td>
 <td style="text-align:right;">
-63.3620544
+6533.0830816
 </td>
 <td style="text-align:right;">
-47.1966279
+4726.4298687
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9497,23 +9426,6 @@ NaN
 </td>
 <td style="text-align:right;">
 NA
-</td>
-<td style="text-align:right;">
-0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Orientale, Democratic Republic of the Congo
-</td>
-<td style="text-align:right;">
-18.2405543
-</td>
-<td style="text-align:right;">
-94.5988676
-</td>
-<td style="text-align:right;">
-16.6682945
 </td>
 <td style="text-align:right;">
 0
@@ -9538,16 +9450,33 @@ NA
 </tr>
 <tr>
 <td style="text-align:left;">
+Orientale, Democratic Republic of the Congo
+</td>
+<td style="text-align:right;">
+1894.2080859
+</td>
+<td style="text-align:right;">
+9513.5696191
+</td>
+<td style="text-align:right;">
+1731.5659507
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Oromia, Ethiopia
 </td>
 <td style="text-align:right;">
-1.5256365
+155.8321485
 </td>
 <td style="text-align:right;">
-12.0582470
+1310.7776640
 </td>
 <td style="text-align:right;">
-1.3572067
+138.5489097
 </td>
 <td style="text-align:right;">
 0
@@ -9558,16 +9487,16 @@ Oromia, Ethiopia
 Oshana, Namibia
 </td>
 <td style="text-align:right;">
-17.5383642
+1894.4794823
 </td>
 <td style="text-align:right;">
-37.9208226
+3841.4602367
 </td>
 <td style="text-align:right;">
-25.4291541
+2554.4106249
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9575,16 +9504,16 @@ Oshana, Namibia
 Oshikoto, Namibia
 </td>
 <td style="text-align:right;">
-22.2307754
+2330.3356182
 </td>
 <td style="text-align:right;">
-42.0008860
+4216.0912867
 </td>
 <td style="text-align:right;">
-29.3094878
+2933.1400330
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9592,16 +9521,16 @@ Oshikoto, Namibia
 Osun, Nigeria
 </td>
 <td style="text-align:right;">
-55.7309071
+5566.2793047
 </td>
 <td style="text-align:right;">
-75.6413390
+7914.6202337
 </td>
 <td style="text-align:right;">
-55.5458390
+5531.2939765
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9609,16 +9538,16 @@ Osun, Nigeria
 Otjozondjupa, Namibia
 </td>
 <td style="text-align:right;">
-29.0108510
+2894.3538093
 </td>
 <td style="text-align:right;">
-40.0086743
+4015.0390166
 </td>
 <td style="text-align:right;">
-29.5057731
+2942.3990515
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9626,16 +9555,16 @@ Otjozondjupa, Namibia
 Ouaddaï, Chad
 </td>
 <td style="text-align:right;">
-22.1379713
+2213.9544061
 </td>
 <td style="text-align:right;">
-32.0583519
+3196.4200370
 </td>
 <td style="text-align:right;">
-22.3904816
+2236.7027219
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9643,16 +9572,16 @@ Ouaddaï, Chad
 Ouaka, Central African Republic
 </td>
 <td style="text-align:right;">
-65.3895676
+6543.8029019
 </td>
 <td style="text-align:right;">
-81.3673937
+8155.3236692
 </td>
 <td style="text-align:right;">
-66.2202264
+6622.8203255
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9711,16 +9640,16 @@ NA
 Ouémé, Benin
 </td>
 <td style="text-align:right;">
-47.6597557
+5047.6304377
 </td>
 <td style="text-align:right;">
-63.7816772
+6363.7382282
 </td>
 <td style="text-align:right;">
-50.6764261
+5171.6153002
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9728,33 +9657,16 @@ Ouémé, Benin
 Ouest, Cameroon
 </td>
 <td style="text-align:right;">
-33.9441198
+3411.9551572
 </td>
 <td style="text-align:right;">
-52.1572892
+5155.7066270
 </td>
 <td style="text-align:right;">
-34.4477721
+3511.6296588
 </td>
 <td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Ouham, Central African Republic
-</td>
-<td style="text-align:right;">
-53.3222769
-</td>
-<td style="text-align:right;">
-67.4793170
-</td>
-<td style="text-align:right;">
-53.0169377
-</td>
-<td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9762,16 +9674,33 @@ Ouham, Central African Republic
 Ouham-Pendé, Central African Republic
 </td>
 <td style="text-align:right;">
-63.0282061
+6304.3329621
 </td>
 <td style="text-align:right;">
-73.6166995
+7349.5977833
 </td>
 <td style="text-align:right;">
-63.2846503
+6330.3042242
 </td>
 <td style="text-align:right;">
-100
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ouham, Central African Republic
+</td>
+<td style="text-align:right;">
+5326.0109791
+</td>
+<td style="text-align:right;">
+6710.3375821
+</td>
+<td style="text-align:right;">
+5290.4596881
+</td>
+<td style="text-align:right;">
+0
 </td>
 </tr>
 <tr>
@@ -9813,16 +9742,16 @@ NA
 Oyo, Nigeria
 </td>
 <td style="text-align:right;">
-71.8559411
+7484.3123757
 </td>
 <td style="text-align:right;">
-89.5651121
+8961.1970431
 </td>
 <td style="text-align:right;">
-76.5341162
+7694.4749866
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9830,16 +9759,16 @@ Oyo, Nigeria
 Pader, Uganda
 </td>
 <td style="text-align:right;">
-35.3722072
+4079.5497394
 </td>
 <td style="text-align:right;">
-61.7671825
+6180.5619211
 </td>
 <td style="text-align:right;">
-39.6757493
+4082.9935814
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9847,16 +9776,16 @@ Pader, Uganda
 Pallisa, Uganda
 </td>
 <td style="text-align:right;">
-70.3161600
+7037.9622178
 </td>
 <td style="text-align:right;">
-78.7116168
+7860.3285284
 </td>
 <td style="text-align:right;">
-70.8513325
+7077.5792325
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9915,16 +9844,16 @@ NaN
 Pemba North, Tanzania
 </td>
 <td style="text-align:right;">
-26.2963021
+2784.2432413
 </td>
 <td style="text-align:right;">
-31.4588999
+3334.0560622
 </td>
 <td style="text-align:right;">
-26.8940411
+2789.1214699
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9932,16 +9861,16 @@ Pemba North, Tanzania
 Pemba South, Tanzania
 </td>
 <td style="text-align:right;">
-26.5002757
+2876.5969396
 </td>
 <td style="text-align:right;">
-34.1649834
+3637.4038323
 </td>
 <td style="text-align:right;">
-26.8512067
+2821.7419609
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -9949,13 +9878,13 @@ Pemba South, Tanzania
 Phalombe, Malawi
 </td>
 <td style="text-align:right;">
-16.0948887
+1778.7443367
 </td>
 <td style="text-align:right;">
-30.5297676
+3272.7621794
 </td>
 <td style="text-align:right;">
-15.0438200
+1615.3166141
 </td>
 <td style="text-align:right;">
 0
@@ -9997,36 +9926,36 @@ NaN
 </tr>
 <tr>
 <td style="text-align:left;">
-Plateau, Benin
+Plateau-Central, Burkina Faso
 </td>
 <td style="text-align:right;">
-52.2524070
+7272.6667009
 </td>
 <td style="text-align:right;">
-61.7858366
+8776.0291996
 </td>
 <td style="text-align:right;">
-52.9546374
+7240.6187358
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-Plateau-Central, Burkina Faso
+Plateau, Benin
 </td>
 <td style="text-align:right;">
-72.7097488
+5247.4714144
 </td>
 <td style="text-align:right;">
-87.8817606
+6159.9663210
 </td>
 <td style="text-align:right;">
-72.3394076
+5303.9581132
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -10034,16 +9963,16 @@ Plateau-Central, Burkina Faso
 Plateau, Nigeria
 </td>
 <td style="text-align:right;">
-69.7454782
+6985.8168549
 </td>
 <td style="text-align:right;">
-82.9459940
+8446.7189476
 </td>
 <td style="text-align:right;">
-69.9434545
+7014.7088955
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -10051,13 +9980,13 @@ Plateau, Nigeria
 Plateaux, Republic of Congo
 </td>
 <td style="text-align:right;">
-19.7733618
+1982.6514532
 </td>
 <td style="text-align:right;">
-34.3333568
+3466.7270475
 </td>
 <td style="text-align:right;">
-19.6050479
+1967.9675131
 </td>
 <td style="text-align:right;">
 0
@@ -10068,16 +9997,16 @@ Plateaux, Republic of Congo
 Plateaux, Togo
 </td>
 <td style="text-align:right;">
-61.2552620
+6102.2768744
 </td>
 <td style="text-align:right;">
-70.1503868
+7126.1540025
 </td>
 <td style="text-align:right;">
-62.6351672
+6229.4423363
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -10102,16 +10031,16 @@ NaN
 Pointe Noire, Republic of Congo
 </td>
 <td style="text-align:right;">
-22.6566988
+2468.2681043
 </td>
 <td style="text-align:right;">
-26.8822652
+2778.6047772
 </td>
 <td style="text-align:right;">
-24.7699579
+2745.5162232
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -10119,16 +10048,16 @@ Pointe Noire, Republic of Congo
 Pool, Republic of Congo
 </td>
 <td style="text-align:right;">
-30.4477482
+3040.8558176
 </td>
 <td style="text-align:right;">
-52.2288645
+5218.9176883
 </td>
 <td style="text-align:right;">
-28.7557567
+2871.7670121
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -10221,16 +10150,16 @@ Príncipe, São Tomé and Príncipe
 Pwani, Tanzania
 </td>
 <td style="text-align:right;">
-41.2366304
+4143.0227803
 </td>
 <td style="text-align:right;">
-63.0033853
+6307.1378894
 </td>
 <td style="text-align:right;">
-41.4317261
+4158.2196751
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -10272,16 +10201,16 @@ NA
 Quinara, Guinea-Bissau
 </td>
 <td style="text-align:right;">
-23.8923013
+2460.5661427
 </td>
 <td style="text-align:right;">
-33.4735197
+3434.2810696
 </td>
 <td style="text-align:right;">
-24.3097605
+2486.5773851
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -10323,16 +10252,16 @@ NA
 Rakai, Uganda
 </td>
 <td style="text-align:right;">
-40.1431139
+4133.0511574
 </td>
 <td style="text-align:right;">
-60.7219168
+6156.8972372
 </td>
 <td style="text-align:right;">
-39.9221721
+4076.1403195
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -10340,13 +10269,13 @@ Rakai, Uganda
 Red Sea, Sudan
 </td>
 <td style="text-align:right;">
-3.3728812
+346.1776939
 </td>
 <td style="text-align:right;">
-23.1493915
+2474.6130968
 </td>
 <td style="text-align:right;">
-3.1375122
+316.2588099
 </td>
 <td style="text-align:right;">
 0
@@ -10388,7 +10317,7 @@ NaN
 </tr>
 <tr>
 <td style="text-align:left;">
-Ribeira Grande, Cape Verde
+Ribeira Grande de Santiago, Cape Verde
 </td>
 <td style="text-align:right;">
 NaN
@@ -10405,7 +10334,7 @@ NaN
 </tr>
 <tr>
 <td style="text-align:left;">
-Ribeira Grande de Santiago, Cape Verde
+Ribeira Grande, Cape Verde
 </td>
 <td style="text-align:right;">
 NaN
@@ -10425,16 +10354,16 @@ NaN
 River Cess, Liberia
 </td>
 <td style="text-align:right;">
-39.2364294
+3980.7964961
 </td>
 <td style="text-align:right;">
-59.9500248
+6510.3848220
 </td>
 <td style="text-align:right;">
-39.1630108
+3930.1841772
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -10442,16 +10371,16 @@ River Cess, Liberia
 River Gee, Liberia
 </td>
 <td style="text-align:right;">
-41.3501483
+4144.6073435
 </td>
 <td style="text-align:right;">
-50.6790194
+5033.1447799
 </td>
 <td style="text-align:right;">
-42.2791732
+4196.3940402
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -10459,13 +10388,13 @@ River Gee, Liberia
 River Nile, Sudan
 </td>
 <td style="text-align:right;">
-2.7372412
+277.9404459
 </td>
 <td style="text-align:right;">
-11.4104319
+1143.1243202
 </td>
 <td style="text-align:right;">
-2.4455986
+245.5174752
 </td>
 <td style="text-align:right;">
 0
@@ -10476,16 +10405,16 @@ River Nile, Sudan
 Rivers, Nigeria
 </td>
 <td style="text-align:right;">
-49.6529969
+4976.6476820
 </td>
 <td style="text-align:right;">
-66.7805224
+7294.8556849
 </td>
 <td style="text-align:right;">
-49.2887159
+4922.7568890
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -10544,16 +10473,16 @@ NaN
 Rukungiri, Uganda
 </td>
 <td style="text-align:right;">
-19.9812268
+2277.2347564
 </td>
 <td style="text-align:right;">
-40.2759890
+4034.1203868
 </td>
 <td style="text-align:right;">
-24.8631608
+2659.4497843
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -10561,13 +10490,13 @@ Rukungiri, Uganda
 Rukwa, Tanzania
 </td>
 <td style="text-align:right;">
-13.5560984
+1484.2366947
 </td>
 <td style="text-align:right;">
-30.4809954
+3402.5625501
 </td>
 <td style="text-align:right;">
-14.7435823
+1524.9253373
 </td>
 <td style="text-align:right;">
 0
@@ -10578,13 +10507,13 @@ Rukwa, Tanzania
 Rumphi, Malawi
 </td>
 <td style="text-align:right;">
-17.2663905
+2273.5848627
 </td>
 <td style="text-align:right;">
-57.2887185
+5735.9703972
 </td>
 <td style="text-align:right;">
-17.9181054
+1957.9762783
 </td>
 <td style="text-align:right;">
 0
@@ -10595,16 +10524,16 @@ Rumphi, Malawi
 Rutana, Burundi
 </td>
 <td style="text-align:right;">
-28.5963331
+2887.0524380
 </td>
 <td style="text-align:right;">
-36.6524136
+3649.5474351
 </td>
 <td style="text-align:right;">
-28.7769044
+2889.2336514
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -10612,16 +10541,16 @@ Rutana, Burundi
 Ruvuma, Tanzania
 </td>
 <td style="text-align:right;">
-18.1116315
+1838.7382606
 </td>
 <td style="text-align:right;">
-35.3203167
+3546.6395784
 </td>
 <td style="text-align:right;">
-17.1257903
+1736.9767558
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -10629,16 +10558,16 @@ Ruvuma, Tanzania
 Ruyigi, Burundi
 </td>
 <td style="text-align:right;">
-29.8250589
+2982.0144177
 </td>
 <td style="text-align:right;">
-39.2747527
+3883.0718405
 </td>
 <td style="text-align:right;">
-29.1589534
+2936.3958214
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -10680,16 +10609,16 @@ Sada, Mayotte
 Sahel, Burkina Faso
 </td>
 <td style="text-align:right;">
-81.3504723
+8132.8726688
 </td>
 <td style="text-align:right;">
-94.8941660
+9527.5850532
 </td>
 <td style="text-align:right;">
-82.1533989
+8212.0181881
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -10711,41 +10640,7 @@ NA
 </tr>
 <tr>
 <td style="text-align:left;">
-Saint-Benoît, Reunion
-</td>
-<td style="text-align:right;">
-NaN
-</td>
-<td style="text-align:right;">
--Inf
-</td>
-<td style="text-align:right;">
-0.0000000
-</td>
-<td style="text-align:right;">
-0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Saint Brandon, Mauritius
-</td>
-<td style="text-align:right;">
-NaN
-</td>
-<td style="text-align:right;">
--Inf
-</td>
-<td style="text-align:right;">
-0.0000000
-</td>
-<td style="text-align:right;">
-0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Saint-Denis, Reunion
 </td>
 <td style="text-align:right;">
 NaN
@@ -10779,23 +10674,6 @@ NA
 </tr>
 <tr>
 <td style="text-align:left;">
-Saint-Louis, Senegal
-</td>
-<td style="text-align:right;">
-11.9160657
-</td>
-<td style="text-align:right;">
-18.6931149
-</td>
-<td style="text-align:right;">
-12.8816364
-</td>
-<td style="text-align:right;">
-0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Saint Louis, Seychelles
 </td>
 <td style="text-align:right;">
@@ -10806,6 +10684,57 @@ NaN
 </td>
 <td style="text-align:right;">
 0.0000000
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saint-Benoît, Reunion
+</td>
+<td style="text-align:right;">
+NaN
+</td>
+<td style="text-align:right;">
+-Inf
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saint-Denis, Reunion
+</td>
+<td style="text-align:right;">
+NaN
+</td>
+<td style="text-align:right;">
+-Inf
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saint-Louis, Senegal
+</td>
+<td style="text-align:right;">
+1202.7387599
+</td>
+<td style="text-align:right;">
+1873.5610570
+</td>
+<td style="text-align:right;">
+1296.5339543
 </td>
 <td style="text-align:right;">
 0
@@ -10847,23 +10776,6 @@ NaN
 </tr>
 <tr>
 <td style="text-align:left;">
-Salamat, Chad
-</td>
-<td style="text-align:right;">
-36.4907253
-</td>
-<td style="text-align:right;">
-43.8299629
-</td>
-<td style="text-align:right;">
-36.9748914
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Sal, Cape Verde
 </td>
 <td style="text-align:right;">
@@ -10881,19 +10793,36 @@ NaN
 </tr>
 <tr>
 <td style="text-align:left;">
+Salamat, Chad
+</td>
+<td style="text-align:right;">
+3663.7949893
+</td>
+<td style="text-align:right;">
+4402.3216364
+</td>
+<td style="text-align:right;">
+3695.5945446
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Salima, Malawi
 </td>
 <td style="text-align:right;">
-22.4474986
+2965.0817301
 </td>
 <td style="text-align:right;">
-54.9372628
+5587.2023387
 </td>
 <td style="text-align:right;">
-21.5914273
+2245.2075656
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -10901,16 +10830,16 @@ Salima, Malawi
 Samburu, Kenya
 </td>
 <td style="text-align:right;">
-23.4505943
+2356.1278956
 </td>
 <td style="text-align:right;">
-41.6685484
+4182.1971911
 </td>
 <td style="text-align:right;">
-22.5643022
+2272.5907636
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -10918,13 +10847,13 @@ Samburu, Kenya
 Sanaag, Somalia
 </td>
 <td style="text-align:right;">
-9.7870483
+976.0665896
 </td>
 <td style="text-align:right;">
-17.1544060
+1698.4656698
 </td>
 <td style="text-align:right;">
-9.6133580
+958.0518855
 </td>
 <td style="text-align:right;">
 0
@@ -10935,16 +10864,16 @@ Sanaag, Somalia
 Sangha-Mbaéré, Central African Republic
 </td>
 <td style="text-align:right;">
-40.4236694
+4122.5485009
 </td>
 <td style="text-align:right;">
-55.7947018
+5663.8087597
 </td>
 <td style="text-align:right;">
-43.1489389
+4315.8902329
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -10952,21 +10881,21 @@ Sangha-Mbaéré, Central African Republic
 Sangha, Republic of Congo
 </td>
 <td style="text-align:right;">
-27.1579192
+2869.3871960
 </td>
 <td style="text-align:right;">
-50.7397691
+5051.8726729
 </td>
 <td style="text-align:right;">
-33.1945779
+3384.4669468
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-Santa Catarina, Cape Verde
+Santa Catarina do Fogo, Cape Verde
 </td>
 <td style="text-align:right;">
 NaN
@@ -10983,7 +10912,7 @@ NaN
 </tr>
 <tr>
 <td style="text-align:left;">
-Santa Catarina do Fogo, Cape Verde
+Santa Catarina, Cape Verde
 </td>
 <td style="text-align:right;">
 NaN
@@ -11139,16 +11068,16 @@ NaN
 Sassandra-Marahoué, Côte d'Ivoire
 </td>
 <td style="text-align:right;">
-42.5543974
+4389.2547081
 </td>
 <td style="text-align:right;">
-85.6437908
+8695.8430400
 </td>
 <td style="text-align:right;">
-50.4260012
+5076.1904676
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -11156,16 +11085,16 @@ Sassandra-Marahoué, Côte d'Ivoire
 Savanes, Côte d'Ivoire
 </td>
 <td style="text-align:right;">
-70.1345694
+7146.8812546
 </td>
 <td style="text-align:right;">
-95.3848071
+9480.8407819
 </td>
 <td style="text-align:right;">
-76.9951385
+7717.0795193
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -11173,16 +11102,16 @@ Savanes, Côte d'Ivoire
 Savanes, Togo
 </td>
 <td style="text-align:right;">
-66.2916268
+6970.3348500
 </td>
 <td style="text-align:right;">
-84.5399192
+8595.1737417
 </td>
 <td style="text-align:right;">
-71.0011317
+7171.7028058
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -11207,13 +11136,13 @@ NaN
 Sédhiou, Senegal
 </td>
 <td style="text-align:right;">
-15.1304095
+1564.3174377
 </td>
 <td style="text-align:right;">
-31.2133542
+3372.5844072
 </td>
 <td style="text-align:right;">
-14.7440323
+1543.6810649
 </td>
 <td style="text-align:right;">
 0
@@ -11224,16 +11153,16 @@ Sédhiou, Senegal
 Ségou, Mali
 </td>
 <td style="text-align:right;">
-81.6073763
+8171.1020102
 </td>
 <td style="text-align:right;">
-96.1588093
+9581.6711916
 </td>
 <td style="text-align:right;">
-80.7377517
+8076.9696181
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -11241,13 +11170,13 @@ Ségou, Mali
 Selibe Phikwe, Botswana
 </td>
 <td style="text-align:right;">
-3.5008439
+347.4266177
 </td>
 <td style="text-align:right;">
-3.6507329
+362.0215858
 </td>
 <td style="text-align:right;">
-3.5008439
+347.4266177
 </td>
 <td style="text-align:right;">
 0
@@ -11258,16 +11187,16 @@ Selibe Phikwe, Botswana
 Sembabule, Uganda
 </td>
 <td style="text-align:right;">
-57.8275802
+5807.1091884
 </td>
 <td style="text-align:right;">
-67.0540413
+6683.6423708
 </td>
 <td style="text-align:right;">
-58.6077090
+5883.5868400
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -11275,13 +11204,13 @@ Sembabule, Uganda
 Semenawi Keyih Bahri, Eritrea
 </td>
 <td style="text-align:right;">
-4.2705965
+433.9911905
 </td>
 <td style="text-align:right;">
-13.8402251
+1380.9435823
 </td>
 <td style="text-align:right;">
-4.0186585
+402.9497563
 </td>
 <td style="text-align:right;">
 0
@@ -11292,13 +11221,13 @@ Semenawi Keyih Bahri, Eritrea
 Sennar, Sudan
 </td>
 <td style="text-align:right;">
-11.2328793
+1167.7671935
 </td>
 <td style="text-align:right;">
-24.7373894
+2475.4693154
 </td>
 <td style="text-align:right;">
-11.7243818
+1211.1012748
 </td>
 <td style="text-align:right;">
 0
@@ -11343,16 +11272,16 @@ NA
 Shabeellaha Dhexe, Somalia
 </td>
 <td style="text-align:right;">
-20.8544599
+2087.8558583
 </td>
 <td style="text-align:right;">
-33.8093855
+3369.3053088
 </td>
 <td style="text-align:right;">
-21.7583725
+2177.5757192
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -11360,16 +11289,16 @@ Shabeellaha Dhexe, Somalia
 Shabeellaha Hoose, Somalia
 </td>
 <td style="text-align:right;">
-29.4104932
+2944.4812564
 </td>
 <td style="text-align:right;">
-43.2944030
+4305.3842890
 </td>
 <td style="text-align:right;">
-30.2307501
+3020.2156200
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -11394,16 +11323,16 @@ NA
 Shinyanga, Tanzania
 </td>
 <td style="text-align:right;">
-25.5279607
+2558.6363919
 </td>
 <td style="text-align:right;">
-50.6456219
+5028.7722574
 </td>
 <td style="text-align:right;">
-25.0407982
+2510.5996361
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -11428,16 +11357,16 @@ NA
 Siaya, Kenya
 </td>
 <td style="text-align:right;">
-47.8556452
+5451.1260963
 </td>
 <td style="text-align:right;">
-75.4674079
+7548.8283883
 </td>
 <td style="text-align:right;">
-59.5548080
+5997.7792261
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -11479,16 +11408,16 @@ NA
 Sikasso, Mali
 </td>
 <td style="text-align:right;">
-80.4185615
+8065.4959154
 </td>
 <td style="text-align:right;">
-96.6389587
+9670.2547129
 </td>
 <td style="text-align:right;">
-79.7994274
+7979.5036818
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -11496,16 +11425,16 @@ Sikasso, Mali
 Sila, Chad
 </td>
 <td style="text-align:right;">
-30.4571493
+3047.4188430
 </td>
 <td style="text-align:right;">
-41.3470978
+4137.2907059
 </td>
 <td style="text-align:right;">
-30.8584756
+3087.2679941
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -11530,13 +11459,13 @@ NA
 Simiyu, Tanzania
 </td>
 <td style="text-align:right;">
-12.4646254
+1356.3884963
 </td>
 <td style="text-align:right;">
-28.5143564
+2869.7254701
 </td>
 <td style="text-align:right;">
-13.1999480
+1372.0792638
 </td>
 <td style="text-align:right;">
 0
@@ -11547,13 +11476,13 @@ Simiyu, Tanzania
 Singida, Tanzania
 </td>
 <td style="text-align:right;">
-16.8845462
+1691.3388456
 </td>
 <td style="text-align:right;">
-35.1718322
+3537.4140782
 </td>
 <td style="text-align:right;">
-16.8628877
+1689.4244818
 </td>
 <td style="text-align:right;">
 0
@@ -11564,16 +11493,16 @@ Singida, Tanzania
 Sinoe, Liberia
 </td>
 <td style="text-align:right;">
-31.9367353
+3334.9504333
 </td>
 <td style="text-align:right;">
-54.2957250
+5769.8589856
 </td>
 <td style="text-align:right;">
-32.8480380
+3302.6192007
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -11581,16 +11510,16 @@ Sinoe, Liberia
 Sironko, Uganda
 </td>
 <td style="text-align:right;">
-55.7209250
+6009.3304217
 </td>
 <td style="text-align:right;">
-78.7156322
+7887.6138581
 </td>
 <td style="text-align:right;">
-58.5174996
+6161.6608458
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -11615,16 +11544,16 @@ NA
 Sofala, Mozambique
 </td>
 <td style="text-align:right;">
-23.2163641
+2457.2053762
 </td>
 <td style="text-align:right;">
-58.9236484
+6564.1321172
 </td>
 <td style="text-align:right;">
-23.7299136
+2547.5301344
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -11632,16 +11561,16 @@ Sofala, Mozambique
 Sokoto, Nigeria
 </td>
 <td style="text-align:right;">
-73.0642017
+7311.6628060
 </td>
 <td style="text-align:right;">
-91.0736104
+9081.6456115
 </td>
 <td style="text-align:right;">
-72.6155858
+7265.0540124
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -11649,13 +11578,13 @@ Sokoto, Nigeria
 Somali, Ethiopia
 </td>
 <td style="text-align:right;">
-3.7571985
+374.9948040
 </td>
 <td style="text-align:right;">
-18.1761075
+1860.9342020
 </td>
 <td style="text-align:right;">
-3.4688114
+345.9941324
 </td>
 <td style="text-align:right;">
 0
@@ -11666,13 +11595,13 @@ Somali, Ethiopia
 Sool, Somalia
 </td>
 <td style="text-align:right;">
-12.2450195
+1220.4941908
 </td>
 <td style="text-align:right;">
-22.7025007
+2258.8695823
 </td>
 <td style="text-align:right;">
-11.9657847
+1191.2932581
 </td>
 <td style="text-align:right;">
 0
@@ -11683,30 +11612,13 @@ Sool, Somalia
 Soroti, Uganda
 </td>
 <td style="text-align:right;">
-56.4945862
+5988.6974667
 </td>
 <td style="text-align:right;">
-69.5168472
+6922.0060005
 </td>
 <td style="text-align:right;">
-60.4257581
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Souk Ahras, Algeria
-</td>
-<td style="text-align:right;">
-NaN
-</td>
-<td style="text-align:right;">
--Inf
-</td>
-<td style="text-align:right;">
-NA
+6056.1280365
 </td>
 <td style="text-align:right;">
 0
@@ -11714,7 +11626,7 @@ NA
 </tr>
 <tr>
 <td style="text-align:left;">
-Sousse, Tunisia
+Souk Ahras, Algeria
 </td>
 <td style="text-align:right;">
 NaN
@@ -11748,19 +11660,53 @@ NA
 </tr>
 <tr>
 <td style="text-align:left;">
+Sousse, Tunisia
+</td>
+<td style="text-align:right;">
+NaN
+</td>
+<td style="text-align:right;">
+-Inf
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 South Darfur, Sudan
 </td>
 <td style="text-align:right;">
-26.5835206
+2712.3436735
 </td>
 <td style="text-align:right;">
-55.8010497
+5594.0661022
 </td>
 <td style="text-align:right;">
-24.8370697
+2565.7950085
 </td>
 <td style="text-align:right;">
-100
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+South Kurdufan, Sudan
+</td>
+<td style="text-align:right;">
+1214.3709594
+</td>
+<td style="text-align:right;">
+2613.5512087
+</td>
+<td style="text-align:right;">
+1165.1595672
+</td>
+<td style="text-align:right;">
+0
 </td>
 </tr>
 <tr>
@@ -11775,6 +11721,23 @@ NaN
 </td>
 <td style="text-align:right;">
 NA
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Southern Nations, Nationalities and Peoples, Ethiopia
+</td>
+<td style="text-align:right;">
+233.1857976
+</td>
+<td style="text-align:right;">
+1936.9992339
+</td>
+<td style="text-align:right;">
+212.1228213
 </td>
 <td style="text-align:right;">
 0
@@ -11799,36 +11762,19 @@ NA
 </tr>
 <tr>
 <td style="text-align:left;">
-Southern Nations, Nationalities and Peoples, Ethiopia
-</td>
-<td style="text-align:right;">
-2.2526567
-</td>
-<td style="text-align:right;">
-19.3090496
-</td>
-<td style="text-align:right;">
-2.0735895
-</td>
-<td style="text-align:right;">
-0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Southern, Sierra Leone
 </td>
 <td style="text-align:right;">
-44.2310327
+4467.4483793
 </td>
 <td style="text-align:right;">
-69.1228633
+6941.6977889
 </td>
 <td style="text-align:right;">
-41.1985950
+4167.9414632
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -11836,30 +11782,13 @@ Southern, Sierra Leone
 Southern, Zambia
 </td>
 <td style="text-align:right;">
-14.1702432
+1526.0683567
 </td>
 <td style="text-align:right;">
-92.1527601
+9340.8735454
 </td>
 <td style="text-align:right;">
-11.9115238
-</td>
-<td style="text-align:right;">
-0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-South Kurdufan, Sudan
-</td>
-<td style="text-align:right;">
-12.1236420
-</td>
-<td style="text-align:right;">
-26.1686391
-</td>
-<td style="text-align:right;">
-11.6471253
+1229.5623210
 </td>
 <td style="text-align:right;">
 0
@@ -11870,13 +11799,47 @@ South Kurdufan, Sudan
 Sowa, Botswana
 </td>
 <td style="text-align:right;">
-2.2379935
+220.6886115
 </td>
 <td style="text-align:right;">
-2.2379935
+220.6886115
 </td>
 <td style="text-align:right;">
-2.2379935
+220.6886115
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sud-Ouest, Burkina Faso
+</td>
+<td style="text-align:right;">
+8199.8608478
+</td>
+<td style="text-align:right;">
+8828.4884166
+</td>
+<td style="text-align:right;">
+8205.0298213
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sud-Ouest, Cameroon
+</td>
+<td style="text-align:right;">
+3528.7421008
+</td>
+<td style="text-align:right;">
+7334.1810756
+</td>
+<td style="text-align:right;">
+3470.3232268
 </td>
 <td style="text-align:right;">
 0
@@ -11887,50 +11850,16 @@ Sowa, Botswana
 Sud, Cameroon
 </td>
 <td style="text-align:right;">
-35.0803043
+3562.9754970
 </td>
 <td style="text-align:right;">
-51.2941454
+6207.9526019
 </td>
 <td style="text-align:right;">
-37.0987356
+3696.9514236
 </td>
 <td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Sud-Ouest, Burkina Faso
-</td>
-<td style="text-align:right;">
-81.9397358
-</td>
-<td style="text-align:right;">
-88.4040651
-</td>
-<td style="text-align:right;">
-82.1267799
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Sud-Ouest, Cameroon
-</td>
-<td style="text-align:right;">
-34.2291827
-</td>
-<td style="text-align:right;">
-68.0365043
-</td>
-<td style="text-align:right;">
-34.5863208
-</td>
-<td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -11972,16 +11901,16 @@ NA
 Tabora, Tanzania
 </td>
 <td style="text-align:right;">
-21.5962904
+2164.4927615
 </td>
 <td style="text-align:right;">
-46.6761870
+4617.3022824
 </td>
 <td style="text-align:right;">
-20.2689326
+2025.4482997
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -11989,13 +11918,13 @@ Tabora, Tanzania
 Tadjourah, Djibouti
 </td>
 <td style="text-align:right;">
-11.8602071
+1192.5980227
 </td>
 <td style="text-align:right;">
-20.3052179
+2058.7127146
 </td>
 <td style="text-align:right;">
-12.7377946
+1278.4785616
 </td>
 <td style="text-align:right;">
 0
@@ -12023,13 +11952,13 @@ NA
 Tagant, Mauritania
 </td>
 <td style="text-align:right;">
-6.5890017
+694.4068411
 </td>
 <td style="text-align:right;">
-16.5586432
+1903.4329476
 </td>
 <td style="text-align:right;">
-6.1678361
+627.9267573
 </td>
 <td style="text-align:right;">
 0
@@ -12040,16 +11969,16 @@ Tagant, Mauritania
 Tahoua, Niger
 </td>
 <td style="text-align:right;">
-29.9357456
+3092.9989285
 </td>
 <td style="text-align:right;">
-69.7686421
+7212.0804137
 </td>
 <td style="text-align:right;">
-19.8974945
+2154.4979884
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12057,16 +11986,16 @@ Tahoua, Niger
 Taita Taveta, Kenya
 </td>
 <td style="text-align:right;">
-20.5198502
+2605.1970643
 </td>
 <td style="text-align:right;">
-63.2881920
+6354.4315494
 </td>
 <td style="text-align:right;">
-4.5689856
+3147.1741080
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12108,16 +12037,16 @@ NA
 Tambacounda, Senegal
 </td>
 <td style="text-align:right;">
-27.0860428
+2778.6360079
 </td>
 <td style="text-align:right;">
-55.0761747
+5607.7985811
 </td>
 <td style="text-align:right;">
-28.8083359
+2897.8381240
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12125,16 +12054,16 @@ Tambacounda, Senegal
 Tana River, Kenya
 </td>
 <td style="text-align:right;">
-25.5193372
+2631.7425585
 </td>
 <td style="text-align:right;">
-51.4392668
+5117.7818762
 </td>
 <td style="text-align:right;">
-24.3083914
+2477.4098407
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12142,16 +12071,16 @@ Tana River, Kenya
 Tandjilé, Chad
 </td>
 <td style="text-align:right;">
-27.1263814
+2715.8435479
 </td>
 <td style="text-align:right;">
-41.9473739
+4191.2534710
 </td>
 <td style="text-align:right;">
-27.0128066
+2700.0774956
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12159,16 +12088,16 @@ Tandjilé, Chad
 Tanga, Tanzania
 </td>
 <td style="text-align:right;">
-30.6347152
+3083.6015455
 </td>
 <td style="text-align:right;">
-51.5477141
+5162.1598422
 </td>
 <td style="text-align:right;">
-29.8878564
+3006.3368076
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12193,21 +12122,21 @@ NA
 Taraba, Nigeria
 </td>
 <td style="text-align:right;">
-55.2870825
+5604.1285025
 </td>
 <td style="text-align:right;">
-90.0750001
+9008.2593465
 </td>
 <td style="text-align:right;">
-57.8311302
+5764.8381142
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-Tarrafal, Cape Verde
+Tarrafal de São Nicolau, Cape Verde
 </td>
 <td style="text-align:right;">
 NaN
@@ -12224,7 +12153,7 @@ NaN
 </tr>
 <tr>
 <td style="text-align:left;">
-Tarrafal de São Nicolau, Cape Verde
+Tarrafal, Cape Verde
 </td>
 <td style="text-align:right;">
 NaN
@@ -12295,16 +12224,16 @@ NA
 Tete, Mozambique
 </td>
 <td style="text-align:right;">
-30.5154228
+3163.3245632
 </td>
 <td style="text-align:right;">
-64.3205157
+6440.8736246
 </td>
 <td style="text-align:right;">
-31.1149998
+3235.9666441
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12329,16 +12258,16 @@ NA
 Tharaka-Nithi, Kenya
 </td>
 <td style="text-align:right;">
-24.9361132
+2511.8328076
 </td>
 <td style="text-align:right;">
-38.6049792
+3971.1105931
 </td>
 <td style="text-align:right;">
-24.1708560
+2413.2590708
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12346,13 +12275,13 @@ Tharaka-Nithi, Kenya
 Thiès, Senegal
 </td>
 <td style="text-align:right;">
-12.3205243
+1236.7871472
 </td>
 <td style="text-align:right;">
-18.1444713
+1817.2330880
 </td>
 <td style="text-align:right;">
-11.9132264
+1197.3255290
 </td>
 <td style="text-align:right;">
 0
@@ -12363,13 +12292,13 @@ Thiès, Senegal
 Thyolo, Malawi
 </td>
 <td style="text-align:right;">
-9.9078742
+1002.9954229
 </td>
 <td style="text-align:right;">
-12.3274993
+1270.9572851
 </td>
 <td style="text-align:right;">
-10.0754327
+1007.8258476
 </td>
 <td style="text-align:right;">
 0
@@ -12397,13 +12326,13 @@ NA
 Tibesti, Chad
 </td>
 <td style="text-align:right;">
-6.3782409
+649.3494347
 </td>
 <td style="text-align:right;">
-8.7724317
+870.7080191
 </td>
 <td style="text-align:right;">
-6.5084108
+667.1565883
 </td>
 <td style="text-align:right;">
 0
@@ -12414,13 +12343,13 @@ Tibesti, Chad
 Tigray, Ethiopia
 </td>
 <td style="text-align:right;">
-2.3987501
+249.8109892
 </td>
 <td style="text-align:right;">
-28.7835005
+2861.9881329
 </td>
 <td style="text-align:right;">
-1.3870318
+147.1617974
 </td>
 <td style="text-align:right;">
 0
@@ -12431,16 +12360,16 @@ Tigray, Ethiopia
 Tillabéry, Niger
 </td>
 <td style="text-align:right;">
-48.1195694
+4902.2341567
 </td>
 <td style="text-align:right;">
-86.0159602
+8621.7211989
 </td>
 <td style="text-align:right;">
-51.2934718
+5176.7700778
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12448,13 +12377,13 @@ Tillabéry, Niger
 Timbuktu, Mali
 </td>
 <td style="text-align:right;">
-52.7585116
+5367.8987415
 </td>
 <td style="text-align:right;">
-87.5351014
+9018.8696469
 </td>
 <td style="text-align:right;">
-52.2112116
+5258.2264577
 </td>
 <td style="text-align:right;">
 0
@@ -12567,13 +12496,13 @@ NA
 Toamasina, Madagascar
 </td>
 <td style="text-align:right;">
-16.2300313
+1632.0296714
 </td>
 <td style="text-align:right;">
-43.6939954
+4366.2574325
 </td>
 <td style="text-align:right;">
-14.4209290
+1444.6456950
 </td>
 <td style="text-align:right;">
 0
@@ -12584,13 +12513,13 @@ Toamasina, Madagascar
 Togdheer, Somalia
 </td>
 <td style="text-align:right;">
-15.6647459
+1561.5847710
 </td>
 <td style="text-align:right;">
-31.0287286
+3068.8621940
 </td>
 <td style="text-align:right;">
-14.1396723
+1408.7441424
 </td>
 <td style="text-align:right;">
 0
@@ -12601,16 +12530,16 @@ Togdheer, Somalia
 Toliary, Madagascar
 </td>
 <td style="text-align:right;">
-24.6664531
+2478.4173731
 </td>
 <td style="text-align:right;">
-71.0731219
+7108.6276084
 </td>
 <td style="text-align:right;">
-23.6911504
+2381.8577717
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12618,16 +12547,16 @@ Toliary, Madagascar
 Tombali, Guinea-Bissau
 </td>
 <td style="text-align:right;">
-26.2799804
+2686.6068788
 </td>
 <td style="text-align:right;">
-40.0673083
+4043.3430661
 </td>
 <td style="text-align:right;">
-25.2156817
+2549.3495600
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12635,16 +12564,16 @@ Tombali, Guinea-Bissau
 Tororo, Uganda
 </td>
 <td style="text-align:right;">
-73.2562185
+7332.3177163
 </td>
 <td style="text-align:right;">
-80.0284012
+8033.2088185
 </td>
 <td style="text-align:right;">
-73.1006014
+7313.1758513
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12669,16 +12598,16 @@ NA
 Trans Nzoia, Kenya
 </td>
 <td style="text-align:right;">
-49.7757661
+4971.6353578
 </td>
 <td style="text-align:right;">
-63.8629031
+6410.7154428
 </td>
 <td style="text-align:right;">
-51.1801813
+5109.9909900
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12686,13 +12615,13 @@ Trans Nzoia, Kenya
 Trarza, Mauritania
 </td>
 <td style="text-align:right;">
-7.0783708
+714.4834064
 </td>
 <td style="text-align:right;">
-14.9317097
+1813.5335510
 </td>
 <td style="text-align:right;">
-7.5316693
+753.1636405
 </td>
 <td style="text-align:right;">
 0
@@ -12771,13 +12700,13 @@ NA
 Turkana, Kenya
 </td>
 <td style="text-align:right;">
-11.6481092
+1215.2667995
 </td>
 <td style="text-align:right;">
-46.4423310
+4791.0998019
 </td>
 <td style="text-align:right;">
-10.2210573
+1071.9518526
 </td>
 <td style="text-align:right;">
 0
@@ -12788,16 +12717,16 @@ Turkana, Kenya
 Uasin Gishu, Kenya
 </td>
 <td style="text-align:right;">
-42.8252639
+4280.0610548
 </td>
 <td style="text-align:right;">
-56.6318464
+5664.4365694
 </td>
 <td style="text-align:right;">
-43.4966272
+4343.5078160
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12805,13 +12734,13 @@ Uasin Gishu, Kenya
 Uíge, Angola
 </td>
 <td style="text-align:right;">
-18.5742349
+1905.3792693
 </td>
 <td style="text-align:right;">
-36.0640293
+3613.5873588
 </td>
 <td style="text-align:right;">
-18.6437630
+1884.7198021
 </td>
 <td style="text-align:right;">
 0
@@ -12822,13 +12751,13 @@ Uíge, Angola
 Umujyi wa Kigali, Rwanda
 </td>
 <td style="text-align:right;">
-13.5776043
+1368.4180760
 </td>
 <td style="text-align:right;">
-18.1213328
+1849.4043707
 </td>
 <td style="text-align:right;">
-13.5440295
+1377.7310974
 </td>
 <td style="text-align:right;">
 0
@@ -12839,16 +12768,16 @@ Umujyi wa Kigali, Rwanda
 Unity, South Sudan
 </td>
 <td style="text-align:right;">
-28.1249691
+2827.9776329
 </td>
 <td style="text-align:right;">
-45.4018008
+4527.3351432
 </td>
 <td style="text-align:right;">
-28.3725274
+2849.9607919
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12856,16 +12785,16 @@ Unity, South Sudan
 Upper East, Ghana
 </td>
 <td style="text-align:right;">
-73.5305456
+7369.2649338
 </td>
 <td style="text-align:right;">
-86.2524227
+8574.4320014
 </td>
 <td style="text-align:right;">
-74.3517815
+7475.6625472
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12873,16 +12802,16 @@ Upper East, Ghana
 Upper Nile, South Sudan
 </td>
 <td style="text-align:right;">
-21.9806161
+2208.8660787
 </td>
 <td style="text-align:right;">
-54.4400647
+5491.4899647
 </td>
 <td style="text-align:right;">
-21.2852856
+2120.7948116
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12890,13 +12819,13 @@ Upper Nile, South Sudan
 Upper River, Gambia
 </td>
 <td style="text-align:right;">
-10.7256255
+1071.2335218
 </td>
 <td style="text-align:right;">
-30.2982729
+3033.1881233
 </td>
 <td style="text-align:right;">
-10.3635186
+1037.5302393
 </td>
 <td style="text-align:right;">
 0
@@ -12907,16 +12836,16 @@ Upper River, Gambia
 Upper West, Ghana
 </td>
 <td style="text-align:right;">
-76.9881155
+7747.9542767
 </td>
 <td style="text-align:right;">
-84.9398689
+8508.9185309
 </td>
 <td style="text-align:right;">
-79.4182148
+7935.2580319
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12924,16 +12853,16 @@ Upper West, Ghana
 Vakaga, Central African Republic
 </td>
 <td style="text-align:right;">
-24.8203610
+2545.4845811
 </td>
 <td style="text-align:right;">
-54.2084608
+5576.8975587
 </td>
 <td style="text-align:right;">
-24.5945106
+2464.1402263
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12941,16 +12870,16 @@ Vakaga, Central African Republic
 Vallée du Bandama, Côte d'Ivoire
 </td>
 <td style="text-align:right;">
-48.0754873
+4894.2357215
 </td>
 <td style="text-align:right;">
-89.8497285
+9153.2396438
 </td>
 <td style="text-align:right;">
-47.3544969
+4710.9637656
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12958,16 +12887,16 @@ Vallée du Bandama, Côte d'Ivoire
 Vihiga, Kenya
 </td>
 <td style="text-align:right;">
-71.0522657
+7125.6642650
 </td>
 <td style="text-align:right;">
-77.4709681
+7760.9966674
 </td>
 <td style="text-align:right;">
-72.2548090
+7235.8559347
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12975,16 +12904,16 @@ Vihiga, Kenya
 Ville de N'Djamena, Chad
 </td>
 <td style="text-align:right;">
-29.3994315
+2959.5013038
 </td>
 <td style="text-align:right;">
-34.1306546
+3443.4852195
 </td>
 <td style="text-align:right;">
-30.3466149
+3017.6951002
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -12992,16 +12921,16 @@ Ville de N'Djamena, Chad
 Volta, Ghana
 </td>
 <td style="text-align:right;">
-36.9730191
+4007.8144760
 </td>
 <td style="text-align:right;">
-80.9636933
+8346.7468014
 </td>
 <td style="text-align:right;">
-34.5254401
+3621.2446071
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13043,13 +12972,13 @@ NA
 Wadi Fira, Chad
 </td>
 <td style="text-align:right;">
-13.1636397
+1370.5284717
 </td>
 <td style="text-align:right;">
-29.9765897
+3630.3872024
 </td>
 <td style="text-align:right;">
-12.2360863
+1220.2268938
 </td>
 <td style="text-align:right;">
 0
@@ -13060,13 +12989,13 @@ Wadi Fira, Chad
 Wajir, Kenya
 </td>
 <td style="text-align:right;">
-14.5001455
+1448.1940836
 </td>
 <td style="text-align:right;">
-21.2967871
+2134.5134947
 </td>
 <td style="text-align:right;">
-14.1949770
+1418.0150105
 </td>
 <td style="text-align:right;">
 0
@@ -13077,16 +13006,16 @@ Wajir, Kenya
 Wakiso, Uganda
 </td>
 <td style="text-align:right;">
-44.6205676
+4547.9585425
 </td>
 <td style="text-align:right;">
-56.3034789
+5627.8708785
 </td>
 <td style="text-align:right;">
-45.3453543
+4587.2662360
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13094,16 +13023,16 @@ Wakiso, Uganda
 Warap, South Sudan
 </td>
 <td style="text-align:right;">
-38.3005440
+3860.4158691
 </td>
 <td style="text-align:right;">
-54.9777224
+5508.3682739
 </td>
 <td style="text-align:right;">
-40.4294270
+4051.1150581
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13111,16 +13040,16 @@ Warap, South Sudan
 Wele-Nzas, Equatorial Guinea
 </td>
 <td style="text-align:right;">
-19.5290015
+2154.1927027
 </td>
 <td style="text-align:right;">
-29.6788328
+2978.1084743
 </td>
 <td style="text-align:right;">
-21.2401495
+2236.8091274
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13128,16 +13057,16 @@ Wele-Nzas, Equatorial Guinea
 West Bahr-al-Ghazal, South Sudan
 </td>
 <td style="text-align:right;">
-43.8837576
+4447.2787484
 </td>
 <td style="text-align:right;">
-58.7723389
+5857.2038692
 </td>
 <td style="text-align:right;">
-47.6100043
+4758.9426778
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13145,13 +13074,13 @@ West Bahr-al-Ghazal, South Sudan
 West Darfur, Sudan
 </td>
 <td style="text-align:right;">
-12.7105739
+1271.8419746
 </td>
 <td style="text-align:right;">
-27.2160849
+2769.3276112
 </td>
 <td style="text-align:right;">
-11.9376489
+1196.8366815
 </td>
 <td style="text-align:right;">
 0
@@ -13162,16 +13091,50 @@ West Darfur, Sudan
 West Equatoria, South Sudan
 </td>
 <td style="text-align:right;">
-49.8733334
+5010.0056473
 </td>
 <td style="text-align:right;">
-63.8664304
+6344.9928497
 </td>
 <td style="text-align:right;">
-51.1988941
+5114.0324671
 </td>
 <td style="text-align:right;">
-100
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+West Kurdufan, Sudan
+</td>
+<td style="text-align:right;">
+1810.5538760
+</td>
+<td style="text-align:right;">
+3382.1581717
+</td>
+<td style="text-align:right;">
+1828.6252059
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+West Pokot, Kenya
+</td>
+<td style="text-align:right;">
+4362.7455582
+</td>
+<td style="text-align:right;">
+5941.2837347
+</td>
+<td style="text-align:right;">
+4480.0594537
+</td>
+<td style="text-align:right;">
+0
 </td>
 </tr>
 <tr>
@@ -13196,13 +13159,13 @@ NA
 Western, Gambia
 </td>
 <td style="text-align:right;">
-5.4319803
+549.9043335
 </td>
 <td style="text-align:right;">
-8.2472940
+872.4102473
 </td>
 <td style="text-align:right;">
-4.8879537
+494.2229164
 </td>
 <td style="text-align:right;">
 0
@@ -13213,64 +13176,13 @@ Western, Gambia
 Western, Ghana
 </td>
 <td style="text-align:right;">
-38.9207415
+3957.8944739
 </td>
 <td style="text-align:right;">
-73.3672524
+7575.8165182
 </td>
 <td style="text-align:right;">
-39.1944544
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Western, Sierra Leone
-</td>
-<td style="text-align:right;">
-44.8404231
-</td>
-<td style="text-align:right;">
-57.7453955
-</td>
-<td style="text-align:right;">
-45.8320228
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Western, Zambia
-</td>
-<td style="text-align:right;">
-33.9771253
-</td>
-<td style="text-align:right;">
-57.9482926
-</td>
-<td style="text-align:right;">
-35.7001601
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-West Kurdufan, Sudan
-</td>
-<td style="text-align:right;">
-18.0653867
-</td>
-<td style="text-align:right;">
-33.8336754
-</td>
-<td style="text-align:right;">
-18.2332666
+3913.9621200
 </td>
 <td style="text-align:right;">
 0
@@ -13278,19 +13190,36 @@ West Kurdufan, Sudan
 </tr>
 <tr>
 <td style="text-align:left;">
-West Pokot, Kenya
+Western, Sierra Leone
 </td>
 <td style="text-align:right;">
-43.5238931
+4700.6222096
 </td>
 <td style="text-align:right;">
-59.6333453
+6216.2161076
 </td>
 <td style="text-align:right;">
-44.7551807
+4956.9096452
 </td>
 <td style="text-align:right;">
-100
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Western, Zambia
+</td>
+<td style="text-align:right;">
+3427.9868971
+</td>
+<td style="text-align:right;">
+5820.6886128
+</td>
+<td style="text-align:right;">
+3568.4903947
+</td>
+<td style="text-align:right;">
+0
 </td>
 </tr>
 <tr>
@@ -13298,13 +13227,13 @@ West Pokot, Kenya
 White Nile, Sudan
 </td>
 <td style="text-align:right;">
-7.3645888
+736.3944244
 </td>
 <td style="text-align:right;">
-16.0767055
+1603.3084860
 </td>
 <td style="text-align:right;">
-7.0524360
+705.2660332
 </td>
 <td style="text-align:right;">
 0
@@ -13315,13 +13244,13 @@ White Nile, Sudan
 Woqooyi Galbeed, Somalia
 </td>
 <td style="text-align:right;">
-12.3257983
+1230.6514195
 </td>
 <td style="text-align:right;">
-27.3906281
+2755.7727465
 </td>
 <td style="text-align:right;">
-11.9827234
+1193.5999098
 </td>
 <td style="text-align:right;">
 0
@@ -13332,16 +13261,16 @@ Woqooyi Galbeed, Somalia
 Woroba, Côte d'Ivoire
 </td>
 <td style="text-align:right;">
-47.9946518
+4843.7770773
 </td>
 <td style="text-align:right;">
-89.2059278
+9265.0194685
 </td>
 <td style="text-align:right;">
-46.8601702
+4676.8547076
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13349,13 +13278,13 @@ Woroba, Côte d'Ivoire
 Wouleu-Ntem, Gabon
 </td>
 <td style="text-align:right;">
-7.3913697
+745.6358760
 </td>
 <td style="text-align:right;">
-33.2968336
+3852.4022857
 </td>
 <td style="text-align:right;">
-6.9566757
+649.0713562
 </td>
 <td style="text-align:right;">
 0
@@ -13366,16 +13295,16 @@ Wouleu-Ntem, Gabon
 Yamoussoukro, Côte d'Ivoire
 </td>
 <td style="text-align:right;">
-33.4039935
+3548.8972060
 </td>
 <td style="text-align:right;">
-66.2800808
+7667.7086958
 </td>
 <td style="text-align:right;">
-32.0872638
+3220.4691410
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13383,16 +13312,16 @@ Yamoussoukro, Côte d'Ivoire
 Yobe, Nigeria
 </td>
 <td style="text-align:right;">
-55.1446508
+5531.4094782
 </td>
 <td style="text-align:right;">
-75.1418565
+7524.1095777
 </td>
 <td style="text-align:right;">
-54.7932448
+5520.2555121
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13400,16 +13329,16 @@ Yobe, Nigeria
 Yumbe, Uganda
 </td>
 <td style="text-align:right;">
-47.0124815
+5191.4937389
 </td>
 <td style="text-align:right;">
-61.9098532
+6233.8586845
 </td>
 <td style="text-align:right;">
-53.9037132
+5532.4596894
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13434,13 +13363,30 @@ NA
 Zaire, Angola
 </td>
 <td style="text-align:right;">
-16.9902378
+1810.6774689
 </td>
 <td style="text-align:right;">
-40.2465760
+4354.0968185
 </td>
 <td style="text-align:right;">
-17.3826468
+1780.8331093
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Zambezi, Namibia
+</td>
+<td style="text-align:right;">
+1121.9744419
+</td>
+<td style="text-align:right;">
+2547.8177371
+</td>
+<td style="text-align:right;">
+1006.3787953
 </td>
 <td style="text-align:right;">
 0
@@ -13451,30 +13397,13 @@ Zaire, Angola
 Zambezia, Mozambique
 </td>
 <td style="text-align:right;">
-27.5668380
+2959.2101616
 </td>
 <td style="text-align:right;">
-69.4934602
+7293.8078072
 </td>
 <td style="text-align:right;">
-28.8699738
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Zambezi, Namibia
-</td>
-<td style="text-align:right;">
-11.0026990
-</td>
-<td style="text-align:right;">
-25.3480375
-</td>
-<td style="text-align:right;">
-10.0893163
+3074.1420161
 </td>
 <td style="text-align:right;">
 0
@@ -13485,16 +13414,16 @@ Zambezi, Namibia
 Zamfara, Nigeria
 </td>
 <td style="text-align:right;">
-72.2055912
+7221.9352383
 </td>
 <td style="text-align:right;">
-84.8432224
+8519.0122758
 </td>
 <td style="text-align:right;">
-72.5771745
+7253.3667793
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13502,16 +13431,16 @@ Zamfara, Nigeria
 Zanzan, Côte d'Ivoire
 </td>
 <td style="text-align:right;">
-41.9479248
+4364.8825128
 </td>
 <td style="text-align:right;">
-78.7151646
+7890.9653281
 </td>
 <td style="text-align:right;">
-50.6382999
+5071.6241665
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13519,13 +13448,13 @@ Zanzan, Côte d'Ivoire
 Zanzibar North, Tanzania
 </td>
 <td style="text-align:right;">
-18.8068227
+1895.4023098
 </td>
 <td style="text-align:right;">
-23.7828088
+2392.1052310
 </td>
 <td style="text-align:right;">
-18.3587208
+1859.4797599
 </td>
 <td style="text-align:right;">
 0
@@ -13536,13 +13465,13 @@ Zanzibar North, Tanzania
 Zanzibar South and Central, Tanzania
 </td>
 <td style="text-align:right;">
-16.7949456
+1733.7919731
 </td>
 <td style="text-align:right;">
-22.4235358
+2299.3920435
 </td>
 <td style="text-align:right;">
-16.5419856
+1775.7459596
 </td>
 <td style="text-align:right;">
 0
@@ -13553,13 +13482,13 @@ Zanzibar South and Central, Tanzania
 Zanzibar West, Tanzania
 </td>
 <td style="text-align:right;">
-19.7254832
+2099.9165348
 </td>
 <td style="text-align:right;">
-23.2424419
+2350.9773407
 </td>
 <td style="text-align:right;">
-19.6026316
+2136.1813559
 </td>
 <td style="text-align:right;">
 0
@@ -13570,13 +13499,13 @@ Zanzibar West, Tanzania
 Ziguinchor, Senegal
 </td>
 <td style="text-align:right;">
-14.8916739
+1555.7521289
 </td>
 <td style="text-align:right;">
-26.4575055
+2669.1322419
 </td>
 <td style="text-align:right;">
-14.1657898
+1475.5671890
 </td>
 <td style="text-align:right;">
 0
@@ -13587,16 +13516,16 @@ Ziguinchor, Senegal
 Zinder, Niger
 </td>
 <td style="text-align:right;">
-34.3181836
+3448.3067292
 </td>
 <td style="text-align:right;">
-68.2767199
+6836.4532125
 </td>
 <td style="text-align:right;">
-30.3752777
+3033.6445061
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13604,13 +13533,13 @@ Zinder, Niger
 Zomba, Malawi
 </td>
 <td style="text-align:right;">
-12.4167242
+1491.9847560
 </td>
 <td style="text-align:right;">
-32.5549539
+3690.6388031
 </td>
 <td style="text-align:right;">
-12.7696829
+1344.8295746
 </td>
 <td style="text-align:right;">
 0
@@ -13621,16 +13550,16 @@ Zomba, Malawi
 Zou, Benin
 </td>
 <td style="text-align:right;">
-55.9869393
+5611.1946535
 </td>
 <td style="text-align:right;">
-69.6887556
+7007.6081351
 </td>
 <td style="text-align:right;">
-55.9268023
+5583.0829286
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 </tbody>
@@ -13663,16 +13592,16 @@ Median score
 Haut-Bassins, Burkina Faso
 </td>
 <td style="text-align:right;">
-91.60008
+9172.726
 </td>
 <td style="text-align:right;">
-97.17127
+9699.758
 </td>
 <td style="text-align:right;">
-92.77149
+9260.945
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13680,16 +13609,16 @@ Haut-Bassins, Burkina Faso
 Mopti, Mali
 </td>
 <td style="text-align:right;">
-88.27035
+8839.293
 </td>
 <td style="text-align:right;">
-97.99863
+9779.972
 </td>
 <td style="text-align:right;">
-91.20591
+9118.064
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13697,33 +13626,16 @@ Mopti, Mali
 Nord, Burkina Faso
 </td>
 <td style="text-align:right;">
-85.83412
+8583.393
 </td>
 <td style="text-align:right;">
-94.06055
+9347.988
 </td>
 <td style="text-align:right;">
-87.66181
+8787.048
 </td>
 <td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Centre-Nord, Burkina Faso
-</td>
-<td style="text-align:right;">
-83.81273
-</td>
-<td style="text-align:right;">
-93.96013
-</td>
-<td style="text-align:right;">
-86.04577
-</td>
-<td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13731,16 +13643,33 @@ Centre-Nord, Burkina Faso
 Boucle du Mouhoun, Burkina Faso
 </td>
 <td style="text-align:right;">
-83.73971
+8431.493
 </td>
 <td style="text-align:right;">
-95.91979
+9635.263
 </td>
 <td style="text-align:right;">
-84.58206
+8461.964
 </td>
 <td style="text-align:right;">
-100
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Centre-Nord, Burkina Faso
+</td>
+<td style="text-align:right;">
+8382.458
+</td>
+<td style="text-align:right;">
+9399.200
+</td>
+<td style="text-align:right;">
+8596.679
+</td>
+<td style="text-align:right;">
+0
 </td>
 </tr>
 <tr>
@@ -13748,16 +13677,16 @@ Boucle du Mouhoun, Burkina Faso
 Kankan, Guinea
 </td>
 <td style="text-align:right;">
-83.54349
+8359.679
 </td>
 <td style="text-align:right;">
-94.31564
+9465.027
 </td>
 <td style="text-align:right;">
-84.62335
+8485.728
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13765,16 +13694,16 @@ Kankan, Guinea
 Sud-Ouest, Burkina Faso
 </td>
 <td style="text-align:right;">
-81.93974
+8199.861
 </td>
 <td style="text-align:right;">
-88.40407
+8828.488
 </td>
 <td style="text-align:right;">
-82.12678
+8205.030
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13782,16 +13711,16 @@ Sud-Ouest, Burkina Faso
 Ségou, Mali
 </td>
 <td style="text-align:right;">
-81.60738
+8171.102
 </td>
 <td style="text-align:right;">
-96.15881
+9581.671
 </td>
 <td style="text-align:right;">
-80.73775
+8076.970
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13799,16 +13728,16 @@ Ségou, Mali
 Sahel, Burkina Faso
 </td>
 <td style="text-align:right;">
-81.35047
+8132.873
 </td>
 <td style="text-align:right;">
-94.89417
+9527.585
 </td>
 <td style="text-align:right;">
-82.15340
+8212.018
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13816,16 +13745,16 @@ Sahel, Burkina Faso
 Cascades, Burkina Faso
 </td>
 <td style="text-align:right;">
-81.28703
+8125.237
 </td>
 <td style="text-align:right;">
-92.07805
+9191.895
 </td>
 <td style="text-align:right;">
-83.46066
+8344.783
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13833,16 +13762,16 @@ Cascades, Burkina Faso
 Sikasso, Mali
 </td>
 <td style="text-align:right;">
-80.41856
+8065.496
 </td>
 <td style="text-align:right;">
-96.63896
+9670.255
 </td>
 <td style="text-align:right;">
-79.79943
+7979.504
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13850,16 +13779,16 @@ Sikasso, Mali
 Centre-Ouest, Burkina Faso
 </td>
 <td style="text-align:right;">
-79.92438
+8030.598
 </td>
 <td style="text-align:right;">
-92.70980
+9231.711
 </td>
 <td style="text-align:right;">
-80.15660
+8029.212
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13867,16 +13796,16 @@ Centre-Ouest, Burkina Faso
 Kindia, Guinea
 </td>
 <td style="text-align:right;">
-79.63474
+7978.207
 </td>
 <td style="text-align:right;">
-94.83462
+9446.056
 </td>
 <td style="text-align:right;">
-83.46420
+8360.696
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13884,33 +13813,16 @@ Kindia, Guinea
 Labé, Guinea
 </td>
 <td style="text-align:right;">
-79.03539
+7904.835
 </td>
 <td style="text-align:right;">
-92.63671
+9268.594
 </td>
 <td style="text-align:right;">
-79.48912
+7948.112
 </td>
 <td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Gombe, Nigeria
-</td>
-<td style="text-align:right;">
-77.28408
-</td>
-<td style="text-align:right;">
-90.12102
-</td>
-<td style="text-align:right;">
-78.81921
-</td>
-<td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13918,16 +13830,16 @@ Gombe, Nigeria
 Kaduna, Nigeria
 </td>
 <td style="text-align:right;">
-77.24924
+7753.996
 </td>
 <td style="text-align:right;">
-88.78899
+8857.563
 </td>
 <td style="text-align:right;">
-78.50101
+7846.138
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13935,33 +13847,33 @@ Kaduna, Nigeria
 Upper West, Ghana
 </td>
 <td style="text-align:right;">
-76.98812
+7747.954
 </td>
 <td style="text-align:right;">
-84.93987
+8508.919
 </td>
 <td style="text-align:right;">
-79.41821
+7935.258
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-Basse-Kotto, Central African Republic
+Gombe, Nigeria
 </td>
 <td style="text-align:right;">
-76.75803
+7747.939
 </td>
 <td style="text-align:right;">
-87.52642
+8968.570
 </td>
 <td style="text-align:right;">
-78.04716
+7873.484
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 <tr>
@@ -13969,16 +13881,33 @@ Basse-Kotto, Central African Republic
 Kano, Nigeria
 </td>
 <td style="text-align:right;">
-76.52610
+7715.637
 </td>
 <td style="text-align:right;">
-91.00785
+9070.181
 </td>
 <td style="text-align:right;">
-77.81490
+7787.169
 </td>
 <td style="text-align:right;">
-100
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Basse-Kotto, Central African Republic
+</td>
+<td style="text-align:right;">
+7710.356
+</td>
+<td style="text-align:right;">
+8721.381
+</td>
+<td style="text-align:right;">
+7823.811
+</td>
+<td style="text-align:right;">
+0
 </td>
 </tr>
 <tr>
@@ -13986,16 +13915,16 @@ Kano, Nigeria
 Katsina, Nigeria
 </td>
 <td style="text-align:right;">
-76.42033
+7635.274
 </td>
 <td style="text-align:right;">
-90.65815
+9050.001
 </td>
 <td style="text-align:right;">
-76.35444
+7622.686
 </td>
 <td style="text-align:right;">
-100
+0
 </td>
 </tr>
 </tbody>

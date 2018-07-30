@@ -23,6 +23,13 @@ if('processed_data.RData' %in% dir('data')){
   # cow_original <- cow
   # values(cow) <- values(cow) / max(values(cow), na.rm = TRUE)
   
+  # Read in density of arab
+  arab_density <- raster('data/ARABIENSIS/2015_Nature_Africa_PR.2015.tif')
+  projection(arab_density) <- "+proj=utm +zone=48 +datum=WGS84"
+  arab_density_original <- arab_density
+  values(arab_density) <- dplyr::percent_rank(values(arab_density)) * 100
+  
+  
   # Crop cow just to africa
   cowa <- crop(cow, mosq)
   extent(cowa) <- extent(mosq)
@@ -47,23 +54,36 @@ if('processed_data.RData' %in% dir('data')){
                        # fun = combine_function
                        fun = prod
                        )
+  cowsquitod <- overlay(cowap,
+                       mosq,
+                       arab_density,
+                       fun = prod)
   
   # Combine into a spatial pixels dataframe
   cowap_small <- cowap#aggregate(cowap, fact=8)
   values(cowap_small) <- values(cowap_small) * 100
   mosq_small <- mosq#aggregate(mosq, fact = 8)
-  r = brick(cowap_small,mosq_small)
+  arab_density_small <- arab_density
+  r = brick(cowap_small,mosq_small, arab_density_small)
   r <- as(r, "SpatialPixelsDataFrame")
-  names(r@data) <- c('cattle', 'pr')
+  names(r@data) <- c('cattle', 'pr', 'arab')
   # Round
   r@data$cattle <- round(r@data$cattle)
   r@data$cattle[is.na(r@data$cattle)] <- 0
   r@data$pr <- round(r@data$pr)
   r@data$pr[is.na(r@data$pr)] <- 0
+  r@data$arab <- round(r@data$arab)
+  r@data$arab[is.na(r@data$arab)] <- 0
+  r@data$cattle <- dplyr::percent_rank(r@data$cattle)
+  r@data$cattle <- r@data$cattle * 100
+  r@data$cattle <- round(r@data$cattle)
+  
   # Define color
   # Come up with a color matrix
-  dat <- expand.grid(cattle=seq(0, 100, by=1), pr=seq(0, 100, by=1))
-  dat <- within(dat, color <- rgb(green=cattle, red=pr, blue=0, maxColorValue=100))
+  dat <- expand.grid(cattle=seq(0, 100, by=1), 
+                     pr=seq(0, 100, by=1),
+                     arab = seq(0, 100, by = 1))
+  dat <- within(dat, color <- rgb(green=cattle, red=pr, blue=arab, maxColorValue=100))
   dat$color_number <- 1:nrow(dat)
   # # Legend
   # ggplot(dat, aes(x=cattle, y=pr)) +
@@ -104,6 +124,9 @@ if('processed_data.RData' %in% dir('data')){
   africa1 <- readOGR('africa_level_1', 'africa1')
   
   save(cow,
+       arab_density,
+       arab_density_small,
+       arab_density_original,
        cowa,
        cowap,
        cowsquito,
@@ -115,6 +138,7 @@ if('processed_data.RData' %in% dir('data')){
        r,
        dat,
        africa1,
+       cowsquitod,
        file = 'data/processed_data.RData')
 }
 
