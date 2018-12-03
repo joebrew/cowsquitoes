@@ -178,7 +178,7 @@ arab <- readOGR('data/VECTORS/13071_2010_245_MOESM1_ESM/Additional file 1 - Afri
 #           # at=seq(-5, 5, len=101)
 #           )            # colour ramp breaks
 
-plotter <- function(r, colr = NULL, no_legend = FALSE){
+plotter <- function(r, colr = NULL, no_legend = FALSE, zscaleLog = NULL){
   if(is.null(colr)){
     colr <- colorRampPalette(rev(brewer.pal(9, 'Spectral')))
   }
@@ -190,7 +190,9 @@ plotter <- function(r, colr = NULL, no_legend = FALSE){
       # labels=list(at=-5:5, font=4)      # legend ticks and labels 
     ) 
   }
-  
+  if(!is.null(zscaleLog)){
+    values(r)[values(r) == 0] <- 0.0001
+  }
   levelplot(r, 
             margin=FALSE,                       # suppress marginal graphics
             colorkey= colorkey,
@@ -198,9 +200,9 @@ plotter <- function(r, colr = NULL, no_legend = FALSE){
               axis.line=list(col='transparent') # suppress axes and legend outline
             ),
             scales=list(draw=FALSE),            # suppress axis labels
-            col.regions=colr#,                   # colour ramp
+            col.regions=colr,
+            zscaleLog = zscaleLog) # colour ramp
             # at=seq(-5, 5, len=101)
-  )   
 }
 
 # Leaflet map

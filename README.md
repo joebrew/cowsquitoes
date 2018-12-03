@@ -9,6 +9,39 @@
 cowsquito: Identifying geographical areas of greatest potential impact for livestock ivermectin implants
 ========================================================================================================
 
+Figure 1. Parasite prevalence (a) Raw and (b) percentilized
+-----------------------------------------------------------
+
+<img src="README-unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
+
+Figure 2. Cattle density (a) Raw and (b) percentilized **review scale**
+-----------------------------------------------------------------------
+
+<img src="README-unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
+
+Figure 3. Arabiensis density (a) Raw and (b) percentilized
+----------------------------------------------------------
+
+<img src="README-unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
+
+Figure 4. Combined score just parasite and cattle
+-------------------------------------------------
+
+<img src="README-unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
+
+Figure 5. Combined score, all three
+-----------------------------------
+
+<img src="README-unnamed-chunk-7-1.png" style="display: block; margin: auto;" />
+
+Figure 6. Combined score with first administrative division (a) median score and (b) proportion of surface &gt; median continent score
+--------------------------------------------------------------------------------------------------------------------------------------
+
+<img src="README-unnamed-chunk-8-1.png" style="display: block; margin: auto;" />
+
+OLD STUFF BELOW
+===============
+
 Methods
 =======
 
@@ -27,37 +60,12 @@ Arabiensis
 
 The below shows the distribution of arabiensis in Africa.
 
-<img src="README-unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-9-1.png" style="display: block; margin: auto;" />
 
 Malaria prevalence on the Plasmodium falciparum parasite rate in 2-10 year-olds.
 --------------------------------------------------------------------------------
 
 The below shows the raw data on the Plasmodium falciparum parasite rate in 2-10 year-olds.
-
-<img src="README-unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
-
-The below is identical to the above, but with country borders.
-
-<img src="README-unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
-
-The below is identical to the above, but with administrative borders.
-
-<img src="README-unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
-
-The below shows our (scaled) data on the Plasmodium falciparum parasite rate in 2-10 year-olds.
-
-<img src="README-unnamed-chunk-7-1.png" style="display: block; margin: auto;" />
-
-The below is identical to the above, but with country borders.
-
-<img src="README-unnamed-chunk-8-1.png" style="display: block; margin: auto;" />
-
-The below is identical to the above, but with administrative borders.
-
-<img src="README-unnamed-chunk-9-1.png" style="display: block; margin: auto;" />
-
-Cattle density
---------------
 
 <img src="README-unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
 
@@ -65,9 +73,34 @@ The below is identical to the above, but with country borders.
 
 <img src="README-unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
 
-The below is identical to the above, but with administrative level 1 borders.
+The below is identical to the above, but with administrative borders.
 
 <img src="README-unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
+
+The below shows our (scaled) data on the Plasmodium falciparum parasite rate in 2-10 year-olds.
+
+<img src="README-unnamed-chunk-13-1.png" style="display: block; margin: auto;" />
+
+The below is identical to the above, but with country borders.
+
+<img src="README-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
+
+The below is identical to the above, but with administrative borders.
+
+<img src="README-unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
+
+Cattle density
+--------------
+
+<img src="README-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
+
+The below is identical to the above, but with country borders.
+
+<img src="README-unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
+
+The below is identical to the above, but with administrative level 1 borders.
+
+<img src="README-unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
 
 Combined score
 --------------
@@ -76,29 +109,29 @@ Combined score
 
 The below shows our combined score, using the product of the cattle and malaria metrics. Unlike a multi-dimensional score, this visual does not contain as much information (ie, with a value of "40", it's not clear whether this is due to a cattle percentile of 40 and a malaria percentile of 1, or a cattle percentile of 5 and a malaria percentile of 8). That said, a one-dimensional color legend is much easier to interpret visually.
 
-<img src="README-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
 
 The below is identical to the above, but with country borders.
 
-<img src="README-unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-21-1.png" style="display: block; margin: auto;" />
 
 The below is identical to the above, but with the distribution of arabiensis as well.
 
-<img src="README-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
 
 The below is identical to the above, but showing a point for each "grid" of the raster surface, and removing the geogrpaphic coordination (ie, scatterplot).
 
-<img src="README-unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-23-1.png" style="display: block; margin: auto;" />
 
 ### Alternative visualizations
 
 #### A
 
-<img src="README-unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-24-1.png" style="display: block; margin: auto;" />
 
 #### B
 
-<img src="README-unnamed-chunk-19-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-25-1.png" style="display: block; margin: auto;" />
 
 #### C
 
@@ -106,11 +139,11 @@ The below is identical to the above, but showing a point for each "grid" of the 
 
 We aggregate at the polygonal national level so as to rank countries by suitability for intervention. The below maps show the mean, median, maximum, and % of area greater than continental median "single score" (product of Pf and cattle percentile) for each country in Africa.
 
-<img src="README-unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-26-1.png" style="display: block; margin: auto;" />
 
 The below shows a plot of country level values (excluding countries with 0 values throughout).
 
-<img src="README-unnamed-chunk-21-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-27-1.png" style="display: block; margin: auto;" />
 
 The below is a table country-level values.
 
@@ -1195,7 +1228,7 @@ Zimbabwe
 
 We aggregate at the polygonal sub-national level so as to rank administrative areas (districts, etc.) by suitability for intervention. The below maps show the mean, median, maximum, and % of area greater than continental median "single score" (product of Pf and cattle percentile) for each administrative unit in Africa.
 
-<img src="README-unnamed-chunk-23-1.png" style="display: block; margin: auto;" />
+<img src="README-unnamed-chunk-29-1.png" style="display: block; margin: auto;" />
 
 All values for all sub-national administrative units.
 

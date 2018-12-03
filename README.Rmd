@@ -21,6 +21,122 @@ africa <- cism::africa
 
 # cowsquito: Identifying geographical areas of greatest potential impact for livestock ivermectin implants
 
+## Figure 1. Parasite prevalence (a) Raw and (b) percentilized
+
+```{r}
+library(gridExtra)
+g1 <- plotter(arab_density_original)
+g2 <- plotter(arab_density)
+grid.arrange(g1, g2, ncol=2)
+```
+
+## Figure 2. Cattle density (a) Raw and (b) percentilized **review scale**
+
+```{r}
+g1 <- plotter(cowa, zscaleLog = 10)
+g2 <- plotter(cowap)
+grid.arrange(g1, g2, ncol=2)
+```
+
+## Figure 3. Arabiensis density (a) Raw and (b) percentilized
+
+```{r}
+g1 <- plotter(arab_density_original)
+g2 <- plotter(arab_density)
+grid.arrange(g1, g2, ncol=2)
+```
+
+
+## Figure 4. Combined score just parasite and cattle
+
+```{r}
+plotter(cowsquito) +
+  layer(sp.polygons(africa))
+```
+
+
+## Figure 5. Combined score, all three
+
+
+```{r}
+plotter(cowsquitod) +
+  layer(sp.polygons(africa))
+```
+
+
+## Figure 6. Combined score with first administrative division (a) median score and (b) proportion of surface > median continent score
+
+
+```{r, fig.width = 9, fig.height = 11}
+xcowsquito <- cowsquitod
+xafrica1 <- africa1
+proj4string(xcowsquito) <- proj4string(xafrica1)
+# a <- extract(xcowsquito, africa, fun = mean, na.rm = TRUE)
+b <- extract(xcowsquito, xafrica1)
+a_mean <- unlist(lapply(b, FUN=mean, na.rm = T))
+a_max <- unlist(lapply(b, FUN=max, na.rm = T))
+a_median <- unlist(lapply(b, function(x){y <- median(x, na.rm = TRUE); ifelse(is.null(y), 0, y)}))
+a_p <- unlist(lapply(b, FUN=function(x){length(which(x > median(values(xcowsquito), na.rm = TRUE))) / length(x) * 100}))
+xafrica1@data$avg <- a_mean
+xafrica1@data$a_max <- a_max
+xafrica1@data$a_median <- a_median
+xafrica1@data$a_p <- a_p
+xafrica1@data$id <- as.character(1:nrow(xafrica1@data))
+
+library(maptools)
+library(databrew)
+africa1_fortified <- fortify(xafrica1, region = 'id')
+africa1_fortified <-
+  left_join(africa1_fortified,
+            xafrica1@data %>%
+              dplyr::select(id, avg, a_max, a_median, a_p))
+
+af <- africa1_fortified %>%
+  filter(!is.na(a_median))
+
+g3 <- ggplot() +
+  geom_polygon(data = af,
+               aes(x = long,
+                   y = lat,
+                   group = group,
+                   fill = a_median),
+               color = 'black',
+               size = 0.1) +
+  theme_databrew() +
+  coord_map() +
+  ggthemes::theme_map() +
+  scale_fill_gradientn(name ='Median combined score',
+                       colors = colorRampPalette(rev(brewer.pal(9, 'Spectral')))(10),
+                       na.value = 'white') 
+
+# Get proportion above 50% score
+coords <- coordinates(xafrica1)
+coords <- data.frame(coords)
+names(coords) <- c('x', 'y')
+p <- xafrica1@data %>% cbind(coords)
+p <- p %>%
+  filter(x >= min(af$long),
+         x <= max(af$long),
+         y >= min(af$lat),
+         y <= max(af$lat))
+
+g4 <- g3 + 
+  geom_point(data = p,
+             aes(x = x,
+                 y = y,
+                 size = a_p),
+             pch = 1,
+             alpha = 0.7) +
+  scale_radius(name = '% of area above median',
+                        range = c(0.1,4))
+
+g4
+```
+
+
+# OLD STUFF BELOW
+
+
 
 # Methods 
 
