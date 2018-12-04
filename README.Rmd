@@ -164,7 +164,7 @@ g4 <- ggplot() +
                        colors = colorRampPalette(rev(brewer.pal(9, 'Spectral')))(10),
                        na.value = 'white') +
   labs(title = 'Percent of area at > median continent score')
-
+Rmisc::multiplot(g3, g4, cols = 2)
 ```
 
 

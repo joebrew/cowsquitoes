@@ -5,8 +5,8 @@ library(raster)
 library(rasterVis)
 library(RColorBrewer)
 
-if('processed_data.RData' %in% dir('data')){
-  load('data/processed_data.RData')
+if('processed_data2.RData' %in% dir('data')){
+  load('data/processed_data2.RData')
 } else {
   # Read in mosquito data
   # mosq <- readGDAL('data/MOSQUITOES/africa_pr_2000_2015_2015.tif', silent = TRUE)
@@ -24,15 +24,22 @@ if('processed_data.RData' %in% dir('data')){
   # values(cow) <- values(cow) / max(values(cow), na.rm = TRUE)
   
   # Read in density of arab
-  arab_density <- raster('data/ARABIENSIS/2015_Nature_Africa_PR.2015.tif')
+  arab_density <- raster('data/ARABIENSIS/2016_Anopheles_arabiensis.RelativeAbundance_Decompressed.tif')
   projection(arab_density) <- "+proj=utm +zone=48 +datum=WGS84"
   arab_density_original <- arab_density
   values(arab_density) <- dplyr::percent_rank(values(arab_density)) * 100
+  
+  # Plasmodium
+  plasmodium <- raster('data/Plasmodium/2015_Nature_Africa_PR.2015.tif')
+  projection(plasmodium) <- "+proj=utm +zone=48 +datum=WGS84"
+  plasmodium_original <- plasmodium
+  values(plasmodium) <- dplyr::percent_rank(values(plasmodium)) * 100
   
   
   # Crop cow just to africa
   cowa <- crop(cow, mosq)
   extent(cowa) <- extent(mosq)
+  arab_density <- crop(arab_density, mosq)
   
   # Overlay
   cowap <- projectRaster(from = cowa, 
@@ -54,6 +61,8 @@ if('processed_data.RData' %in% dir('data')){
                        # fun = combine_function
                        fun = prod
                        )
+  arab_density <- projectRaster(arab_density, cowap, method = 'ngb')
+  
   cowsquitod <- overlay(cowap,
                        mosq,
                        arab_density,
@@ -139,7 +148,7 @@ if('processed_data.RData' %in% dir('data')){
        dat,
        africa1,
        cowsquitod,
-       file = 'data/processed_data.RData')
+       file = 'data/processed_data2.RData')
 }
 
 # Read in arabiensis data
@@ -244,6 +253,11 @@ if('more_data.RData' %in% dir()){
   values(a)[is.infinite(values(a))] <- NA 
   proj4string(a) <- proj4string(arab)
   aa@data$cow_original <- extract(x = a, y = aa, fun = mean, na.rm = TRUE)
+  
+  a <- arab_density_original
+  values(a)[is.infinite(values(a))] <- NA 
+  proj4string(a) <- proj4string(arab)
+  aa@data$arab_density_original <- extract(x = a, y = aa, fun = mean, na.rm = TRUE)
   
   
   save(aa, aa_coords, 

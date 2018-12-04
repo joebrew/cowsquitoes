@@ -1,6 +1,10 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
     OGR data source with driver: ESRI Shapefile 
+    Source: "/home/joebrew/Documents/cowsquitoes/africa_level_1", layer: "africa1"
+    with 855 features
+    It has 13 fields
+    OGR data source with driver: ESRI Shapefile 
     Source: "/home/joebrew/Documents/cowsquitoes/data/VECTORS/13071_2010_245_MOESM1_ESM/Additional file 1 - African, Euro-ME EO shapefiles", layer: "arabiensis"
     with 1 features
     It has 1 fields
@@ -36,6 +40,8 @@ Figure 5. Combined score, all three
 
 Figure 6. Combined score with first administrative division (a) median score and (b) proportion of surface &gt; median continent score
 --------------------------------------------------------------------------------------------------------------------------------------
+
+<img src="README-unnamed-chunk-8-1.png" style="display: block; margin: auto;" />
 
 OLD STUFF BELOW
 ===============
