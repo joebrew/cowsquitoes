@@ -37,8 +37,6 @@ Figure 5. Combined score, all three
 Figure 6. Combined score with first administrative division (a) median score and (b) proportion of surface &gt; median continent score
 --------------------------------------------------------------------------------------------------------------------------------------
 
-<img src="README-unnamed-chunk-8-1.png" style="display: block; margin: auto;" />
-
 OLD STUFF BELOW
 ===============
 

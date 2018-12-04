@@ -25,8 +25,8 @@ africa <- cism::africa
 
 ```{r}
 library(gridExtra)
-g1 <- plotter(arab_density_original)
-g2 <- plotter(arab_density)
+g1 <- plotter(mosq_original)
+g2 <- plotter(mosq)
 grid.arrange(g1, g2, ncol=2)
 ```
 
@@ -94,6 +94,45 @@ africa1_fortified <-
 af <- africa1_fortified %>%
   filter(!is.na(a_median))
 
+# g3 <- ggplot() +
+#   geom_polygon(data = af,
+#                aes(x = long,
+#                    y = lat,
+#                    group = group,
+#                    fill = a_median),
+#                color = 'black',
+#                size = 0.1) +
+#   theme_databrew() +
+#   coord_map() +
+#   ggthemes::theme_map() +
+#   scale_fill_gradientn(name ='Median combined score',
+#                        colors = colorRampPalette(rev(brewer.pal(9, 'Spectral')))(10),
+#                        na.value = 'white') 
+# 
+# # Get proportion above 50% score
+# coords <- coordinates(xafrica1)
+# coords <- data.frame(coords)
+# names(coords) <- c('x', 'y')
+# p <- xafrica1@data %>% cbind(coords)
+# p <- p %>%
+#   filter(x >= min(af$long),
+#          x <= max(af$long),
+#          y >= min(af$lat),
+#          y <= max(af$lat))
+# 
+# g4 <- g3 + 
+#   geom_point(data = p,
+#              aes(x = x,
+#                  y = y,
+#                  size = a_p),
+#              pch = 1,
+#              alpha = 0.7) +
+#   scale_radius(name = '% of area above median',
+#                         range = c(0.1,4))
+# 
+# g4
+
+
 g3 <- ggplot() +
   geom_polygon(data = af,
                aes(x = long,
@@ -105,32 +144,27 @@ g3 <- ggplot() +
   theme_databrew() +
   coord_map() +
   ggthemes::theme_map() +
-  scale_fill_gradientn(name ='Median combined score',
+  scale_fill_gradientn(name ='',
                        colors = colorRampPalette(rev(brewer.pal(9, 'Spectral')))(10),
-                       na.value = 'white') 
+                       na.value = 'white') +
+  labs(title = 'Median score')
 
-# Get proportion above 50% score
-coords <- coordinates(xafrica1)
-coords <- data.frame(coords)
-names(coords) <- c('x', 'y')
-p <- xafrica1@data %>% cbind(coords)
-p <- p %>%
-  filter(x >= min(af$long),
-         x <= max(af$long),
-         y >= min(af$lat),
-         y <= max(af$lat))
+g4 <- ggplot() +
+  geom_polygon(data = af,
+               aes(x = long,
+                   y = lat,
+                   group = group,
+                   fill = a_p),
+               color = 'black',
+               size = 0.1) +
+  theme_databrew() +
+  coord_map() +
+  ggthemes::theme_map() +
+  scale_fill_gradientn(name ='',
+                       colors = colorRampPalette(rev(brewer.pal(9, 'Spectral')))(10),
+                       na.value = 'white') +
+  labs(title = 'Percent of area at > median continent score')
 
-g4 <- g3 + 
-  geom_point(data = p,
-             aes(x = x,
-                 y = y,
-                 size = a_p),
-             pch = 1,
-             alpha = 0.7) +
-  scale_radius(name = '% of area above median',
-                        range = c(0.1,4))
-
-g4
 ```
 
 
