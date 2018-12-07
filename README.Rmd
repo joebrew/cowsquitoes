@@ -9,7 +9,8 @@ library(knitr)
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "README-"
+  fig.path = "README-",
+  dpi=300
 )
 opts_chunk$set(comment = NA, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE, fig.align = 'center', fig.height = 5, fig.width = 8)
 ```
@@ -28,6 +29,10 @@ library(gridExtra)
 g1 <- plotter(mosq_original)
 g2 <- plotter(mosq)
 grid.arrange(g1, g2, ncol=2)
+
+tiff("figs/1.tiff", units="in", width=8, height=5, res=300)
+grid.arrange(g1, g2, ncol=2)
+dev.off()
 ```
 
 ## Figure 2. Cattle density (a) Raw and (b) percentilized **review scale**
@@ -36,6 +41,9 @@ grid.arrange(g1, g2, ncol=2)
 g1 <- plotter(cowa, zscaleLog = 10)
 g2 <- plotter(cowap)
 grid.arrange(g1, g2, ncol=2)
+tiff("figs/2.tiff", units="in", width=8, height=5, res=300)
+grid.arrange(g1, g2, ncol=2)
+dev.off()
 ```
 
 ## Figure 3. Arabiensis density (a) Raw and (b) percentilized
@@ -44,6 +52,9 @@ grid.arrange(g1, g2, ncol=2)
 g1 <- plotter(arab_density_original)
 g2 <- plotter(arab_density)
 grid.arrange(g1, g2, ncol=2)
+tiff("figs/3.tiff", units="in", width=8, height=5, res=300)
+grid.arrange(g1, g2, ncol=2)
+dev.off()
 ```
 
 
@@ -52,6 +63,11 @@ grid.arrange(g1, g2, ncol=2)
 ```{r}
 plotter(cowsquito) +
   layer(sp.polygons(africa))
+
+tiff("figs/4.tiff", units="in", width=8, height=5, res=300)
+plotter(cowsquito) +
+  layer(sp.polygons(africa))
+dev.off()
 ```
 
 
@@ -61,6 +77,10 @@ plotter(cowsquito) +
 ```{r}
 plotter(cowsquitod) +
   layer(sp.polygons(africa))
+tiff("figs/5.tiff", units="in", width=8, height=5, res=300)
+plotter(cowsquitod) +
+  layer(sp.polygons(africa))
+dev.off()
 ```
 
 
@@ -165,6 +185,11 @@ g4 <- ggplot() +
                        na.value = 'white') +
   labs(title = 'Percent of area at > median continent score')
 Rmisc::multiplot(g3, g4, cols = 2)
+
+tiff("figs/6.tiff", units="in", width=8, height=5, res=300)
+Rmisc::multiplot(g3, g4, cols = 2)
+
+dev.off()
 ```
 
 
