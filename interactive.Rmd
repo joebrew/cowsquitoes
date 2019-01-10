@@ -1,7 +1,5 @@
 ---
 title: "Interactive map"
-author: "www.databrew.cc"
-date: "May, 2018"
 output: html_document
 ---
 
@@ -12,7 +10,19 @@ options(xtable.comment = FALSE)
 ```
 
 ```{r}
-source('code.R')
+if('done.RData' %in% dir()){
+  load('done.RData')
+} else {
+  source('code.R')
+  save.image('done.RData')
+}
+library(tidyverse)
+library(tiff)
+library(rgdal)
+library(raster)
+library(rasterVis)
+library(RColorBrewer)
+
 ```
 
 ```{r}
@@ -70,7 +80,7 @@ make_small <-
 pal <- colorNumeric(
   palette = "YlOrRd",
   domain = aa@data$cowap)
-leaflet() %>%
+l <- leaflet() %>%
   addProviderTiles(providers$Stamen.Toner) %>%
   addPolygons(data = aa,
               smoothFactor = 0.2,
@@ -103,7 +113,7 @@ create_column <- function(r){
   simple <- data.frame(coordinates(xa)); names(simple) <- c('x', 'y'); simple$lng <- simple$x; simple$lat <- simple$y
   coordinates(simple) <- ~x+y
   proj4string(simple) <- proj4string(africa1)
-  proj4string(r) <- proj4string(xafrica1)
+  proj4string(r) <- proj4string(africa1)
   # a <- extract(xcowsquito, africa, fun = mean, na.rm = TRUE)
   b <- extract(r, simple, na.rm = TRUE)
   return(b)
@@ -112,7 +122,10 @@ create_column <- function(r){
 data_list <- list(arab_density, cowap, mosq)
 names_list <- c('Arabiensis', 'Cattle', 'Malaria')
 
-x_shp <- xafrica1
+library(rgeos)
+x_shp <- gSimplify(africa1, tol = 1, topologyPreserve = T)
+x_shp <- SpatialPolygonsDataFrame(Sr = x_shp,
+                                  data = africa1@data)
 for(i in 1:length(data_list)){
   x_shp@data[,names_list[i]] <-
     create_column(r = data_list[[i]])
@@ -120,6 +133,39 @@ for(i in 1:length(data_list)){
 
 af <- x_shp
 af_coords <- data.frame(coordinates(af)); names(af_coords) <- c('x', 'y'); coordinates(af_coords) <- ~x+y
+
+library(leaflet.extras)
+pops <- af@data %>%
+  mutate(Cattle = round(Cattle, 2),
+         Malaria = round(Malaria, 2),
+         Arabiensis = round(Arabiensis, 2)) %>%
+  dplyr::rename(`Cattle density (percentile)` = Cattle,
+                # `Malaria prevalence (2-10 yrs old)` = mosq_original,
+                `Malaria prevalence (2-10 yrs old, percentile)` = Malaria,
+                `Arabiensis prevalence (percentile)` = Arabiensis,
+                `Area` = NAME_1,
+                `Country` = NAME_0) %>%
+  dplyr::select(`Cattle density (percentile)`,
+                # `Cattle density`,
+                # `Malaria prevalence (2-10 yrs old)`,
+                `Malaria prevalence (2-10 yrs old, percentile)`,
+                # `Combined cattle/malaria score (percentile)`,
+                `Arabiensis prevalence (percentile)`,
+                `Area`,
+                `Country`)
+
+popups <- lapply(rownames(pops), function(row){
+  x <- pops[row.names(pops) == row,] %>% 
+                         dplyr::select(-Area, -Country)
+  captions <- paste0(x$Area, ' ', x$Country)
+
+  htmlTable::htmlTable(x, 
+               rnames = FALSE,
+               caption = captions,
+               # align = 'lr',
+               align = paste(rep("l", ncol(x)), collapse = ''),
+               format = 'html')
+})
 
 pal <- colorNumeric(
   palette = "YlOrRd",
@@ -145,7 +191,8 @@ l <- leaflet() %>%
               fillOpacity = 0.8,
               stroke = TRUE,
               weight = 0.5,
-              color = pal(af@data$Cattle)) %>%
+              color = pal(af@data$Cattle),
+                   popup = popups) %>%
   addCircleMarkers(data = af_coords@coords,
                              lng = af_coords@coords[,1],
                              lat = af_coords@coords[,2],
@@ -153,7 +200,8 @@ l <- leaflet() %>%
                              weight = 0.5,
                    fillOpacity = 0.9,
                              fillColor = pal2(af@data$Arabiensis),
-                             radius = make_small(af@data$Malaria)) %>%
+                             radius = make_small(af@data$Malaria),
+                   popup = popups) %>%
   addFullscreenControl() %>%
   addLegend("bottomleft", pal = pal, values = af@data$Cattle[!is.na(af@data$Cattle)],
     title = "Cattle",
@@ -168,6 +216,6 @@ l <- leaflet() %>%
   addLegendCustom(colors = 'black', 
                   title = 'Malaria',
                   labels = as.character(seq(0, 100, 20)), sizes = make_small(seq(0, 100, 20)))
-
-htmlwidgets::saveWidget(l, file = '../databrew.github.io/cow3.html')
+l
+htmlwidgets::saveWidget(l, file = '~/Documents/databrew.github.io/cow3.html')
 ```
