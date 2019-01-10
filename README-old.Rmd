@@ -1,0 +1,631 @@
+
+
+# OLD STUFF BELOW
+
+(First run README.Rmd)
+
+# Methods 
+
+- We use raw raster data on where cattle are from the International Livestock Research Institute (ILRI) and the Food and Agriculture Organization of the United Nations (FAO) and the Université Libre de Bruxelles (ULB-LUBIES).  
+- We use raw raster data on the Plasmodium falciparum parasite rate in 2-10 year olds in Africa in 2015, made available through the Malaria Atlas Project.  
+- We use R to process the data, standardize their geographic attributes (extents, projections) and quality attributes (granularity, etc.).
+- We use simple percentilization to scale prevalence (0-1) and cattle per square kilometer (0-Inf) into a 0-100 metric.
+- We combine our two metrics by simple product So, in the combined score, 0 means no Pf or cattle, and 100 means the maximum amount of Pf and cattle. 0 can also much of one metric, but not of the other (for example, a very malarious region with no cattle gets a 0). Anything between the two represents some combination. This method assumes an equilinear value of both percentilized Pf and cattle (ie, a place with 60th percentile cattle density and 40th percentile Pf is equally as promising as a place with 40th percentile cattle density and 60th percentile Pf).  
+- Full code in this repo (`code.R`).
+
+# Results  
+
+## Arabiensis
+
+The below shows the distribution of arabiensis in Africa.
+
+```{r}
+plot(africa)
+plot(arab, col = adjustcolor('red', alpha.f = 0.6), add = TRUE)
+```
+
+
+## Malaria prevalence on the Plasmodium falciparum parasite rate in 2-10 year-olds.
+
+The below shows the raw data on the Plasmodium falciparum parasite rate in 2-10 year-olds.
+
+```{r}
+plotter(mosq_original)
+```
+
+The below is identical to the above, but with country borders.
+
+```{r}
+plotter(mosq_original) +
+  layer(sp.polygons(africa))
+```
+
+The below is identical to the above, but with administrative borders.
+
+```{r}
+plotter(mosq_original) +
+  layer(sp.polygons(africa1))
+```
+
+
+The below shows our (scaled) data on the Plasmodium falciparum parasite rate in 2-10 year-olds.
+
+```{r}
+plotter(mosq)
+```
+
+The below is identical to the above, but with country borders.
+
+```{r}
+plotter(mosq) +
+  layer(sp.polygons(africa))
+```
+
+The below is identical to the above, but with administrative borders.
+
+```{r}
+plotter(mosq) +
+  layer(sp.polygons(africa1))
+```
+
+
+## Cattle density  
+
+```{r}
+plotter(cowap)
+```
+
+
+The below is identical to the above, but with country borders.
+
+```{r}
+plotter(cowap) +
+  layer(sp.polygons(africa))
+```
+
+The below is identical to the above, but with administrative level 1 borders.
+
+```{r}
+plotter(cowap) +
+  layer(sp.polygons(africa1))
+```
+
+
+
+## Combined score
+
+
+
+```{r, eval = FALSE}
+
+### Multidimensional score
+
+
+# We can visualize the quantity of malaria, cattle, and arabiensis density through a 3-dimensional color-scale. In the below chart, we use a 10,000 value color palette, mixing green (neither cattle nor malaria) with blue (lots of cattle, little malaria) with orange (lots of malaria, little cattle) with purple (lots of both). Below the map is key for interpretation.
+dat <- dat %>%
+  arrange(color_number)
+plotter(z, colr = colorRampPalette(dat$color), no_legend = TRUE)
+
+ggplot(dat %>%
+         filter(arab %in% c(seq(0, 98, 14))) %>%
+         mutate(arab = paste0('Arabiensis percentile: ', arab)), 
+       aes(x=cattle, y=pr)) +
+  geom_tile(aes(fill=color), color=NA) +
+  scale_fill_identity() +
+    labs(x = 'Cattle percentile',
+         y = 'Pr percentile',
+         # title = 'Legend for intepreting above map',
+         subtitle = '') +
+  theme_bw() +
+  facet_wrap(~arab,
+             ncol = 2)
+# The below is identical to the above, but with country borders.
+
+plotter(z, colr = colorRampPalette(dat$color), no_legend = TRUE) +
+  layer(sp.polygons(africa))
+
+# The below is identical to the above, but with the distribution of arabiensis overlapped.
+
+plotter(z, colr = colorRampPalette(dat$color), no_legend = TRUE) +
+  layer(sp.polygons(arab))
+
+```
+
+
+### Single score
+
+The below shows our combined score, using the product of the cattle and malaria metrics. Unlike a multi-dimensional score, this visual does not contain as much information (ie, with a value of "40", it's not clear whether this is due to a cattle percentile of 40 and a malaria percentile of 1, or a cattle percentile of 5 and a malaria percentile of 8). That said, a one-dimensional color legend is much easier to interpret visually.
+
+```{r}
+plotter(cowsquito)
+```
+
+The below is identical to the above, but with country borders.
+
+```{r}
+plotter(cowsquito) +
+  layer(sp.polygons(africa))
+```
+
+The below is identical to the above, but with the distribution of arabiensis as well.
+
+```{r}
+plotter(cowsquito) +
+  layer(sp.polygons(arab))
+```
+
+
+The below is identical to the above, but showing a point for each "grid" of the raster surface, and removing the geogrpaphic coordination (ie, scatterplot).
+
+```{r}
+xs <- coordinates(z)[,1]
+xs <- seq(min(xs), max(xs), by = 1)
+ys <- coordinates(z)[,2]
+ys <- seq(min(ys), max(ys), 1)
+the_grid <- expand.grid(x = xs,
+                        y = ys)
+coordinates(the_grid) <- ~x+y
+proj4string(the_grid) <- proj4string(africa)
+# Keep only Africa
+the_grid <- the_grid[!is.na(over(the_grid, polygons(africa)))]
+# the_grid <- spTransform(the_grid, proj4string(cowa))
+# Get values
+cow_scores <- raster::extract(cowap, coordinates(the_grid))
+mosq_scores <- raster::extract(mosq_original, coordinates(the_grid))
+the_data <- data.frame(cattle = cow_scores,
+                       mosq = mosq_scores)
+ggplot(data = the_data,
+       aes(x = cattle,
+           y = mosq)) +
+  geom_point() +
+  theme_bw()
+```
+
+### Alternative visualizations
+
+#### A
+
+```{r}
+df_grid <- 
+  expand.grid(lng = seq(bbox(arab)[1,1],
+                        bbox(arab)[1,2],
+                        length = 60),
+              lat = seq(bbox(arab)[2,1],
+                        bbox(arab)[2,2],
+                        length = 40)) %>%
+  mutate(x = lng,
+         y = lat)
+
+coordinates(df_grid) <- ~x+y
+proj4string(df_grid) <- proj4string(arab)
+zz <- over(df_grid, polygons(arab))
+df_grid <- df_grid[!is.na(zz),]
+# Loop through and get values
+df_grid@data$cowap <- df_grid@data$mosq <- df_grid$data$cowsquito <- 0
+
+# cowap
+# mosq
+# cowsquito
+a <- cowap
+values(a)[is.infinite(values(a))] <- NA 
+proj4string(a) <- proj4string(arab)
+df_grid@data$cowap <- extract(x = a, y = df_grid)
+
+a <- mosq
+values(a)[is.infinite(values(a))] <- NA 
+proj4string(a) <- proj4string(arab)
+df_grid@data$mosq <- extract(x = a, y = df_grid)
+
+a <- cowsquito
+values(a)[is.infinite(values(a))] <- NA 
+proj4string(a) <- proj4string(arab)
+df_grid@data$cowsquito <- extract(x = a, y = df_grid)
+
+df_grid <- df_grid@data
+
+africa_fortified <- broom::tidy(africa1, id = 'OBJECTID')
+arab_fortified <- broom::tidy(arab, id = 'region')
+ggplot(data = df_grid,
+       aes(x = lng,
+           y = lat)) +
+  # geom_polygon(data = africa_fortified,
+  #              aes(x = long,
+  #                  y = lat,
+  #                  group = group),
+  #              color = 'black',
+  #              fill = NA,
+  #              lwd = 0.2) +
+  geom_point(aes(color = cowap,
+                 size = mosq)) +
+  scale_color_gradient(low = 'yellow',
+                         high = 'red',
+                       name = 'Cattle score') +
+  scale_size_continuous(range = c(0.1,3),
+                        name = 'Malaria score') +
+  ggthemes::theme_map() +
+  geom_polygon(data = arab_fortified,
+               aes(x = long,
+                   y = lat,
+                   group = group),
+               color = 'black',
+               fill = NA,
+               lwd = 0.2) 
+```
+
+#### B
+
+
+```{r, fig.width = 9}
+df_grid <- 
+  expand.grid(lng = seq(bbox(arab)[1,1],
+                        bbox(arab)[1,2],
+                        length = 60),
+              lat = seq(bbox(arab)[2,1],
+                        bbox(arab)[2,2],
+                        length = 40)) %>%
+  mutate(x = lng,
+         y = lat)
+
+coordinates(df_grid) <- ~x+y
+proj4string(df_grid) <- proj4string(arab)
+# zz <- over(df_grid, polygons(arab))
+# df_grid <- df_grid[!is.na(zz),]
+# Loop through and get values
+df_grid@data$cowap <- df_grid@data$mosq <- df_grid@data$arab <- df_grid$data$cowsquito <- 0
+
+# cowap
+# mosq
+# cowsquito
+a <- cowap
+values(a)[is.infinite(values(a))] <- NA 
+proj4string(a) <- proj4string(arab)
+df_grid@data$cowap <- extract(x = a, y = df_grid)
+
+a <- mosq
+values(a)[is.infinite(values(a))] <- NA 
+proj4string(a) <- proj4string(arab)
+df_grid@data$mosq <- extract(x = a, y = df_grid)
+
+a <- cowsquito
+values(a)[is.infinite(values(a))] <- NA 
+proj4string(a) <- proj4string(arab)
+df_grid@data$cowsquito <- extract(x = a, y = df_grid)
+
+a <- arab_density
+values(a)[is.infinite(values(a))] <- NA 
+proj4string(a) <- proj4string(arab)
+df_grid@data$arab <- extract(x = a, y = df_grid)
+
+
+df_grid <- df_grid@data
+
+africa_fortified <- broom::tidy(africa1, id = 'OBJECTID')
+# Make arab density categorical
+df_grid$arab_density <- 
+  base::cut(df_grid$arab,
+            breaks = seq(0, 100, 20))
+# arab_fortified <- broom::tidy(arab, id = 'region')
+ggplot(data = df_grid %>%
+         filter(!is.na(arab_density)),
+       aes(x = lng,
+           y = lat)) +
+  # geom_polygon(data = africa_fortified,
+  #              aes(x = long,
+  #                  y = lat,
+  #                  group = group),
+  #              color = 'black',
+  #              fill = NA,
+  #              lwd = 0.2) +
+  geom_point(aes(color = cowap,
+                 size = mosq,
+                 pch = arab_density)) +
+  scale_color_gradient(low = 'yellow',
+                         high = 'red',
+                       name = 'Cattle score') +
+  scale_size_continuous(range = c(0.1,2),
+                        name = 'Malaria score') +
+  scale_shape_manual(name = 'Arabiensis density',
+                     values = c(3, 8, 0, 1, 9)) +
+  ggthemes::theme_map() +
+  theme(legend.position = 'bottom')
+```
+
+#### C
+
+
+### Country aggregation
+
+We aggregate at the polygonal national level so as to rank countries by suitability for intervention. The below maps show the mean, median, maximum, and % of area greater than continental median "single score" (product of Pf and cattle percentile) for each country in Africa.
+
+```{r, fig.width = 9, fig.height = 11}
+proj4string(cowsquito) <- proj4string(africa)
+# a <- extract(cowsquito, africa, fun = mean, na.rm = TRUE)
+b <- extract(cowsquito, africa)
+a_mean <- unlist(lapply(b, FUN=mean, na.rm = T))
+a_max <- unlist(lapply(b, FUN=max, na.rm = T))
+a_median <- unlist(lapply(b, function(x){y <- median(x, na.rm = TRUE); ifelse(is.null(y), 0, y)}))
+a_p <- unlist(lapply(b, FUN=function(x){length(which(x > median(values(cowsquito), na.rm = TRUE))) / length(x) * 100}))
+africa@data$avg <- a_mean
+africa@data$a_max <- a_max
+africa@data$a_median <- a_median
+africa@data$a_p <- a_p
+africa@data$id <- as.character(1:nrow(africa@data))
+
+library(maptools)
+library(databrew)
+africa_fortified <- fortify(africa, region = 'id')
+africa_fortified <-
+  left_join(africa_fortified,
+            africa@data %>%
+              dplyr::select(id, avg, a_max, a_median, a_p))
+
+g1 <- ggplot() +
+  geom_polygon(data = africa_fortified,
+               aes(x = long,
+                   y = lat,
+                   group = group,
+                   fill = avg),
+               color = 'black',
+               size = 0.1) +
+  theme_databrew() +
+  coord_map() +
+  ggthemes::theme_map() +
+  scale_fill_gradientn(name ='',
+                       colors = colorRampPalette(rev(brewer.pal(9, 'Spectral')))(10),
+                       na.value = 'white') +
+  labs(title = 'Average score')
+
+g2 <- ggplot() +
+  geom_polygon(data = africa_fortified,
+               aes(x = long,
+                   y = lat,
+                   group = group,
+                   fill = a_max),
+               color = 'black',
+               size = 0.1) +
+  theme_databrew() +
+  coord_map() +
+  ggthemes::theme_map() +
+  scale_fill_gradientn(name ='',
+                       colors = colorRampPalette(rev(brewer.pal(9, 'Spectral')))(10),
+                       na.value = 'white') +
+  labs(title = 'Maximum score')
+
+g3 <- ggplot() +
+  geom_polygon(data = africa_fortified,
+               aes(x = long,
+                   y = lat,
+                   group = group,
+                   fill = a_median),
+               color = 'black',
+               size = 0.1) +
+  theme_databrew() +
+  coord_map() +
+  ggthemes::theme_map() +
+  scale_fill_gradientn(name ='',
+                       colors = colorRampPalette(rev(brewer.pal(9, 'Spectral')))(10),
+                       na.value = 'white') +
+  labs(title = 'Median score')
+
+g4 <- ggplot() +
+  geom_polygon(data = africa_fortified,
+               aes(x = long,
+                   y = lat,
+                   group = group,
+                   fill = a_p),
+               color = 'black',
+               size = 0.1) +
+  theme_databrew() +
+  coord_map() +
+  ggthemes::theme_map() +
+  scale_fill_gradientn(name ='',
+                       colors = colorRampPalette(rev(brewer.pal(9, 'Spectral')))(10),
+                       na.value = 'white') +
+  labs(title = 'Percent of area at > median continent score')
+
+Rmisc::multiplot(g1, g2, g3, g4, cols = 2)
+```
+
+
+The below shows a plot of country level values (excluding countries with 0 values throughout).
+
+```{r}
+plot_data <- africa_fortified %>%
+  left_join(africa@data %>% dplyr::select(COUNTRY, id)) %>%
+  dplyr::rename(country = COUNTRY) %>%
+  dplyr::select(id, country, avg, a_max, a_median, a_p) %>%
+  group_by(country) %>%
+  summarise(avg = mean(avg[!is.infinite(avg)], na.rm = TRUE),
+            a_max = max(a_max[!is.infinite(a_max)], na.rm = TRUE),
+            a_median = median(a_median[!is.infinite(a_median)], na.rm = TRUE),
+            a_p = length(which(a_p > median(values(cowsquito), na.rm = TRUE))) / length(a_p) * 100) %>%
+  ungroup %>%
+  rename(`Average score` = avg,
+         `Max score` = a_max,
+         `Median score` = a_median,
+         `% of area > African median` = a_p)
+
+pd <- plot_data %>%
+  gather(key, value, `Average score`:`% of area > African median`) %>%
+  mutate(value = ifelse(value < 0, 0, value)) %>%
+  filter(!is.na(value)) %>%
+  # group_by(country) %>%
+  # dplyr::filter(!all(value) == 0) %>%
+  ungroup %>%
+  group_by(country) %>%
+  mutate(all_bad = all(value == 0) | all(is.na(value))) %>%
+  ungroup %>%
+  filter(!all_bad)
+ggplot(data = pd,
+       aes(x = country,
+           y = value,
+           fill = key,
+           group = key)) +
+  geom_bar(stat = 'identity',
+           pos = 'dodge') +
+    theme_bw() +
+  theme(legend.position = 'bottom',
+        axis.text.x = element_text(angle = 90)) +
+  scale_fill_manual(name = '',
+                    values = brewer.pal(n = 4, name = 'Spectral')) +
+  labs(x = 'Country',
+       y = 'Value') 
+
+```
+
+The below is a table country-level values.
+
+```{r}
+knitr::kable(plot_data, format = 'html')  
+```
+
+
+
+### Administrative level 1 aggregation
+
+We aggregate at the polygonal sub-national level so as to rank administrative areas (districts, etc.) by suitability for intervention. The below maps show the mean, median, maximum, and % of area greater than continental median "single score" (product of Pf and cattle percentile) for each administrative unit in Africa.
+
+```{r, fig.width = 9, fig.height = 11}
+proj4string(cowsquito) <- proj4string(africa1)
+# a <- extract(cowsquito, africa, fun = mean, na.rm = TRUE)
+b <- extract(cowsquito, africa1)
+a_mean <- unlist(lapply(b, FUN=mean, na.rm = T))
+a_max <- unlist(lapply(b, FUN=max, na.rm = T))
+a_median <- unlist(lapply(b, function(x){y <- median(x, na.rm = TRUE); ifelse(is.null(y), 0, y)}))
+a_p <- unlist(lapply(b, FUN=function(x){length(which(x > median(values(cowsquito), na.rm = TRUE))) / length(x) * 100}))
+africa1@data$avg <- a_mean
+africa1@data$a_max <- a_max
+africa1@data$a_median <- a_median
+africa1@data$a_p <- a_p
+africa1@data$id <- as.character(1:nrow(africa1@data))
+
+library(maptools)
+library(databrew)
+africa1_fortified <- fortify(africa1, region = 'id')
+africa1_fortified <-
+  left_join(africa1_fortified,
+            africa1@data %>%
+              dplyr::select(id, avg, a_max, a_median, a_p))
+
+g1 <- ggplot() +
+  geom_polygon(data = africa1_fortified,
+               aes(x = long,
+                   y = lat,
+                   group = group,
+                   fill = avg),
+               color = 'black',
+               size = 0.1) +
+  theme_databrew() +
+  coord_map() +
+  ggthemes::theme_map() +
+  scale_fill_gradientn(name ='',
+                       colors = colorRampPalette(rev(brewer.pal(9, 'Spectral')))(10),
+                       na.value = 'white') +
+  labs(title = 'Average score') 
+
+g2 <- ggplot() +
+  geom_polygon(data = africa1_fortified,
+               aes(x = long,
+                   y = lat,
+                   group = group,
+                   fill = a_max),
+               color = 'black',
+               size = 0.1) +
+  theme_databrew() +
+  coord_map() +
+  ggthemes::theme_map() +
+  scale_fill_gradientn(name ='',
+                       colors = colorRampPalette(rev(brewer.pal(9, 'Spectral')))(10),
+                       na.value = 'white') +
+  labs(title = 'Maximum score')
+
+g3 <- ggplot() +
+  geom_polygon(data = africa1_fortified,
+               aes(x = long,
+                   y = lat,
+                   group = group,
+                   fill = a_median),
+               color = 'black',
+               size = 0.1) +
+  theme_databrew() +
+  coord_map() +
+  ggthemes::theme_map() +
+  scale_fill_gradientn(name ='',
+                       colors = colorRampPalette(rev(brewer.pal(9, 'Spectral')))(10),
+                       na.value = 'white') +
+  labs(title = 'Median score')
+
+g4 <- ggplot() +
+  geom_polygon(data = africa1_fortified,
+               aes(x = long,
+                   y = lat,
+                   group = group,
+                   fill = a_p),
+               color = 'black',
+               size = 0.1) +
+  theme_databrew() +
+  coord_map() +
+  ggthemes::theme_map() +
+  scale_fill_gradientn(name ='',
+                       colors = colorRampPalette(rev(brewer.pal(9, 'Spectral')))(10),
+                       na.value = 'white') +
+  labs(title = 'Percent of area at > median continent score')
+
+Rmisc::multiplot(g1, g2, g3, g4, cols = 2)
+```
+
+All values for all sub-national administrative units.
+
+```{r}
+plot_data <- africa1_fortified %>%
+  left_join(africa1@data %>% dplyr::select(NAME_0, NAME_1, id)) %>%
+  dplyr::mutate(country = paste0(NAME_1, ', ', NAME_0)) %>%
+  dplyr::select(id, country, avg, a_max, a_median, a_p) %>%
+  group_by(country) %>%
+  summarise(avg = mean(avg[!is.infinite(avg)], na.rm = TRUE),
+            a_max = max(a_max[!is.infinite(a_max)], na.rm = TRUE),
+            a_median = median(a_median[!is.infinite(a_median)], na.rm = TRUE),
+            a_p = length(which(a_p > median(values(cowsquito), na.rm = TRUE))) / length(a_p) * 100) %>%
+  ungroup %>%
+  rename(`Average score` = avg,
+         `Max score` = a_max,
+         `Median score` = a_median,
+         `% of area > African median` = a_p)
+knitr::kable(plot_data, format = 'html')
+```
+
+The below shows the top 20 districts in regards to average combined score.
+
+```{r}
+x <- plot_data %>%
+  arrange(desc(`Average score`)) 
+x <- x[1:20,]
+knitr::kable(x, format = 'html')
+```
+
+
+# Conclusion
+
+West Africa appears to be the region with the most promise for ivermectin-infused cows. Yummy.
+
+# Data sources
+
+### Where are the cows?
+
+https://livestock.geo-wiki.org/Application/index.php
+
+### Where are the mosquitoes?  
+
+(malaria, actually)
+
+https://map.ox.ac.uk/explorer/#/explorer
+
+
+# Contact
+
+[Databrew](http://www.databrew.cc), empowering researchers in academia and industry to explore, understand, and communicate their data through consulting and teaching. <a href="mailto:info@databrew.cc?Subject=Hello" target="_top">info@databrew.cc</a>.
+
+
+<img align="center" src="logo_clear.png" alt="http://databrew.cc">
+
+

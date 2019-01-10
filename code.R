@@ -187,7 +187,7 @@ arab <- readOGR('data/VECTORS/13071_2010_245_MOESM1_ESM/Additional file 1 - Afri
 #           # at=seq(-5, 5, len=101)
 #           )            # colour ramp breaks
 
-plotter <- function(r, colr = NULL, no_legend = FALSE, zscaleLog = NULL){
+plotter <- function(r, colr = NULL, no_legend = FALSE, zscaleLog = NULL, main = '', ...){
   if(is.null(colr)){
     colr <- colorRampPalette(rev(brewer.pal(9, 'Spectral')))
   }
@@ -210,7 +210,9 @@ plotter <- function(r, colr = NULL, no_legend = FALSE, zscaleLog = NULL){
             ),
             scales=list(draw=FALSE),            # suppress axis labels
             col.regions=colr,
-            zscaleLog = zscaleLog) # colour ramp
+            zscaleLog = zscaleLog,
+            main = main,
+            ...) # colour ramp
             # at=seq(-5, 5, len=101)
 }
 
