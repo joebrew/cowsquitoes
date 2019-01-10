@@ -96,3 +96,78 @@ leaflet() %>%
   )
 
 ```
+
+```{r}
+create_column <- function(r){
+  xa <- africa1
+  simple <- data.frame(coordinates(xa)); names(simple) <- c('x', 'y'); simple$lng <- simple$x; simple$lat <- simple$y
+  coordinates(simple) <- ~x+y
+  proj4string(simple) <- proj4string(africa1)
+  proj4string(r) <- proj4string(xafrica1)
+  # a <- extract(xcowsquito, africa, fun = mean, na.rm = TRUE)
+  b <- extract(r, simple, na.rm = TRUE)
+  return(b)
+}
+
+data_list <- list(arab_density, cowap, mosq)
+names_list <- c('Arabiensis', 'Cattle', 'Malaria')
+
+x_shp <- xafrica1
+for(i in 1:length(data_list)){
+  x_shp@data[,names_list[i]] <-
+    create_column(r = data_list[[i]])
+}
+
+af <- x_shp
+af_coords <- data.frame(coordinates(af)); names(af_coords) <- c('x', 'y'); coordinates(af_coords) <- ~x+y
+
+pal <- colorNumeric(
+  palette = "YlOrRd",
+  domain = af@data$Cattle)
+pal2 <- colorNumeric(
+  palette = "Blues",
+  domain = af@data$Arabiensis)
+
+addLegendCustom <- function(map, colors, labels, sizes, opacity = 0.5, title = ''){
+      colorAdditions <- paste0(colors, "; width:", sizes, "px; height:", sizes, "px")
+      labelAdditions <- paste0("<div style='display: inline-block;height: ", sizes, "px;margin-top: 4px;line-height: ", sizes, "px;'>", labels, "</div>")
+
+      return(addLegend(map, colors = colorAdditions, labels = labelAdditions, opacity = opacity,
+                       title = title))
+    }
+l <- leaflet() %>%
+  addProviderTiles(providers$Stamen.Toner) %>%
+  # Add cattle
+  addPolygons(data = af,
+              smoothFactor = 0.2,
+              # fill = NA,
+              fill = pal(af@data$Cattle),
+              fillOpacity = 0.8,
+              stroke = TRUE,
+              weight = 0.5,
+              color = pal(af@data$Cattle)) %>%
+  addCircleMarkers(data = af_coords@coords,
+                             lng = af_coords@coords[,1],
+                             lat = af_coords@coords[,2],
+                             color = 'black',
+                             weight = 0.5,
+                   fillOpacity = 0.9,
+                             fillColor = pal2(af@data$Arabiensis),
+                             radius = make_small(af@data$Malaria)) %>%
+  addFullscreenControl() %>%
+  addLegend("bottomleft", pal = pal, values = af@data$Cattle[!is.na(af@data$Cattle)],
+    title = "Cattle",
+    opacity = 1
+  ) %>%
+  addLegend("bottomright", pal = pal2, 
+            values = seq(0, 100, 20),
+            # values = af@data$Arabiensis[!is.na(af@data$Arabiensis)],
+    title = "Arabiensis",
+    opacity = 1
+  ) %>%
+  addLegendCustom(colors = 'black', 
+                  title = 'Malaria',
+                  labels = as.character(seq(0, 100, 20)), sizes = make_small(seq(0, 100, 20)))
+
+htmlwidgets::saveWidget(l, file = '../databrew.github.io/cow3.html')
+```
