@@ -22,6 +22,26 @@ africa <- cism::africa
 
 # cowsquito: Identifying geographical areas of greatest potential impact for livestock ivermectin implants
 
+# Overlap between arabiensis and cattle
+
+```{r}
+x = cowap
+y = arab_density
+df <- data.frame(x = values(x),
+                 y = values(y))
+df %>%
+  mutate(x5 = x >= 50) %>%
+  mutate(y5 = y >= 50) %>%
+  group_by(dense_arab = y5) %>%
+  summarise(avg_cattle_density = mean(x, na.rm = T))
+df %>%
+  mutate(x5 = x >= 50) %>%
+  mutate(y5 = y >= 50) %>%
+  group_by(dense_cattle = x5) %>%
+  summarise(avg_arab_density = mean(y, na.rm = T))
+
+```
+
 ## Figure 1. Parasite prevalence (a) Raw and (b) percentilized
 
 ```{r}
