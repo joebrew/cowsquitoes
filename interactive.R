@@ -1,15 +1,7 @@
----
-title: "Interactive map"
-output: html_document
----
 
-```{r setup, include=FALSE}
 library(knitr)
 opts_chunk$set(comment = NA, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE, fig.align = 'center', fig.height = 4, fig.width = 7)
 options(xtable.comment = FALSE)
-```
-
-```{r}
 if('done.RData' %in% dir()){
   load('done.RData')
 } else {
@@ -23,9 +15,6 @@ library(raster)
 library(rasterVis)
 library(RColorBrewer)
 
-```
-
-```{r}
 roundy <- function(x, digits = 0){
   round(as.numeric(unlist(x)), digits = digits)
 }
@@ -55,15 +44,15 @@ pops <- aa@data %>%
 
 popups <- lapply(rownames(pops), function(row){
   x <- pops[row.names(pops) == row,] %>% 
-                         dplyr::select(-Area, -Country)
+    dplyr::select(-Area, -Country)
   captions <- paste0(x$Area, ' ', x$Country)
-
+  
   htmlTable::htmlTable(x, 
-               rnames = FALSE,
-               caption = captions,
-               # align = 'lr',
-               align = paste(rep("l", ncol(x)), collapse = ''),
-               format = 'html')
+                       rnames = FALSE,
+                       caption = captions,
+                       # align = 'lr',
+                       align = paste(rep("l", ncol(x)), collapse = ''),
+                       format = 'html')
   
   # knitr::kable(x, 
   #              rnames = FALSE,
@@ -74,9 +63,9 @@ popups <- lapply(rownames(pops), function(row){
 })
 
 make_small <- 
-            function(x){
-              ((1 + percent_rank(x)) * 1.2)^2.2
-            }
+  function(x){
+    ((1 + percent_rank(x)) * 1.2)^2.2
+  }
 pal <- colorNumeric(
   palette = "YlOrRd",
   domain = aa@data$cowap)
@@ -91,22 +80,20 @@ l <- leaflet() %>%
               # color = pal(aa@data$cowap),
               color = 'black') %>%
   addCircleMarkers(data = aa_coords@coords,
-                             lng = aa_coords@coords[,1],
-                             lat = aa_coords@coords[,2],
-                             color = 'black',
-                             weight = 0.5,
+                   lng = aa_coords@coords[,1],
+                   lat = aa_coords@coords[,2],
+                   color = 'black',
+                   weight = 0.5,
                    fillOpacity = 0.9,
-                             fillColor = pal(aa@data$cowap),
-                             radius = make_small(aa@data$mosq),
-                             popup = popups) %>%
+                   fillColor = pal(aa@data$cowap),
+                   radius = make_small(aa@data$mosq),
+                   popup = popups) %>%
   addFullscreenControl() %>%
   addLegend("bottomleft", pal = pal, values = aa@data$cowap[!is.na(aa@data$cowap)],
-    title = "Color = cattle density;<br>Circle size = malaria prevalence",
-    opacity = 1
+            title = "Color = cattle density;<br>Circle size = malaria prevalence",
+            opacity = 1
   )
-```
 
-```{r}
 create_column <- function(r){
   xa <- africa1
   simple <- data.frame(coordinates(xa)); names(simple) <- c('x', 'y'); simple$lng <- simple$x; simple$lat <- simple$y
@@ -122,9 +109,10 @@ data_list <- list(arab_density, cowap, mosq)
 names_list <- c('Arabiensis', 'Cattle', 'Malaria')
 
 library(rgeos)
-x_shp <- gSimplify(africa1, tol = 1, topologyPreserve = T)
+x_shp <- gSimplify(africa1, tol = 0.1, topologyPreserve = T)
 x_shp <- SpatialPolygonsDataFrame(Sr = x_shp,
                                   data = africa1@data)
+x_shp <- africa1
 for(i in 1:length(data_list)){
   x_shp@data[,names_list[i]] <-
     create_column(r = data_list[[i]])
@@ -155,15 +143,15 @@ pops <- af@data %>%
 
 popups <- lapply(rownames(pops), function(row){
   x <- pops[row.names(pops) == row,] %>% 
-                         dplyr::select(-Area, -Country)
+    dplyr::select(-Area, -Country)
   captions <- paste0(x$Area, ' ', x$Country)
-
+  
   htmlTable::htmlTable(x, 
-               rnames = FALSE,
-               caption = captions,
-               # align = 'lr',
-               align = paste(rep("l", ncol(x)), collapse = ''),
-               format = 'html')
+                       rnames = FALSE,
+                       caption = captions,
+                       # align = 'lr',
+                       align = paste(rep("l", ncol(x)), collapse = ''),
+                       format = 'html')
 })
 
 pal <- colorNumeric(
@@ -174,12 +162,12 @@ pal2 <- colorNumeric(
   domain = af@data$Arabiensis)
 
 addLegendCustom <- function(map, colors, labels, sizes, opacity = 0.5, title = ''){
-      colorAdditions <- paste0(colors, "; width:", sizes, "px; height:", sizes, "px")
-      labelAdditions <- paste0("<div style='display: inline-block;height: ", sizes, "px;margin-top: 4px;line-height: ", sizes, "px;'>", labels, "</div>")
-
-      return(addLegend(map, colors = colorAdditions, labels = labelAdditions, opacity = opacity,
-                       title = title))
-    }
+  colorAdditions <- paste0(colors, "; width:", sizes, "px; height:", sizes, "px")
+  labelAdditions <- paste0("<div style='display: inline-block;height: ", sizes, "px;margin-top: 4px;line-height: ", sizes, "px;'>", labels, "</div>")
+  
+  return(addLegend(map, colors = colorAdditions, labels = labelAdditions, opacity = opacity,
+                   title = title))
+}
 l <- leaflet() %>%
   addProviderTiles(providers$Stamen.Toner) %>%
   # Add cattle
@@ -191,30 +179,29 @@ l <- leaflet() %>%
               stroke = TRUE,
               weight = 0.5,
               color = pal(af@data$Cattle),
-                   popup = popups) %>%
+              popup = popups) %>%
   addCircleMarkers(data = af_coords@coords,
-                             lng = af_coords@coords[,1],
-                             lat = af_coords@coords[,2],
-                             color = 'black',
-                             weight = 0.5,
+                   lng = af_coords@coords[,1],
+                   lat = af_coords@coords[,2],
+                   color = 'black',
+                   weight = 0.5,
                    fillOpacity = 0.9,
-                             fillColor = pal2(af@data$Arabiensis),
-                             radius = make_small(af@data$Malaria),
+                   fillColor = pal2(af@data$Arabiensis),
+                   radius = make_small(af@data$Malaria),
                    popup = popups) %>%
   addFullscreenControl() %>%
   addLegend("bottomleft", pal = pal, values = af@data$Cattle[!is.na(af@data$Cattle)],
-    title = "Cattle",
-    opacity = 1
+            title = "Cattle",
+            opacity = 1
   ) %>%
   addLegend("bottomright", pal = pal2, 
             values = seq(0, 100, 20),
             # values = af@data$Arabiensis[!is.na(af@data$Arabiensis)],
-    title = "Arabiensis",
-    opacity = 1
+            title = "Arabiensis",
+            opacity = 1
   ) %>%
   addLegendCustom(colors = 'black', 
                   title = 'Malaria',
                   labels = as.character(seq(0, 100, 20)), sizes = make_small(seq(0, 100, 20)))
 l
-htmlwidgets::saveWidget(l, file = '~/Documents/databrew.github.io/cow3.html')
-```
+htmlwidgets::saveWidget(l, file = '~/Documents/databrew.github.io/cow3.html', selfcontained = FALSE)
