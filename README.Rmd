@@ -26,20 +26,24 @@ africa <- cism::africa
 
 ```{r}
 library(gridExtra)
-g1 <- plotter(mosq_original,main='A', ylim=c(-30, 20))
-g2 <- plotter(mosq,main='B', ylim=c(-30, 20))
+g1 <- plotter(mosq_original,main='A', ylim=c(-30, 20)) +
+  layer(sp.polygons(africa))
+g2 <- plotter(mosq,main='B', ylim=c(-30, 20)) +
+  layer(sp.polygons(africa))
 grid.arrange(g1, g2, ncol=2)
 
 tiff("figs/1.tiff", units="in", width=8, height=5, res=300)
-grid.arrange(g1, g2, ncol=2)
+grid.arrange(g1, g2, ncol=2) 
 dev.off()
 ```
 
 ## Figure 2. Cattle density (a) Raw and (b) percentilized **review scale**
 
 ```{r}
-g1 <- plotter(cowa, zscaleLog = 10,main='A', ylim=c(-35, 20))
-g2 <- plotter(cowap, main='B', ylim=c(-35, 20))
+g1 <- plotter(cowa, zscaleLog = 10,main='A', ylim=c(-35, 20)) +
+  layer(sp.polygons(africa))
+g2 <- plotter(cowap, main='B', ylim=c(-35, 20)) +
+  layer(sp.polygons(africa))
 grid.arrange(g1, g2, ncol=2)
 tiff("figs/2.tiff", units="in", width=8, height=5, res=300)
 grid.arrange(g1, g2, ncol=2)
@@ -49,8 +53,10 @@ dev.off()
 ## Figure 3. Arabiensis density (a) Raw and (b) percentilized
 
 ```{r}
-g1 <- plotter(arab_density_original, main='A', ylim=c(-35, 20))
-g2 <- plotter(arab_density, main='B', ylim=c(-35, 20))
+g1 <- plotter(arab_density_original, main='A', ylim=c(-35, 20)) +
+  layer(sp.polygons(africa))
+g2 <- plotter(arab_density, main='B', ylim=c(-35, 20)) +
+  layer(sp.polygons(africa))
 grid.arrange(g1, g2, ncol=2)
 tiff("figs/3.tiff", units="in", width=8, height=5, res=300)
 grid.arrange(g1, g2, ncol=2)

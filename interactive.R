@@ -109,10 +109,11 @@ data_list <- list(arab_density, cowap, mosq)
 names_list <- c('Arabiensis', 'Cattle', 'Malaria')
 
 library(rgeos)
-x_shp <- gSimplify(africa1, tol = 0.1, topologyPreserve = T)
+# x_shp <- africa1
+x_shp <- gSimplify(africa1, tol = 0.01, topologyPreserve = T)
 x_shp <- SpatialPolygonsDataFrame(Sr = x_shp,
                                   data = africa1@data)
-x_shp <- africa1
+# x_shp <- africa1
 for(i in 1:length(data_list)){
   x_shp@data[,names_list[i]] <-
     create_column(r = data_list[[i]])
@@ -203,5 +204,7 @@ l <- leaflet() %>%
   addLegendCustom(colors = 'black', 
                   title = 'Malaria',
                   labels = as.character(seq(0, 100, 20)), sizes = make_small(seq(0, 100, 20)))
-l
-htmlwidgets::saveWidget(l, file = '~/Documents/databrew.github.io/cow3.html', selfcontained = FALSE)
+
+htmlwidgets::saveWidget(l, 
+                        file = 'cow.html', 
+                        selfcontained = FALSE)
